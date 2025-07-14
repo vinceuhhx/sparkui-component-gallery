@@ -4,6 +4,7 @@ import { Button } from "@/components/sparkui"
 
 export default function CardDemo() {
   return (
+       <div className="p-8">
     <ComponentDemo
       title="Card Components"
       description="Basic card components with different variants and composition patterns using the ig-grid system"
@@ -204,5 +205,6 @@ export default function CardDemo() {
         </div>
       </div>
     </ComponentDemo>
+       </div>
   )
 }
