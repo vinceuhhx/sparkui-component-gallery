@@ -1,3 +1,4 @@
+
 import { useState } from "react"
 import { NavLink, useLocation } from "react-router-dom"
 import { ChevronDown, Package, Palette, Sun, Moon } from "lucide-react"
@@ -23,10 +24,9 @@ const SidebarItem = ({ title, to, icon: Icon }: SidebarItemProps) => {
     <NavLink
       to={to}
       className={`sidebar-item ${isActive ? 'active' : ''}`}
-      style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '12px' }}
     >
       {Icon && <Icon className="icon" />}
-      <span style={{ fontSize: '14px', fontWeight: isActive ? '600' : '500' }}>{title}</span>
+      <span>{title}</span>
     </NavLink>
   )
 }
@@ -35,7 +35,7 @@ const SidebarGroup = ({ title, items, defaultOpen = false }: SidebarGroupProps) 
   const [isOpen, setIsOpen] = useState(defaultOpen)
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+    <div style={{ marginBottom: '16px' }}>
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="interactive-highlight"
@@ -47,23 +47,22 @@ const SidebarGroup = ({ title, items, defaultOpen = false }: SidebarGroupProps) 
           padding: '12px 16px',
           fontSize: '14px',
           fontWeight: '600',
-          color: 'rgba(255, 255, 255, 0.9)',
-          background: 'rgba(255, 255, 255, 0.1)',
+          color: 'var(--ig-text-bold)',
+          background: 'var(--ig-background-surface-on-clear-soft)',
           border: 'none',
-          borderRadius: '10px',
-          cursor: 'pointer',
-          transition: 'all 0.3s ease'
+          borderRadius: 'var(--ig-border-radius)',
+          cursor: 'pointer'
         }}
       >
         <span style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-          <Package style={{ width: '16px', height: '16px' }} />
+          <Package className="icon" />
           {title}
         </span>
         <ChevronDown style={{ 
           width: '16px', 
           height: '16px', 
           transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)',
-          transition: 'transform 0.3s ease'
+          transition: 'transform var(--ig-transition-duration) ease'
         }} />
       </button>
       
@@ -71,10 +70,8 @@ const SidebarGroup = ({ title, items, defaultOpen = false }: SidebarGroupProps) 
         <div style={{ 
           marginLeft: '16px', 
           paddingLeft: '16px', 
-          borderLeft: '2px solid rgba(103, 126, 234, 0.3)',
-          display: 'flex',
-          flexDirection: 'column',
-          gap: '4px'
+          borderLeft: '2px solid var(--ig-border-soft)',
+          marginTop: '8px'
         }}>
           {items.map((item) => (
             <SidebarItem key={item.to} {...item} />
@@ -105,30 +102,26 @@ export const ComponentLibrarySidebar = () => {
   ]
 
   return (
-    <div className="impressive-sidebar" style={{ width: '280px', height: '100vh', display: 'flex', flexDirection: 'column' }}>
+    <div className="sparkui-sidebar">
       {/* Header */}
-      <div style={{ padding: '20px', borderBottom: '1px solid rgba(255, 255, 255, 0.1)' }}>
+      <div style={{ padding: '20px', borderBottom: '1px solid var(--ig-border-soft)' }}>
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
           <NavLink to="/" style={{ display: 'flex', alignItems: 'center', gap: '12px', textDecoration: 'none' }}>
-            <div className="float-animation glow-primary" style={{ 
-              width: '40px', 
-              height: '40px', 
-              background: 'linear-gradient(135deg, #667eea, #764ba2)', 
-              borderRadius: '12px', 
+            <div style={{ 
+              width: '32px', 
+              height: '32px', 
+              background: 'var(--ig-text-primary)', 
+              borderRadius: 'var(--ig-border-radius-large)', 
               display: 'flex', 
               alignItems: 'center', 
               justifyContent: 'center' 
             }}>
-              <Palette style={{ width: '20px', height: '20px', color: 'white' }} />
+              <Palette style={{ width: '18px', height: '18px', color: 'var(--ig-background-page-clear)' }} />
             </div>
-            <span className="text-glow" style={{ 
-              fontWeight: '800', 
-              fontSize: '20px', 
-              color: 'white',
-              background: 'linear-gradient(135deg, #667eea, #764ba2)',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-              backgroundClip: 'text'
+            <span style={{ 
+              fontWeight: '700', 
+              fontSize: '18px', 
+              color: 'var(--ig-text-primary)'
             }}>SparkUI</span>
           </NavLink>
           
@@ -137,16 +130,16 @@ export const ComponentLibrarySidebar = () => {
             className="theme-toggle"
           >
             {theme === "light" ? (
-              <Moon style={{ width: '20px', height: '20px' }} />
+              <Moon className="icon" />
             ) : (
-              <Sun style={{ width: '20px', height: '20px' }} />
+              <Sun className="icon" />
             )}
           </button>
         </div>
       </div>
 
       {/* Navigation */}
-      <div style={{ flex: 1, padding: '20px', display: 'flex', flexDirection: 'column', gap: '20px', overflowY: 'auto' }}>
+      <div style={{ flex: 1, padding: '20px', overflowY: 'auto' }}>
         <SidebarGroup 
           title="Basic Components" 
           items={basicComponents}
@@ -160,14 +153,14 @@ export const ComponentLibrarySidebar = () => {
       </div>
 
       {/* Footer */}
-      <div style={{ padding: '20px', borderTop: '1px solid rgba(255, 255, 255, 0.1)' }}>
+      <div style={{ padding: '20px', borderTop: '1px solid var(--ig-border-soft)' }}>
         <div style={{ 
           fontSize: '12px', 
-          color: 'rgba(255, 255, 255, 0.7)', 
+          color: 'var(--ig-text-soft)', 
           textAlign: 'center',
           lineHeight: '1.5'
         }}>
-          <div className="sparkle-effect">SparkUI Component Library</div>
+          <div>SparkUI Component Library</div>
           <div style={{ marginTop: '4px' }}>Built with ❤️ using Lovable</div>
         </div>
       </div>

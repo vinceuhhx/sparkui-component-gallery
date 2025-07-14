@@ -1,26 +1,50 @@
+
 /* SparkUI Component Library - Clean minimalistic design using only IG CDN */
 
-/* Navigation Items */
+/* Layout Components */
+.sparkui-layout {
+  min-height: 100vh;
+  display: flex;
+  background: var(--ig-background-page-clear);
+}
+
+.sparkui-sidebar {
+  width: 280px;
+  background: var(--ig-background-surface-on-clear-subtle);
+  border-right: 1px solid var(--ig-border-soft);
+  display: flex;
+  flex-direction: column;
+}
+
+.sparkui-content {
+  flex: 1;
+  overflow-y: auto;
+}
+
+/* Sidebar Items */
 .sidebar-item {
   display: flex;
   align-items: center;
-  gap: var(--ig-size-100);
-  padding: var(--ig-size-100) var(--ig-size-150);
-  margin: var(--ig-size-025) 0;
+  gap: 12px;
+  padding: 12px 16px;
+  margin: 4px 0;
   border-radius: var(--ig-border-radius);
   color: var(--ig-text-medium);
   text-decoration: none;
   transition: all var(--ig-transition-duration) ease;
+  font-size: 14px;
+  font-weight: 500;
 }
 
 .sidebar-item:hover {
-  background: var(--ig-background-surface-on-clear-subtle);
+  background: var(--ig-background-surface-on-clear-soft);
   color: var(--ig-text-bold);
 }
 
 .sidebar-item.active {
-  background: var(--ig-background-primary-subtle);
+  background: var(--ig-background-surface-on-clear-soft);
   color: var(--ig-text-primary);
+  font-weight: 600;
 }
 
 /* Interactive Elements */
@@ -29,30 +53,140 @@
 }
 
 .interactive-highlight:hover {
-  background: var(--ig-background-surface-on-clear-subtle);
+  background: var(--ig-background-surface-on-clear-soft);
 }
 
 /* Theme Toggle */
 .theme-toggle {
   background: var(--ig-background-surface-on-clear-soft);
-  border: var(--ig-border-width) solid var(--ig-border-soft);
+  border: 1px solid var(--ig-border-soft);
   border-radius: var(--ig-border-radius);
-  padding: var(--ig-size-075);
+  padding: 8px;
   color: var(--ig-text-medium);
   cursor: pointer;
+  transition: all var(--ig-transition-duration) ease;
+}
+
+.theme-toggle:hover {
+  color: var(--ig-text-bold);
 }
 
 /* Demo Cards */
 .demo-card {
-  background: var(--ig-background-surface-on-clear-soft);
-  border: var(--ig-border-width) solid var(--ig-border-soft);
+  background: var(--ig-background-surface-on-clear-subtle);
+  border: 1px solid var(--ig-border-soft);
   border-radius: var(--ig-border-radius-large);
-  padding: var(--ig-size-300);
-  margin: var(--ig-size-150) 0;
+  padding: 24px;
+  margin: 16px 0;
+}
+
+/* Content Layout */
+.content-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px;
+}
+
+.content-section {
+  margin-bottom: 48px;
+}
+
+.content-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  margin-top: 24px;
+}
+
+/* Typography Helpers */
+.text-primary {
+  color: var(--ig-text-primary);
+}
+
+.text-medium {
+  color: var(--ig-text-medium);
+}
+
+.text-soft {
+  color: var(--ig-text-soft);
 }
 
 /* Utilities */
 .icon {
   width: 16px;
   height: 16px;
+  flex-shrink: 0;
+}
+
+.logo-icon {
+  width: 32px;
+  height: 32px;
+}
+
+/* Landing Page Specific */
+.hero-section {
+  text-align: center;
+  padding: 64px 0;
+}
+
+.hero-title {
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: var(--ig-text-bold);
+}
+
+.hero-subtitle {
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 12px;
+  color: var(--ig-text-primary);
+}
+
+.hero-description {
+  font-size: 16px;
+  color: var(--ig-text-medium);
+  margin-bottom: 32px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Feature Cards */
+.feature-card {
+  background: var(--ig-background-surface-on-clear-subtle);
+  border: 1px solid var(--ig-border-soft);
+  border-radius: var(--ig-border-radius-large);
+  padding: 32px;
+  text-align: center;
+}
+
+.feature-icon {
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--ig-background-surface-on-clear-soft);
+  border-radius: var(--ig-border-radius-large);
+}
+
+.feature-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--ig-text-bold);
+}
+
+.feature-description {
+  font-size: 14px;
+  color: var(--ig-text-medium);
 }

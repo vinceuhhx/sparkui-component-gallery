@@ -1,147 +1,136 @@
+
 import { Link } from "react-router-dom"
 import { Typography, Body, Button } from "@/components/sparkui"
-import { ArrowRight, Palette, Zap, Heart } from "lucide-react"
+import { ArrowRight, Palette, Zap, Heart, Sparkles } from "lucide-react"
 
 const Home = () => {
   return (
-    <div className="p-8 max-w-4xl mx-auto">
+    <div className="content-container">
       {/* Hero Section */}
-      <div className="text-center mb-12">
-        <div className="flex items-center justify-center gap-3 mb-6">
-          <div className="w-12 h-12 bg-primary rounded-xl flex items-center justify-center">
-            <Palette className="h-6 w-6 text-primary-foreground" />
+      <div className="hero-section">
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '16px', marginBottom: '32px' }}>
+          <div style={{ 
+            width: '64px', 
+            height: '64px', 
+            background: 'var(--ig-text-primary)', 
+            borderRadius: 'var(--ig-border-radius-large)', 
+            display: 'flex', 
+            alignItems: 'center', 
+            justifyContent: 'center' 
+          }}>
+            <Sparkles style={{ width: '32px', height: '32px', color: 'var(--ig-background-page-clear)' }} />
           </div>
-          <Typography level={1} color="primary">SparkUI</Typography>
         </div>
         
-        <Typography level={2} weight="medium" color="soft" align="center">
-          Modern Component Library
-        </Typography>
+        <h1 className="hero-title">SparkUI</h1>
+        <h2 className="hero-subtitle">Modern Component Library</h2>
         
-        <Body size="large" color="medium" align="center" className="mt-4 max-w-2xl mx-auto">
+        <p className="hero-description">
           A comprehensive showcase of SparkUI components with all variants, states, and configurations. 
-          Built with modern design principles and accessibility in mind.
-        </Body>
+          Built with modern design principles and accessibility in mind using clean, minimalistic design tokens.
+        </p>
 
-        <div className="mt-8 flex justify-center gap-4">
+        <div className="hero-actions">
           <Link to="/components/button">
             <Button variant="filled" color="primary" size="lg">
               Explore Components
-              <ArrowRight className="w-4 h-4 ml-2" />
+              <ArrowRight style={{ width: '16px', height: '16px', marginLeft: '8px' }} />
             </Button>
           </Link>
           <Button variant="outlined" color="primary" size="lg">
-            View on GitHub
+            Documentation
           </Button>
         </div>
       </div>
 
       {/* Features Grid */}
-      <div className="grid md:grid-cols-3 gap-8 mb-12">
-        <div className="text-center p-6 bg-card rounded-xl border border-border">
-          <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-4">
-            <Zap className="h-6 w-6 text-primary" />
+      <div className="content-section">
+        <div className="content-grid">
+          <div className="feature-card">
+            <div className="feature-icon">
+              <Zap style={{ width: '24px', height: '24px', color: 'var(--ig-text-primary)' }} />
+            </div>
+            <h3 className="feature-title">Fast & Modern</h3>
+            <p className="feature-description">
+              Built with performance and modern design patterns in mind
+            </p>
           </div>
-          <Typography level={4} weight="medium" align="center">
-            Fast & Modern
-          </Typography>
-          <Body size="small" color="soft" align="center" className="mt-2">
-            Built with performance and modern design patterns in mind
-          </Body>
-        </div>
 
-        <div className="text-center p-6 bg-card rounded-xl border border-border">
-          <div className="w-12 h-12 bg-success/10 rounded-lg flex items-center justify-center mx-auto mb-4">
-            <Palette className="h-6 w-6 text-success" />
+          <div className="feature-card">
+            <div className="feature-icon">
+              <Palette style={{ width: '24px', height: '24px', color: 'var(--ig-text-primary)' }} />
+            </div>
+            <h3 className="feature-title">Themeable</h3>
+            <p className="feature-description">
+              Full light and dark mode support with customizable design tokens
+            </p>
           </div>
-          <Typography level={4} weight="medium" align="center">
-            Themeable
-          </Typography>
-          <Body size="small" color="soft" align="center" className="mt-2">
-            Full light and dark mode support with customizable tokens
-          </Body>
-        </div>
 
-        <div className="text-center p-6 bg-card rounded-xl border border-border">
-          <div className="w-12 h-12 bg-pink-100 rounded-lg flex items-center justify-center mx-auto mb-4">
-            <Heart className="h-6 w-6 text-pink-600" />
+          <div className="feature-card">
+            <div className="feature-icon">
+              <Heart style={{ width: '24px', height: '24px', color: 'var(--ig-text-primary)' }} />
+            </div>
+            <h3 className="feature-title">Developer Friendly</h3>
+            <p className="feature-description">
+              Clean APIs, TypeScript support, and comprehensive documentation
+            </p>
           </div>
-          <Typography level={4} weight="medium" align="center">
-            Developer Friendly
-          </Typography>
-          <Body size="small" color="soft" align="center" className="mt-2">
-            Clean APIs, TypeScript support, and comprehensive documentation
-          </Body>
         </div>
       </div>
 
       {/* Component Categories */}
-      <div className="space-y-8">
-        <Typography level={2} weight="bold" align="center">
-          Component Categories
-        </Typography>
+      <div className="content-section">
+        <div style={{ textAlign: 'center', marginBottom: '32px' }}>
+          <h2 style={{ fontSize: '32px', fontWeight: '700', color: 'var(--ig-text-bold)', marginBottom: '16px' }}>
+            Component Categories
+          </h2>
+        </div>
 
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="content-grid">
           {/* Basic Components */}
-          <div className="p-6 bg-card rounded-xl border border-border">
-            <Typography level={3} weight="medium" color="primary" className="mb-4">
+          <div className="demo-card">
+            <h3 style={{ fontSize: '20px', fontWeight: '600', color: 'var(--ig-text-primary)', marginBottom: '16px' }}>
               Basic Components
-            </Typography>
-            <Body color="medium" className="mb-4">
+            </h3>
+            <p style={{ color: 'var(--ig-text-medium)', marginBottom: '16px' }}>
               Essential building blocks for any application interface.
-            </Body>
-            <div className="space-y-2">
-              <Link to="/components/button" className="block">
-                <Body size="small" color="primary" className="hover:underline">
-                  • Button - Interactive actions with multiple variants
-                </Body>
+            </p>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+              <Link to="/components/button" style={{ color: 'var(--ig-text-primary)', textDecoration: 'none', fontSize: '14px' }}>
+                • Button - Interactive actions with multiple variants
               </Link>
-              <Link to="/components/typography" className="block">
-                <Body size="small" color="primary" className="hover:underline">
-                  • Typography - Flexible heading component
-                </Body>
+              <Link to="/components/typography" style={{ color: 'var(--ig-text-primary)', textDecoration: 'none', fontSize: '14px' }}>
+                • Typography - Flexible heading component
               </Link>
-              <Link to="/components/body" className="block">
-                <Body size="small" color="primary" className="hover:underline">
-                  • Body - Versatile text content component
-                </Body>
+              <Link to="/components/body" style={{ color: 'var(--ig-text-primary)', textDecoration: 'none', fontSize: '14px' }}>
+                • Body - Versatile text content component
               </Link>
-              <Link to="/components/tabs" className="block">
-                <Body size="small" color="primary" className="hover:underline">
-                  • Tabs - Navigation and content organization
-                </Body>
+              <Link to="/components/tabs" style={{ color: 'var(--ig-text-primary)', textDecoration: 'none', fontSize: '14px' }}>
+                • Tabs - Navigation and content organization
               </Link>
             </div>
           </div>
 
           {/* Composite Components */}
-          <div className="p-6 bg-card rounded-xl border border-border">
-            <Typography level={3} weight="medium" color="success" className="mb-4">
+          <div className="demo-card">
+            <h3 style={{ fontSize: '20px', fontWeight: '600', color: 'var(--ig-text-primary)', marginBottom: '16px' }}>
               Composite Components
-            </Typography>
-            <Body color="medium" className="mb-4">
+            </h3>
+            <p style={{ color: 'var(--ig-text-medium)', marginBottom: '16px' }}>
               Complex components built from basic elements.
-            </Body>
-            <div className="space-y-2">
-              <Link to="/components/card-layouts" className="block">
-                <Body size="small" color="success" className="hover:underline">
-                  • Card Layouts - Structured content containers
-                </Body>
+            </p>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+              <Link to="/components/extended-cards" style={{ color: 'var(--ig-text-primary)', textDecoration: 'none', fontSize: '14px' }}>
+                • Extended Cards - Advanced card layouts
               </Link>
-              <Link to="/components/forms" className="block">
-                <Body size="small" color="success" className="hover:underline">
-                  • Form Components - Complete form solutions
-                </Body>
+              <Link to="/components/forms" style={{ color: 'var(--ig-text-primary)', textDecoration: 'none', fontSize: '14px' }}>
+                • Form Components - Complete form solutions
               </Link>
-              <Link to="/components/navigation" className="block">
-                <Body size="small" color="success" className="hover:underline">
-                  • Navigation - Advanced navigation patterns
-                </Body>
+              <Link to="/components/navigation" style={{ color: 'var(--ig-text-primary)', textDecoration: 'none', fontSize: '14px' }}>
+                • Navigation - Advanced navigation patterns
               </Link>
-              <Link to="/components/data-display" className="block">
-                <Body size="small" color="success" className="hover:underline">
-                  • Data Display - Tables, lists, and data visualization
-                </Body>
+              <Link to="/components/data-display" style={{ color: 'var(--ig-text-primary)', textDecoration: 'none', fontSize: '14px' }}>
+                • Data Display - Tables, lists, and data visualization
               </Link>
             </div>
           </div>
@@ -149,24 +138,26 @@ const Home = () => {
       </div>
 
       {/* Getting Started */}
-      <div className="mt-12 p-8 bg-muted/20 rounded-xl border border-border">
-        <Typography level={3} weight="medium" align="center" className="mb-4">
-          Getting Started
-        </Typography>
-        <Body align="center" color="medium" className="mb-6">
-          Start exploring the components using the sidebar navigation or jump directly to a specific component below.
-        </Body>
-        <div className="flex justify-center gap-4">
-          <Link to="/components/button">
-            <Button variant="soft" color="primary">
-              View Buttons
-            </Button>
-          </Link>
-          <Link to="/components/typography">
-            <Button variant="soft" color="success">
-              View Typography
-            </Button>
-          </Link>
+      <div className="content-section">
+        <div className="demo-card" style={{ textAlign: 'center' }}>
+          <h3 style={{ fontSize: '24px', fontWeight: '600', color: 'var(--ig-text-bold)', marginBottom: '16px' }}>
+            Getting Started
+          </h3>
+          <p style={{ color: 'var(--ig-text-medium)', marginBottom: '24px' }}>
+            Start exploring the components using the sidebar navigation or jump directly to a specific component below.
+          </p>
+          <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
+            <Link to="/components/button">
+              <Button variant="soft" color="primary">
+                View Buttons
+              </Button>
+            </Link>
+            <Link to="/components/typography">
+              <Button variant="soft" color="primary">
+                View Typography
+              </Button>
+            </Link>
+          </div>
         </div>
       </div>
     </div>
