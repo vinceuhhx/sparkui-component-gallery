@@ -33,7 +33,7 @@ const TypographyDemo = () => {
         <div className="space-y-8">
           {/* Levels Section */}
           <div>
-            <h3 className="text-lg font-semibold mb-4 text-foreground">Heading Levels</h3>
+            <h3 className="text-lg font-semibold mb-4" style={{ color: 'var(--ig-text-bold)' }}>Heading Levels</h3>
             <div className="space-y-4">
               <Typography level={1} weight="bold">Heading 1 - XXLarge Bold</Typography>
               <Typography level={2} weight="bold">Heading 2 - XLarge Bold</Typography>
@@ -46,7 +46,7 @@ const TypographyDemo = () => {
 
           {/* Weights Section */}
           <div>
-            <h3 className="text-lg font-semibold mb-4 text-foreground">Font Weights</h3>
+            <h3 className="text-lg font-semibold mb-4" style={{ color: 'var(--ig-text-bold)' }}>Font Weights</h3>
             <div className="space-y-2">
               <Typography level={3} weight="bold">Bold Weight</Typography>
               <Typography level={3} weight="medium">Medium Weight</Typography>
@@ -56,7 +56,7 @@ const TypographyDemo = () => {
 
           {/* Colors Section */}
           <div>
-            <h3 className="text-lg font-semibold mb-4 text-foreground">Colors</h3>
+            <h3 className="text-lg font-semibold mb-4" style={{ color: 'var(--ig-text-bold)' }}>Colors</h3>
             <div className="space-y-2">
               <Typography level={4} color="default">Default Color</Typography>
               <Typography level={4} color="bold">Bold Color</Typography>
@@ -73,8 +73,8 @@ const TypographyDemo = () => {
 
           {/* Alignment Section */}
           <div>
-            <h3 className="text-lg font-semibold mb-4 text-foreground">Text Alignment</h3>
-            <div className="space-y-4 border border-border rounded-lg p-4">
+            <h3 className="text-lg font-semibold mb-4" style={{ color: 'var(--ig-text-bold)' }}>Text Alignment</h3>
+            <div className="space-y-4 border rounded-lg p-4">
               <Typography level={4} align="left">Left Aligned Text</Typography>
               <Typography level={4} align="center">Center Aligned Text</Typography>
               <Typography level={4} align="right">Right Aligned Text</Typography>
@@ -83,8 +83,8 @@ const TypographyDemo = () => {
 
           {/* Truncate Section */}
           <div>
-            <h3 className="text-lg font-semibold mb-4 text-foreground">Text Truncation</h3>
-            <div className="max-w-xs border border-border rounded-lg p-4">
+            <h3 className="text-lg font-semibold mb-4" style={{ color: 'var(--ig-text-bold)' }}>Text Truncation</h3>
+            <div className="max-w-xs border rounded-lg p-4">
               <Typography level={4} truncate>
                 This is a very long heading that will be truncated when it exceeds the container width
               </Typography>
@@ -93,7 +93,7 @@ const TypographyDemo = () => {
 
           {/* Combined Examples */}
           <div>
-            <h3 className="text-lg font-semibold mb-4 text-foreground">Combined Examples</h3>
+            <h3 className="text-lg font-semibold mb-4" style={{ color: 'var(--ig-text-bold)' }}>Combined Examples</h3>
             <div className="space-y-4">
               <Typography level={1} weight="bold" color="primary" align="center">
                 Main Page Title

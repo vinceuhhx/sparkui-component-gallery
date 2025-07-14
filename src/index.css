@@ -1,12 +1,86 @@
 
 /* SparkUI Component Library - Using IG CDN Design System */
 
+/* Essential IG CDN color tokens only */
+:root {
+  --ig-black: #000;
+  --ig-white: #fff;
+  --ig-text-bold: #1d2830;
+  --ig-text-medium: #54636d;
+  --ig-text-soft: #6f7c86;
+  --ig-text-primary: #c42600;
+  --ig-text-secondary: #1272ab;
+  --ig-text-tertiary: #880a5d;
+  --ig-text-success: #007900;
+  --ig-text-warning: #835600;
+  --ig-text-danger: #ba0032;
+  --ig-background-page-clear: #fff;
+  --ig-background-surface-on-clear-subtle: #f6f9fb;
+  --ig-background-surface-on-clear-soft: #e9f0f5;
+  --ig-border-soft: #e9f0f5;
+  --ig-border-medium: #b7c3cc;
+  --ig-border-radius: 4px;
+  --ig-border-radius-large: 8px;
+  --ig-font-family-body: Roboto, sans-serif;
+  --ig-font-family-heading: Roboto, sans-serif;
+  --ig-font-weight-regular: 400;
+  --ig-font-weight-medium: 500;
+  --ig-font-weight-bold: 700;
+  --ig-font-size-body: 1rem;
+  --ig-font-size-heading-large: 3rem;
+  --ig-font-size-heading-medium: 2.5rem;
+  --ig-font-size-heading-small: 2rem;
+  --ig-font-size-heading-xsmall: 1.5rem;
+  --ig-font-size-heading-xxsmall: 1.125rem;
+  --ig-font-size-heading-xlarge: 3.5rem;
+  --ig-font-size-heading-xxlarge: 4rem;
+  --ig-line-height-body: 1.5rem;
+  --ig-line-height-heading-large: 3.25rem;
+  --ig-line-height-heading-medium: 2.75rem;
+  --ig-line-height-heading-small: 2.25rem;
+  --ig-line-height-heading-xsmall: 2rem;
+  --ig-line-height-heading-xxsmall: 1.5rem;
+  --ig-line-height-heading-xlarge: 4rem;
+  --ig-line-height-heading-xxlarge: 4.5rem;
+  --ig-typography-heading-large-bold: 700 3rem / 3.25rem Roboto;
+  --ig-typography-heading-large-medium: 500 3rem / 3.25rem Roboto;
+  --ig-typography-heading-large-regular: 400 3rem / 3.25rem Roboto;
+  --ig-typography-heading-medium-bold: 700 2.5rem / 2.75rem Roboto;
+  --ig-typography-heading-medium-medium: 500 2.5rem / 2.75rem Roboto;
+  --ig-typography-heading-medium-regular: 400 2.5rem / 2.75rem Roboto;
+  --ig-typography-heading-small-bold: 700 2rem / 2.25rem Roboto;
+  --ig-typography-heading-small-medium: 500 2rem / 2.25rem Roboto;
+  --ig-typography-heading-small-regular: 400 2rem / 2.25rem Roboto;
+  --ig-typography-heading-xsmall-bold: 700 1.5rem / 2rem Roboto;
+  --ig-typography-heading-xsmall-medium: 500 1.5rem / 2rem Roboto;
+  --ig-typography-heading-xsmall-regular: 400 1.5rem / 2rem Roboto;
+  --ig-typography-heading-xxsmall-bold: 700 1.125rem / 1.5rem Roboto;
+  --ig-typography-heading-xxsmall-medium: 500 1.125rem / 1.5rem Roboto;
+  --ig-typography-heading-xxsmall-regular: 400 1.125rem / 1.5rem Roboto;
+  --ig-typography-heading-xlarge-bold: 700 3.5rem / 4rem Roboto;
+  --ig-typography-heading-xlarge-medium: 500 3.5rem / 4rem Roboto;
+  --ig-typography-heading-xlarge-regular: 400 3.5rem / 4rem Roboto;
+  --ig-typography-heading-xxlarge-bold: 700 4rem / 4.5rem Roboto;
+  --ig-typography-heading-xxlarge-medium: 500 4rem / 4.5rem Roboto;
+  --ig-typography-heading-xxlarge-regular: 400 4rem / 4.5rem Roboto;
+  --ig-transition-duration: 0.25s;
+}
+
 :root, [data-theme="light"] {
   color-scheme: light;
 }
 
 [data-theme="dark"] {
   color-scheme: dark;
+  --ig-text-bold: #e9f0f5;
+  --ig-text-medium: #b7c3cc;
+  --ig-text-soft: #54636d;
+  --ig-text-primary: #ff9b7d;
+  --ig-background-page-clear: #0e171e;
+  --ig-background-surface-on-clear-subtle: #1d2830;
+  --ig-background-surface-on-clear-soft: #303c45;
+  --ig-border-soft: #303c45;
+  --ig-border-medium: #424f59;
 }
 
 /* Clean minimalistic styling using only IG CDN variables */
@@ -21,4 +95,50 @@ body {
 
 * {
   box-sizing: border-box;
+}
+
+/* Component library specific utilities */
+.p-8 {
+  padding: 32px;
+}
+
+.space-y-8 > * + * {
+  margin-top: 32px;
+}
+
+.space-y-4 > * + * {
+  margin-top: 16px;
+}
+
+.space-y-2 > * + * {
+  margin-top: 8px;
+}
+
+.text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
+.font-semibold {
+  font-weight: 600;
+}
+
+.mb-4 {
+  margin-bottom: 16px;
+}
+
+.max-w-xs {
+  max-width: 320px;
+}
+
+.border {
+  border: 1px solid var(--ig-border-soft);
+}
+
+.rounded-lg {
+  border-radius: var(--ig-border-radius-large);
+}
+
+.p-4 {
+  padding: 16px;
 }
