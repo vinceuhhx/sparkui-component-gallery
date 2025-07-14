@@ -1,8 +1,8 @@
+
 "use client"
 
 import * as React from "react"
 import { Typography } from "../Typography"
-import { Grid, GridCol } from "../Grid"
 
 const LogoSVG = () => (
   <svg width="100%" height="100%" viewBox="0 0 139 62" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -55,52 +55,83 @@ export const AccreditationBar = React.forwardRef<
         }}
         {...props}
       >
-        <div className="ig-container">
-        {/* Header Section */}
-        <div className="mb-6" style={{ textAlign: "center" }}>
-          <Typography 
-            level={2} 
-            weight="regular" 
-            color="bold"
-            className="mb-3"
-            style={{ textAlign: "center" }}
-          >
-            {title}
-          </Typography>
-          <Typography 
-            level={4} 
-            weight="regular" 
-            color="medium"
-            style={{ 
-              maxWidth: "600px", 
-              margin: "0 auto",
-              textAlign: "center"
-            }}
-          >
-            {subtitle}
-          </Typography>
-        </div>
+        <style jsx>{`
+          .accreditation-container {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 2rem;
+          }
+          .accreditation-header {
+            text-align: center;
+            margin-bottom: 4rem;
+          }
+          .accreditation-title {
+            margin-bottom: 1.25rem;
+          }
+          .accreditation-subtitle {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+          }
+          .accreditation-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 2rem;
+            justify-items: center;
+            align-items: center;
+          }
+          .accreditation-logo-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 80px;
+            color: var(--ig-text-medium);
+            opacity: 0.7;
+            width: 100%;
+            max-width: 120px;
+          }
+          @media (max-width: 992px) {
+            .accreditation-grid {
+              grid-template-columns: repeat(3, 1fr);
+            }
+          }
+          @media (max-width: 576px) {
+            .accreditation-grid {
+              grid-template-columns: repeat(2, 1fr);
+            }
+            .accreditation-container {
+              padding: 0 1rem;
+            }
+          }
+        `}</style>
+
+        <div className="accreditation-container">
+          {/* Header Section */}
+          <div className="accreditation-header">
+            <Typography 
+              level={2} 
+              weight="regular" 
+              color="bold"
+              className="accreditation-title"
+            >
+              {title}
+            </Typography>
+            <Typography 
+              level={4} 
+              weight="regular" 
+              color="medium"
+              className="accreditation-subtitle"
+            >
+              {subtitle}
+            </Typography>
+          </div>
 
           {/* Logos Grid */}
-          <div 
-            className="ig-grid" 
-            style={{ 
-              justifyItems: "center",
-              alignItems: "center"
-            }}
-          >
+          <div className="accreditation-grid">
             {Array.from({ length: 6 }, (_, index) => (
               <div 
                 key={index}
-                className="ig-col-2"
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  minHeight: "80px",
-                  color: "var(--ig-text-medium)",
-                  opacity: "0.7"
-                }}
+                className="accreditation-logo-item"
               >
                 <LogoSVG />
               </div>
