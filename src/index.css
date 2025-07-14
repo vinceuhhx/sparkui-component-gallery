@@ -8,92 +8,95 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* core page & text */
+    --ig-background-page-clear:    hsl(var(--background));
+    --ig-text-bold:                hsl(var(--foreground));
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    /* cards & surfaces */
+    --ig-background-clear:         hsl(var(--card));
+    --ig-background-clear-hover:   hsl(var(--card));  /* adjust if desired */
+    --ig-text-on-clear:            hsl(var(--card-foreground));
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    /* popovers */
+    --ig-popover-background:       hsl(var(--popover));
+    --ig-text-on-bold-bold:        hsl(var(--popover-foreground));
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* primary scale */
+    --ig-background-primary-bold:       hsl(var(--primary));
+    --ig-text-on-bold-bold:             hsl(var(--primary-foreground));
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* secondary / muted / accent */
+    --ig-background-secondary-bold:     hsl(var(--secondary));
+    --ig-text-secondary:                hsl(var(--secondary-foreground));
+    --ig-background-muted-bold:         hsl(var(--muted));
+    --ig-text-muted:                    hsl(var(--muted-foreground));
+    --ig-background-accent-bold:        hsl(var(--accent));
+    --ig-text-accent:                   hsl(var(--accent-foreground));
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* destructive */
+    --ig-background-danger-bold:        hsl(var(--destructive));
+    --ig-text-danger:                   hsl(var(--destructive-foreground));
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* borders, inputs, rings */
+    --ig-border:                        hsl(var(--border));
+    --ig-input:                         hsl(var(--input));
+    --ig-ring:                          hsl(var(--ring));
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    /* radius */
+    --ig-border-radius:                 var(--radius);
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
-    --radius: 0.5rem;
-
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* sidebar */
+    --ig-background-page-subtle:        hsl(var(--sidebar-background));
+    --ig-text-secondary:                hsl(var(--sidebar-foreground));
+    --ig-background-secondary-strong:   hsl(var(--sidebar-primary));
+    --ig-text-on-bold-medium:           hsl(var(--sidebar-primary-foreground));
+    --ig-background-accent-soft:        hsl(var(--sidebar-accent));
+    --ig-text-neutral-medium:           hsl(var(--sidebar-accent-foreground));
+    --ig-border:                        hsl(var(--sidebar-border));
+    --ig-ring:                          hsl(var(--sidebar-ring));
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    /* invert for dark theme */
+    --ig-background-page-clear:    hsl(var(--background));
+    --ig-text-bold:                hsl(var(--foreground));
 
-    --card: 217.2 32.6% 17.5%;
-    --card-foreground: 210 40% 98%;
+    --ig-background-clear:         hsl(var(--card));
+    --ig-text-on-clear:            hsl(var(--card-foreground));
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --ig-popover-background:       hsl(var(--popover));
+    --ig-text-on-bold-bold:        hsl(var(--popover-foreground));
 
-    --primary: 217.2 91.2% 59.8%;
-    --primary-foreground: 222.2 84% 4.9%;
+    --ig-background-primary-bold:       hsl(var(--primary));
+    --ig-text-on-bold-bold:             hsl(var(--primary-foreground));
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --ig-background-secondary-bold:     hsl(var(--secondary));
+    --ig-text-secondary:                hsl(var(--secondary-foreground));
+    --ig-background-muted-bold:         hsl(var(--muted));
+    --ig-text-muted:                    hsl(var(--muted-foreground));
+    --ig-background-accent-bold:        hsl(var(--accent));
+    --ig-text-accent:                   hsl(var(--accent-foreground));
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --ig-background-danger-bold:        hsl(var(--destructive));
+    --ig-text-danger:                   hsl(var(--destructive-foreground));
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --ig-border:                        hsl(var(--border));
+    --ig-input:                         hsl(var(--input));
+    --ig-ring:                          hsl(var(--ring));
 
-    --destructive: 0 62.8% 50.6%;
-    --destructive-foreground: 210 40% 98%;
+    --ig-border-radius:                 var(--radius);
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --ig-background-page-subtle:        hsl(var(--sidebar-background));
+    --ig-text-secondary:                hsl(var(--sidebar-foreground));
+    --ig-background-secondary-strong:   hsl(var(--sidebar-primary));
+    --ig-text-on-bold-medium:           hsl(var(--sidebar-primary-foreground));
+    --ig-background-accent-soft:        hsl(var(--sidebar-accent));
+    --ig-text-neutral-medium:           hsl(var(--sidebar-accent-foreground));
+    --ig-border:                        hsl(var(--sidebar-border));
+    --ig-ring:                          hsl(var(--sidebar-ring));
   }
 }
+
 
 @layer base {
   * {
