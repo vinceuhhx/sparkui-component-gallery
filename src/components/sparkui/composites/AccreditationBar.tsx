@@ -56,28 +56,30 @@ export const AccreditationBar = React.forwardRef<
         {...props}
       >
         <div className="ig-container">
-          {/* Header Section */}
-          <div className="mb-6">
-            <Typography 
-              level={5} 
-              weight="bold" 
-              color="bold"
-              className="mb-3"
-            >
-              {title}
-            </Typography>
-            <Typography 
-              level={4} 
-              weight="regular" 
-              color="medium"
-              style={{ 
-                maxWidth: "600px", 
-                margin: "0 auto" 
-              }}
-            >
-              {subtitle}
-            </Typography>
-          </div>
+        {/* Header Section */}
+        <div className="mb-6" style={{ textAlign: "center" }}>
+          <Typography 
+            level={5} 
+            weight="bold" 
+            color="bold"
+            className="mb-3"
+            style={{ textAlign: "center" }}
+          >
+            {title}
+          </Typography>
+          <Typography 
+            level={4} 
+            weight="regular" 
+            color="medium"
+            style={{ 
+              maxWidth: "600px", 
+              margin: "0 auto",
+              textAlign: "center"
+            }}
+          >
+            {subtitle}
+          </Typography>
+        </div>
 
           {/* Logos Grid */}
           <div 
