@@ -1,5 +1,5 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Separator } from "@/components/ui/separator"
+import { useState } from "react"
+import { Code } from "lucide-react"
 
 interface ComponentDemoProps {
   title: string
@@ -9,39 +9,94 @@ interface ComponentDemoProps {
 }
 
 export const ComponentDemo = ({ title, description, children, code }: ComponentDemoProps) => {
+  const [showCode, setShowCode] = useState(false)
+
   return (
-    <div className="space-y-6">
-      <div>
-        <h1 className="text-3xl font-bold text-foreground">{title}</h1>
-        <p className="text-muted-foreground mt-2">{description}</p>
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+        <h1 className="text-glow" style={{ 
+          fontSize: '2.5rem', 
+          fontWeight: '800', 
+          color: 'white',
+          background: 'linear-gradient(135deg, #667eea, #764ba2)',
+          WebkitBackgroundClip: 'text',
+          WebkitTextFillColor: 'transparent',
+          backgroundClip: 'text',
+          marginBottom: '8px'
+        }}>{title}</h1>
+        <p style={{ 
+          fontSize: '1.125rem', 
+          color: 'rgba(255, 255, 255, 0.8)',
+          lineHeight: '1.6'
+        }}>{description}</p>
       </div>
-      
-      <Separator />
-      
-      <Card>
-        <CardHeader>
-          <CardTitle>Demo</CardTitle>
-          <CardDescription>Interactive examples of the {title} component</CardDescription>
-        </CardHeader>
-        <CardContent>
-          <div className="p-6 bg-muted/20 rounded-lg border border-border">
-            {children}
-          </div>
-        </CardContent>
-      </Card>
-      
+
+      <div className="demo-card">
+        <h3 style={{ 
+          fontSize: '1.25rem', 
+          fontWeight: '600', 
+          color: '#1f2937',
+          marginBottom: '16px'
+        }}>Interactive Demo</h3>
+        <div style={{ 
+          padding: '24px', 
+          background: 'rgba(103, 126, 234, 0.05)', 
+          borderRadius: '12px',
+          border: '1px solid rgba(103, 126, 234, 0.2)'
+        }}>
+          {children}
+        </div>
+      </div>
+
       {code && (
-        <Card>
-          <CardHeader>
-            <CardTitle>Code Example</CardTitle>
-            <CardDescription>Usage example</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <pre className="bg-muted p-4 rounded-lg overflow-x-auto text-sm">
-              <code>{code}</code>
-            </pre>
-          </CardContent>
-        </Card>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+          <button
+            onClick={() => setShowCode(!showCode)}
+            className="glow-primary"
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '8px',
+              padding: '12px 20px',
+              background: 'linear-gradient(135deg, #667eea, #764ba2)',
+              color: 'white',
+              borderRadius: '12px',
+              border: 'none',
+              fontWeight: '600',
+              cursor: 'pointer',
+              transition: 'all 0.3s ease',
+              alignSelf: 'flex-start'
+            }}
+          >
+            <Code style={{ width: '16px', height: '16px' }} />
+            {showCode ? 'Hide Code' : 'Show Code'}
+          </button>
+
+          {showCode && (
+            <div className="demo-card">
+              <h3 style={{ 
+                fontSize: '1.25rem', 
+                fontWeight: '600', 
+                color: '#1f2937',
+                marginBottom: '16px'
+              }}>Code Example</h3>
+              <pre style={{ 
+                background: 'rgba(0, 0, 0, 0.8)',
+                padding: '20px',
+                borderRadius: '12px',
+                overflowX: 'auto',
+                border: '1px solid rgba(255, 255, 255, 0.1)',
+                margin: 0
+              }}>
+                <code style={{ 
+                  fontSize: '14px',
+                  color: '#e2e8f0',
+                  fontFamily: 'Monaco, Consolas, "Courier New", monospace'
+                }}>{code}</code>
+              </pre>
+            </div>
+          )}
+        </div>
       )}
     </div>
   )

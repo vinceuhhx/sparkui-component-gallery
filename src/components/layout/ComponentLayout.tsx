@@ -6,10 +6,12 @@ interface ComponentLayoutProps {
 
 export const ComponentLayout = ({ children }: ComponentLayoutProps) => {
   return (
-    <div className="flex min-h-screen bg-background">
+    <div style={{ display: 'flex', minHeight: '100vh' }}>
       <ComponentLibrarySidebar />
-      <main className="flex-1 overflow-y-auto">
-        {children}
+      <main className="impressive-content" style={{ flex: 1, position: 'relative' }}>
+        <div style={{ position: 'relative', zIndex: 1 }}>
+          {children}
+        </div>
       </main>
     </div>
   )

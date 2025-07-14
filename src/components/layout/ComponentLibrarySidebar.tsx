@@ -22,14 +22,11 @@ const SidebarItem = ({ title, to, icon: Icon }: SidebarItemProps) => {
   return (
     <NavLink
       to={to}
-      className={`flex items-center gap-3 px-3 py-2 rounded-lg text-sm transition-all hover:bg-background/80 ${
-        isActive 
-          ? "bg-primary/10 text-primary font-medium border-l-2 border-primary" 
-          : "text-muted-foreground hover:text-foreground"
-      }`}
+      className={`sidebar-item ${isActive ? 'active' : ''}`}
+      style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '12px' }}
     >
-      {Icon && <Icon className="h-4 w-4" />}
-      {title}
+      {Icon && <Icon className="icon" />}
+      <span style={{ fontSize: '14px', fontWeight: isActive ? '600' : '500' }}>{title}</span>
     </NavLink>
   )
 }
@@ -38,20 +35,47 @@ const SidebarGroup = ({ title, items, defaultOpen = false }: SidebarGroupProps) 
   const [isOpen, setIsOpen] = useState(defaultOpen)
 
   return (
-    <div className="space-y-2">
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center justify-between w-full px-3 py-2 text-sm font-medium text-foreground hover:bg-background/50 rounded-lg transition-colors"
+        className="interactive-highlight"
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          width: '100%',
+          padding: '12px 16px',
+          fontSize: '14px',
+          fontWeight: '600',
+          color: 'rgba(255, 255, 255, 0.9)',
+          background: 'rgba(255, 255, 255, 0.1)',
+          border: 'none',
+          borderRadius: '10px',
+          cursor: 'pointer',
+          transition: 'all 0.3s ease'
+        }}
       >
-        <span className="flex items-center gap-2">
-          <Package className="h-4 w-4" />
+        <span style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+          <Package style={{ width: '16px', height: '16px' }} />
           {title}
         </span>
-        <ChevronDown className={`h-4 w-4 transition-transform ${isOpen ? 'rotate-180' : ''}`} />
+        <ChevronDown style={{ 
+          width: '16px', 
+          height: '16px', 
+          transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)',
+          transition: 'transform 0.3s ease'
+        }} />
       </button>
       
       {isOpen && (
-        <div className="ml-4 space-y-1 border-l border-border/40 pl-4">
+        <div style={{ 
+          marginLeft: '16px', 
+          paddingLeft: '16px', 
+          borderLeft: '2px solid rgba(103, 126, 234, 0.3)',
+          display: 'flex',
+          flexDirection: 'column',
+          gap: '4px'
+        }}>
           {items.map((item) => (
             <SidebarItem key={item.to} {...item} />
           ))}
@@ -81,32 +105,48 @@ export const ComponentLibrarySidebar = () => {
   ]
 
   return (
-    <div className="w-64 h-screen bg-card border-r border-border flex flex-col">
+    <div className="impressive-sidebar" style={{ width: '280px', height: '100vh', display: 'flex', flexDirection: 'column' }}>
       {/* Header */}
-      <div className="p-4 border-b border-border">
-        <div className="flex items-center justify-between">
-          <NavLink to="/" className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-              <Palette className="h-4 w-4 text-primary-foreground" />
+      <div style={{ padding: '20px', borderBottom: '1px solid rgba(255, 255, 255, 0.1)' }}>
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+          <NavLink to="/" style={{ display: 'flex', alignItems: 'center', gap: '12px', textDecoration: 'none' }}>
+            <div className="float-animation glow-primary" style={{ 
+              width: '40px', 
+              height: '40px', 
+              background: 'linear-gradient(135deg, #667eea, #764ba2)', 
+              borderRadius: '12px', 
+              display: 'flex', 
+              alignItems: 'center', 
+              justifyContent: 'center' 
+            }}>
+              <Palette style={{ width: '20px', height: '20px', color: 'white' }} />
             </div>
-            <span className="font-bold text-lg text-foreground">SparkUI</span>
+            <span className="text-glow" style={{ 
+              fontWeight: '800', 
+              fontSize: '20px', 
+              color: 'white',
+              background: 'linear-gradient(135deg, #667eea, #764ba2)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              backgroundClip: 'text'
+            }}>SparkUI</span>
           </NavLink>
           
           <button
             onClick={() => setTheme(theme === "light" ? "dark" : "light")}
-            className="p-2 rounded-lg hover:bg-background transition-colors"
+            className="theme-toggle"
           >
             {theme === "light" ? (
-              <Moon className="h-4 w-4 text-muted-foreground" />
+              <Moon style={{ width: '20px', height: '20px' }} />
             ) : (
-              <Sun className="h-4 w-4 text-muted-foreground" />
+              <Sun style={{ width: '20px', height: '20px' }} />
             )}
           </button>
         </div>
       </div>
 
       {/* Navigation */}
-      <div className="flex-1 p-4 space-y-4 overflow-y-auto">
+      <div style={{ flex: 1, padding: '20px', display: 'flex', flexDirection: 'column', gap: '20px', overflowY: 'auto' }}>
         <SidebarGroup 
           title="Basic Components" 
           items={basicComponents}
@@ -120,10 +160,15 @@ export const ComponentLibrarySidebar = () => {
       </div>
 
       {/* Footer */}
-      <div className="p-4 border-t border-border">
-        <div className="text-xs text-muted-foreground text-center">
-          SparkUI Component Library<br />
-          Built with ❤️ using Lovable
+      <div style={{ padding: '20px', borderTop: '1px solid rgba(255, 255, 255, 0.1)' }}>
+        <div style={{ 
+          fontSize: '12px', 
+          color: 'rgba(255, 255, 255, 0.7)', 
+          textAlign: 'center',
+          lineHeight: '1.5'
+        }}>
+          <div className="sparkle-effect">SparkUI Component Library</div>
+          <div style={{ marginTop: '4px' }}>Built with ❤️ using Lovable</div>
         </div>
       </div>
     </div>
