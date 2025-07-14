@@ -59,8 +59,8 @@ export const AccreditationBar = React.forwardRef<
         {/* Header Section */}
         <div className="mb-6" style={{ textAlign: "center" }}>
           <Typography 
-            level={5} 
-            weight="bold" 
+            level={2} 
+            weight="regular" 
             color="bold"
             className="mb-3"
             style={{ textAlign: "center" }}
