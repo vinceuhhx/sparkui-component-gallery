@@ -3,6 +3,7 @@ import { Grid, GridCol, Card, CardHeader, CardTitle, CardBody } from "@/componen
 
 export default function GridDemo() {
   return (
+       <div className="p-8">
     <ComponentDemo
       title="Grid System"
       description="A responsive grid system using the ig-grid classes from your CDN"
@@ -227,5 +228,6 @@ export default function GridDemo() {
         </div>
       </div>
     </ComponentDemo>
+       </div>
   )
 }
