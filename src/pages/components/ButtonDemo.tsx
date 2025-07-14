@@ -36,64 +36,51 @@ const ButtonDemo = () => {
         <div className="space-y-8">
           {/* Variants Section */}
           <div>
-            <h3 className="text-lg font-semibold mb-4 text-foreground">Variants</h3>
-            <div className="flex flex-wrap gap-4">
-              <Button variant="filled" color="primary">Filled</Button>
-              <Button variant="outlined" color="primary">Outlined</Button>
-              <Button variant="soft" color="primary">Soft</Button>
-              <Button variant="plain" color="primary">Plain</Button>
+            <h3 className="text-lg font-semibold mb-4" style={{ color: 'var(--ig-text-bold)' }}>Button Variants</h3>
+            <div className="space-y-4">
+              <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
+                <Button variant="filled" color="primary">Filled Primary</Button>
+                <Button variant="outlined" color="primary">Outlined Primary</Button>
+                <Button variant="plain" color="primary">Plain Primary</Button>
+                <Button variant="soft" color="primary">Soft Primary</Button>
+              </div>
+              <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
+                <Button variant="filled" color="success">Filled Secondary</Button>
+                <Button variant="outlined" color="success">Outlined Secondary</Button>
+                <Button variant="plain" color="success">Plain Secondary</Button>
+                <Button variant="soft" color="success">Soft Secondary</Button>
+              </div>
             </div>
           </div>
 
           {/* Colors Section */}
           <div>
-            <h3 className="text-lg font-semibold mb-4 text-foreground">Colors</h3>
-            <div className="space-y-3">
-              <div className="flex flex-wrap gap-4">
-                <span className="text-sm text-muted-foreground w-20">Primary:</span>
-                <Button variant="filled" color="primary">Filled</Button>
-                <Button variant="outlined" color="primary">Outlined</Button>
-                <Button variant="soft" color="primary">Soft</Button>
-                <Button variant="plain" color="primary">Plain</Button>
-              </div>
-              <div className="flex flex-wrap gap-4">
-                <span className="text-sm text-muted-foreground w-20">Danger:</span>
-                <Button variant="filled" color="danger">Filled</Button>
-                <Button variant="outlined" color="danger">Outlined</Button>
-                <Button variant="soft" color="danger">Soft</Button>
-                <Button variant="plain" color="danger">Plain</Button>
-              </div>
-              <div className="flex flex-wrap gap-4">
-                <span className="text-sm text-muted-foreground w-20">Success:</span>
-                <Button variant="filled" color="success">Filled</Button>
-                <Button variant="outlined" color="success">Outlined</Button>
-                <Button variant="soft" color="success">Soft</Button>
-                <Button variant="plain" color="success">Plain</Button>
-              </div>
+            <h3 className="text-lg font-semibold mb-4" style={{ color: 'var(--ig-text-bold)' }}>Button Colors</h3>
+            <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
+              <Button color="primary">Primary</Button>
+              <Button color="success">Success</Button>
+              <Button color="danger">Danger</Button>
             </div>
           </div>
 
           {/* Sizes Section */}
           <div>
-            <h3 className="text-lg font-semibold mb-4 text-foreground">Sizes</h3>
-            <div className="flex flex-wrap items-center gap-4">
-              <Button variant="filled" color="primary" size="sm">Small</Button>
-              <Button variant="filled" color="primary" size="md">Medium</Button>
-              <Button variant="filled" color="primary" size="lg">Large</Button>
-              <Button variant="filled" color="primary" size="icon">
-                <Heart className="w-4 h-4" />
-              </Button>
+            <h3 className="text-lg font-semibold mb-4" style={{ color: 'var(--ig-text-bold)' }}>Button Sizes</h3>
+            <div style={{ display: 'flex', gap: '12px', alignItems: 'center', flexWrap: 'wrap' }}>
+              <Button size="sm">Small</Button>
+              <Button size="md">Medium</Button>
+              <Button size="lg">Large</Button>
             </div>
           </div>
 
           {/* States Section */}
           <div>
-            <h3 className="text-lg font-semibold mb-4 text-foreground">States</h3>
-            <div className="flex flex-wrap gap-4">
-              <Button variant="filled" color="primary">Normal</Button>
-              <Button variant="filled" color="primary" disabled>Disabled</Button>
-              <Button variant="filled" color="primary" loading>Loading</Button>
-              <Button variant="filled" color="primary" loading loadingText="Saving...">
+            <h3 className="text-lg font-semibold mb-4" style={{ color: 'var(--ig-text-bold)' }}>Button States</h3>
+            <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
+              <Button>Normal</Button>
+              <Button disabled>Disabled</Button>
+              <Button loading>Loading</Button>
+              <Button loading loadingText="Saving...">
                 Custom Loading
               </Button>
             </div>
@@ -101,22 +88,19 @@ const ButtonDemo = () => {
 
           {/* With Icons Section */}
           <div>
-            <h3 className="text-lg font-semibold mb-4 text-foreground">With Icons</h3>
-            <div className="flex flex-wrap gap-4">
+            <h3 className="text-lg font-semibold mb-4" style={{ color: 'var(--ig-text-bold)' }}>With Icons</h3>
+            <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
               <Button variant="filled" color="primary">
-                <Download className="w-4 h-4 mr-2" />
+                <Download style={{ width: '16px', height: '16px', marginRight: '8px' }} />
                 Download
               </Button>
               <Button variant="outlined" color="success">
-                <Heart className="w-4 h-4 mr-2" />
+                <Heart style={{ width: '16px', height: '16px', marginRight: '8px' }} />
                 Favorite
               </Button>
               <Button variant="soft" color="primary">
                 Continue
-                <ArrowRight className="w-4 h-4 ml-2" />
-              </Button>
-              <Button variant="filled" color="danger" size="icon">
-                <Heart className="w-4 h-4" />
+                <ArrowRight style={{ width: '16px', height: '16px', marginLeft: '8px' }} />
               </Button>
             </div>
           </div>

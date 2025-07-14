@@ -12,6 +12,7 @@ import CardDemo from "@/pages/components/CardDemo";
 import GridDemo from "@/pages/components/GridDemo";
 import TabsDemo from "@/pages/components/TabsDemo";
 import ExtendedCardDemo from "@/pages/components/ExtendedCardDemo";
+import HomeComponentDemo from "@/pages/components/HomeComponentDemo";
 
 import "@/index.css";
 import "@/styles/impressive.css";
@@ -32,6 +33,7 @@ function App() {
                 <Route path="grid" element={<GridDemo />} />
                 <Route path="tabs" element={<TabsDemo />} />
                 <Route path="extended-cards" element={<ExtendedCardDemo />} />
+                <Route path="home-components" element={<HomeComponentDemo />} />
                 <Route path="forms" element={
                   <div className="p-8">
                     <h1 style={{ 

@@ -96,6 +96,7 @@ export const ComponentLibrarySidebar = () => {
 
   const compositeComponents = [
     { title: "Extended Cards", to: "/components/extended-cards" },
+    { title: "Home Components", to: "/components/home-components" },
     { title: "Form Components", to: "/components/forms" },
     { title: "Navigation", to: "/components/navigation" },
     { title: "Data Display", to: "/components/data-display" },

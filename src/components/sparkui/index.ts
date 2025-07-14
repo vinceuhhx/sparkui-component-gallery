@@ -17,3 +17,7 @@ export type { ProfileCardProps, FeatureCardProps, MetricCardProps, ContentCardPr
 
 export { Grid, GridCol } from "./Grid"
 export type { GridProps, GridColProps } from "./Grid"
+
+// Composite components
+export { Marquee } from "./composites/Marquee"
+export { WidgetHome } from "./composites/WidgetHome"
