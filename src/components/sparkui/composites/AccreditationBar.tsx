@@ -59,7 +59,7 @@ export const AccreditationBar = React.forwardRef<
           {/* Header Section */}
           <div className="mb-6">
             <Typography 
-              level={2} 
+              level={5} 
               weight="bold" 
               color="bold"
               className="mb-3"
