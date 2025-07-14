@@ -1,12 +1,15 @@
 "use client"
 
 import * as React from "react"
+import { Typography } from "../Typography"
 
 export interface MarqueeProps extends React.HTMLAttributes<HTMLDivElement> {
   variant?: "default" | "reverse" | "vertical" | "bounce"
   speed?: "slow" | "normal" | "fast"
   pauseOnHover?: boolean
   gradient?: boolean
+  title?: string
+  description?: string
   children: React.ReactNode
 }
 
@@ -17,6 +20,8 @@ const Marquee = React.forwardRef<HTMLDivElement, MarqueeProps>(
       speed = "normal",
       pauseOnHover = false,
       gradient = false,
+      title,
+      description,
       className,
       children,
       style,
@@ -24,6 +29,11 @@ const Marquee = React.forwardRef<HTMLDivElement, MarqueeProps>(
     },
     ref,
   ) => {
+    const childrenArray = React.Children.toArray(children)
+    const itemCount = childrenArray.length
+    const shouldAnimate = itemCount > 6
+    const displayItems = shouldAnimate ? childrenArray : childrenArray.slice(0, 6)
+
     const getSpeed = () => {
       switch (speed) {
         case "slow":
@@ -52,15 +62,18 @@ const Marquee = React.forwardRef<HTMLDivElement, MarqueeProps>(
 
     const marqueeStyles: React.CSSProperties = {
       display: "flex",
-      minWidth: "100%",
-      justifyContent: "space-around",
+      gap: "var(--spacing-4)",
+      alignItems: "center",
       ...(isVertical ? {
         flexDirection: "column",
         minHeight: "100%",
       } : {
         flexDirection: "row",
+        minWidth: shouldAnimate ? "100%" : "auto",
       }),
-      animation: `marquee${isVertical ? 'Vertical' : ''} ${getSpeed()} linear infinite ${getDirection()}`,
+      ...(shouldAnimate && {
+        animation: `marquee${isVertical ? 'Vertical' : ''} ${getSpeed()} linear infinite ${getDirection()}`,
+      }),
     }
 
     const containerStyles: React.CSSProperties = {
@@ -68,14 +81,15 @@ const Marquee = React.forwardRef<HTMLDivElement, MarqueeProps>(
       overflow: "hidden",
       userSelect: "none",
       position: "relative",
+      width: "100%",
       ...(isVertical ? {
         flexDirection: "column",
         height: "400px",
       } : {
         flexDirection: "row",
-        width: "100%",
+        justifyContent: shouldAnimate ? "flex-start" : "center",
       }),
-      ...(gradient && {
+      ...(gradient && shouldAnimate && {
         maskImage: isVertical 
           ? "linear-gradient(to bottom, transparent, white 20%, white 80%, transparent)"
           : "linear-gradient(to right, transparent, white 20%, white 80%, transparent)",
@@ -83,17 +97,12 @@ const Marquee = React.forwardRef<HTMLDivElement, MarqueeProps>(
           ? "linear-gradient(to bottom, transparent, white 20%, white 80%, transparent)"
           : "linear-gradient(to right, transparent, white 20%, white 80%, transparent)",
       }),
-      ...(pauseOnHover && {
-        ":hover > *": {
-          animationPlayState: "paused"
-        }
-      }),
       ...style,
     }
 
     // Add CSS keyframes
     React.useEffect(() => {
-      if (typeof document !== 'undefined') {
+      if (typeof document !== 'undefined' && shouldAnimate) {
         const style = document.createElement('style')
         style.textContent = `
           @keyframes marquee {
@@ -115,27 +124,50 @@ const Marquee = React.forwardRef<HTMLDivElement, MarqueeProps>(
           }
         }
       }
-    }, [pauseOnHover])
+    }, [pauseOnHover, shouldAnimate])
 
     return (
-      <div
-        ref={ref}
-        className={`marquee-container ${className || ''}`}
-        style={containerStyles}
-        {...props}
-      >
-        <div 
-          className="marquee-content"
-          style={marqueeStyles}
+      <div style={{ padding: "var(--spacing-6) 0" }}>
+        {(title || description) && (
+          <div style={{ 
+            textAlign: "center", 
+            marginBottom: "var(--spacing-6)",
+            color: "var(--text-default)"
+          }}>
+            {title && (
+              <Typography level={2} weight="bold" color="default" style={{ marginBottom: "var(--spacing-2)" }}>
+                {title}
+              </Typography>
+            )}
+            {description && (
+              <Typography level={4} weight="regular" color="medium">
+                {description}
+              </Typography>
+            )}
+          </div>
+        )}
+        
+        <div
+          ref={ref}
+          className={`marquee-container ${className || ''}`}
+          style={containerStyles}
+          {...props}
         >
-          {children}
-        </div>
-        <div 
-          className="marquee-content"
-          style={marqueeStyles}
-          aria-hidden="true"
-        >
-          {children}
+          <div 
+            className="marquee-content"
+            style={marqueeStyles}
+          >
+            {displayItems}
+          </div>
+          {shouldAnimate && (
+            <div 
+              className="marquee-content"
+              style={marqueeStyles}
+              aria-hidden="true"
+            >
+              {displayItems}
+            </div>
+          )}
         </div>
       </div>
     )
