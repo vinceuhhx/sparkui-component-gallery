@@ -6,6 +6,108 @@
 All colors MUST be HSL.
 */
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Map our semantic tokens to the IG CDN design tokens */
+@layer base {
+  :root {
+    /* Surface colors */
+    --background: var(--ig-background-page-clear);
+    --foreground: var(--ig-text-bold);
+
+    --card: var(--ig-background-surface-on-clear-soft);
+    --card-foreground: var(--ig-text-bold);
+
+    --popover: var(--ig-background-secondary-strong);
+    --popover-foreground: var(--ig-text-on-bold-bold);
+
+    /* Brand colors */
+    --primary: var(--ig-background-primary-bold);
+    --primary-foreground: var(--ig-text-on-bold-bold);
+
+    --secondary: var(--ig-background-secondary-bold);
+    --secondary-foreground: var(--ig-text-secondary);
+
+    /* Muted / subtle */
+    --muted: var(--ig-background-subtle);
+    --muted-foreground: var(--ig-text-soft);
+
+    /* Accent (you can pick whichever accent1–12 you want) */
+    --accent: var(--ig-background-accent-1-bold);
+    --accent-foreground: var(--ig-text-on-bold-bold);
+
+    /* Destructive / danger */
+    --destructive: var(--ig-background-danger-bold);
+    --destructive-foreground: var(--ig-text-on-bold-bold);
+
+    /* Borders, rings, inputs */
+    --border: var(--ig-border-soft);
+    --input: var(--ig-background-surface-on-clear-soft);
+    --ring: var(--ig-border-focus);
+
+    --radius: var(--ig-border-radius);
+
+    /* Sidebar */
+    --sidebar-background: var(--ig-background-page-subtle);
+    --sidebar-foreground: var(--ig-text-medium);
+    --sidebar-primary: var(--ig-background-primary-subtle);
+    --sidebar-primary-foreground: var(--ig-text-primary);
+    --sidebar-accent: var(--ig-background-accent-1-subtle);
+    --sidebar-accent-foreground: var(--ig-text-accent-1);
+    --sidebar-border: var(--ig-border-soft);
+    --sidebar-ring: var(--ig-border-focus);
+  }
+
+  /* Dark theme overrides */
+  .dark {
+    --background: var(--ig-background-strong);
+    --foreground: var(--ig-text-on-strong-medium);
+
+    --card: var(--ig-background-surface-on-clear-soft);
+    --card-foreground: var(--ig-text-on-bold-medium);
+
+    --popover: var(--ig-background-tertiary-strong);
+    --popover-foreground: var(--ig-text-on-bold-bold);
+
+    --primary: var(--ig-background-primary-strong);
+    --primary-foreground: var(--ig-text-on-bold-bold);
+
+    --secondary: var(--ig-background-secondary-strong);
+    --secondary-foreground: var(--ig-text-on-bold-bold);
+
+    --muted: var(--ig-background-surface-on-subtle-soft);
+    --muted-foreground: var(--ig-text-medium);
+
+    --accent: var(--ig-background-accent-1-strong);
+    --accent-foreground: var(--ig-text-on-bold-bold);
+
+    --destructive: var(--ig-background-danger-soft);
+    --destructive-foreground: var(--ig-text-on-bold-bold);
+
+    --border: var(--ig-border-soft);
+    --input: var(--ig-background-surface-on-subtle-soft);
+    --ring: var(--ig-border-focus);
+
+    --sidebar-background: var(--ig-background-page-clear);
+    --sidebar-foreground: var(--ig-text-medium);
+    --sidebar-primary: var(--ig-background-primary-subtle);
+    --sidebar-primary-foreground: var(--ig-text-primary);
+    --sidebar-accent: var(--ig-background-accent-1-subtle);
+    --sidebar-accent-foreground: var(--ig-text-accent-1);
+    --sidebar-border: var(--ig-border-soft);
+    --sidebar-ring: var(--ig-border-focus);
+  }
+
+  /* Apply border color and default body styles */
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
 
 @layer base {
   * {
