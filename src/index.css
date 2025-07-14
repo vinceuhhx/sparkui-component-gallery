@@ -1,25 +1,6 @@
 
 /* SparkUI Component Library - Using IG CDN Design System */
 
-:root {
-  --ig-black: light-dark(#000, #fff);
-  --ig-white: light-dark(#fff, #000);
-  --ig-text-bold: light-dark(#1d2830, #e9f0f5);
-  --ig-text-medium: light-dark(#54636d, #b7c3cc);
-  --ig-text-soft: light-dark(#6f7c86, #54636d);
-  --ig-text-primary: light-dark(#c42600, #ff9b7d);
-  --ig-background-page-clear: light-dark(#fff, #0e171e);
-  --ig-background-surface-on-clear-subtle: light-dark(#f6f9fb, #1d2830);
-  --ig-background-surface-on-clear-soft: light-dark(#e9f0f5, #303c45);
-  --ig-border-soft: light-dark(#e9f0f5, #303c45);
-  --ig-border-medium: light-dark(#b7c3cc, #424f59);
-  --ig-font-family-body: Roboto;
-  --ig-font-family-heading: Roboto;
-  --ig-transition-duration: .25s;
-  --ig-border-radius: 4px;
-  --ig-border-radius-large: 8px;
-}
-
 :root, [data-theme="light"] {
   color-scheme: light;
 }
