@@ -3,7 +3,7 @@
 
 import * as React from "react"
 import { Typography } from "../Typography"
-
+import {Body} from "../Body"
 const LogoSVG = () => (
   <svg width="100%" height="100%" viewBox="0 0 139 62" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M81.5395 11.1227C81.7847 11.3686 82.1019 11.5333 82.4622 11.4489C85.5885 10.7154 88.6511 9.71673 91.4866 8.18983C91.8277 8.0062 92.0897 7.58754 92.2184 7.23871C92.3653 6.83993 92.4248 6.29244 92.3067 5.87685C92.2085 5.53223 92.0387 5.1286 91.6963 4.95968C91.3686 4.79804 91.0441 4.80919 90.718 4.98474C89.8093 5.4742 88.8746 5.91193 87.9191 6.30198C86.1065 7.01209 84.2325 7.54163 82.3383 7.986C81.517 8.17868 81.0824 9.21935 81.1375 9.99217C81.1653 10.3824 81.2516 10.8342 81.5395 11.1227Z" fill="currentColor"></path>
@@ -76,10 +76,10 @@ export const AccreditationBar = React.forwardRef<
             >
               {title}
             </Typography>
-            <Typography 
+            <Body 
               level={4} 
-              weight="regular" 
-              color="medium"
+            size="small"
+              color="soft"
               style={{
                 maxWidth: "600px",
                 margin: "0 auto",
@@ -87,7 +87,7 @@ export const AccreditationBar = React.forwardRef<
               }}
             >
               {subtitle}
-            </Typography>
+            </Body>
           </div>
 
           {/* Logos Grid */}
