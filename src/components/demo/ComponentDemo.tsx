@@ -34,7 +34,6 @@ export const ComponentDemo = ({ title, description, children, code }: ComponentD
         }}>Interactive Demo</h3>
         <div style={{ 
           padding: '24px', 
-          background: 'var(--ig-background-surface-on-clear-soft)', 
           borderRadius: 'var(--ig-border-radius-large)',
         }}>
           {children}
