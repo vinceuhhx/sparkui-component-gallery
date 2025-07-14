@@ -36,7 +36,6 @@ export const ComponentDemo = ({ title, description, children, code }: ComponentD
           padding: '24px', 
           background: 'var(--ig-background-surface-on-clear-soft)', 
           borderRadius: 'var(--ig-border-radius-large)',
-          border: '1px solid var(--ig-border-soft)'
         }}>
           {children}
         </div>
