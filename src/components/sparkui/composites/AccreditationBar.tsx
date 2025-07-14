@@ -55,64 +55,24 @@ export const AccreditationBar = React.forwardRef<
         }}
         {...props}
       >
-        <style jsx>{`
-          .accreditation-container {
-            max-width: 1140px;
-            margin: 0 auto;
-            padding: 0 2rem;
-          }
-          .accreditation-header {
-            text-align: center;
-            margin-bottom: 4rem;
-          }
-          .accreditation-title {
-            margin-bottom: 1.25rem;
-          }
-          .accreditation-subtitle {
-            max-width: 600px;
-            margin: 0 auto;
-            text-align: center;
-          }
-          .accreditation-grid {
-            display: grid;
-            grid-template-columns: repeat(6, 1fr);
-            gap: 2rem;
-            justify-items: center;
-            align-items: center;
-          }
-          .accreditation-logo-item {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 80px;
-            color: var(--ig-text-medium);
-            opacity: 0.7;
-            width: 100%;
-            max-width: 120px;
-          }
-          @media (max-width: 992px) {
-            .accreditation-grid {
-              grid-template-columns: repeat(3, 1fr);
-            }
-          }
-          @media (max-width: 576px) {
-            .accreditation-grid {
-              grid-template-columns: repeat(2, 1fr);
-            }
-            .accreditation-container {
-              padding: 0 1rem;
-            }
-          }
-        `}</style>
-
-        <div className="accreditation-container">
+        <div style={{
+          maxWidth: "1140px",
+          margin: "0 auto",
+          padding: "0 2rem"
+        }}>
           {/* Header Section */}
-          <div className="accreditation-header">
+          <div style={{
+            textAlign: "center",
+            marginBottom: "4rem"
+          }}>
             <Typography 
               level={2} 
               weight="regular" 
               color="bold"
-              className="accreditation-title"
+              style={{
+                marginBottom: "1.25rem",
+                textAlign: "center"
+              }}
             >
               {title}
             </Typography>
@@ -120,18 +80,37 @@ export const AccreditationBar = React.forwardRef<
               level={4} 
               weight="regular" 
               color="medium"
-              className="accreditation-subtitle"
+              style={{
+                maxWidth: "600px",
+                margin: "0 auto",
+                textAlign: "center"
+              }}
             >
               {subtitle}
             </Typography>
           </div>
 
           {/* Logos Grid */}
-          <div className="accreditation-grid">
+          <div style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(6, 1fr)",
+            gap: "2rem",
+            justifyItems: "center",
+            alignItems: "center"
+          }}>
             {Array.from({ length: 6 }, (_, index) => (
               <div 
                 key={index}
-                className="accreditation-logo-item"
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  minHeight: "80px",
+                  color: "var(--ig-text-medium)",
+                  opacity: "0.7",
+                  width: "100%",
+                  maxWidth: "120px"
+                }}
               >
                 <LogoSVG />
               </div>
