@@ -1,224 +1,242 @@
-import React from "react";
-import { ComponentDemo } from "@/components/demo/ComponentDemo";
-import { ProfileCard, FeatureCard, MetricCard, ContentCard } from "@/components/sparkui";
-import { Button } from "@/components/sparkui";
-import { Heart, Star, TrendingUp, Users, Award, Shield } from "lucide-react";
+import { ComponentDemo } from "@/components/demo/ComponentDemo"
+import { ProfileCard, FeatureCard, MetricCard, ContentCard, Grid, GridCol } from "@/components/sparkui"
+import { Button } from "@/components/sparkui"
+import { Star, Users, TrendingUp, Calendar, MapPin, Mail, Globe, Award } from "lucide-react"
 
-const ExtendedCardDemo = () => {
+export default function ExtendedCardDemo() {
   return (
-    <ComponentDemo 
-      title="Extended Cards" 
-      description="Composite card components built on the base card system with various layouts and use cases."
+    <ComponentDemo
+      title="Extended Cards"
+      description="Composite card components built on top of the basic card system using the ig-grid layout system"
     >
-      <div className="ig-grid ig-grid--responsive" style={{ gap: "var(--ig-size-300)" }}>
-        
+      <div className="space-y-8">
         {/* Profile Cards */}
-        <div className="ig-demo-section">
-          <h3 className="ig-demo-section-title">Profile Cards</h3>
-          <div className="ig-grid ig-grid--responsive" style={{ gap: "var(--ig-size-200)" }}>
-            <ProfileCard
-              name="Sarah Johnson"
-              title="Senior UX Designer"
-              description="Passionate about creating user-centered design solutions with over 5 years of experience in digital product design."
-              avatar="https://images.unsplash.com/photo-1494790108755-2616b612b4b0?w=400&h=400&fit=crop&crop=face"
-              actions={
-                <Button variant="outlined" color="primary" size="sm">
-                  Connect
-                </Button>
-              }
-              stats={[
-                { label: "Projects", value: "24" },
-                { label: "Followers", value: "1.2K" },
-                { label: "Rating", value: "4.9" }
-              ]}
-              variant="clear"
-              shadow={true}
-            />
-            
-            <ProfileCard
-              name="Alex Chen"
-              title="Full Stack Developer"
-              description="Building scalable web applications with modern technologies. Love solving complex problems."
-              avatar="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face"
-              actions={
-                <div style={{ display: "flex", gap: "var(--ig-size-100)" }}>
-                  <Button variant="filled" color="primary" size="sm">
-                    Follow
+        <div>
+          <h3 className="ig-typography-heading-xxsmall-bold mb-4">Profile Cards</h3>
+          <Grid>
+            <GridCol span={12} spanMd={4}>
+              <ProfileCard
+                name="Sarah Chen"
+                role="Senior Designer"
+                avatar="https://images.unsplash.com/photo-1494790108755-2616b612c9cf?w=150&h=150&fit=crop&crop=face"
+                stats={[
+                  { label: "Projects", value: "24" },
+                  { label: "Reviews", value: "4.9" },
+                ]}
+                actions={
+                  <Button size="small" variant="primary">
+                    View Profile
                   </Button>
-                  <Button variant="outlined" color="primary" size="sm">
-                    Message
+                }
+              />
+            </GridCol>
+
+            <GridCol span={12} spanMd={4}>
+              <ProfileCard
+                name="Alex Rodriguez"
+                role="Full Stack Developer"
+                stats={[
+                  { label: "Commits", value: "1.2k" },
+                  { label: "Stars", value: "156" },
+                ]}
+                actions={
+                  <Button size="small" variant="outline">
+                    Connect
                   </Button>
-                </div>
-              }
-              stats={[
-                { label: "Repos", value: "48" },
-                { label: "Stars", value: "892" },
-                { label: "Years", value: "7" }
-              ]}
-              variant="subtle"
-              shadow={true}
-            />
-          </div>
+                }
+              />
+            </GridCol>
+
+            <GridCol span={12} spanMd={4}>
+              <ProfileCard
+                name="Maya Patel"
+                role="Product Manager"
+                avatar="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face"
+                stats={[
+                  { label: "Products", value: "8" },
+                  { label: "Team Size", value: "12" },
+                ]}
+                actions={
+                  <>
+                    <Button size="small" variant="primary">Message</Button>
+                    <Button size="small" variant="outline">Follow</Button>
+                  </>
+                }
+              />
+            </GridCol>
+          </Grid>
         </div>
 
         {/* Feature Cards */}
-        <div className="ig-demo-section">
-          <h3 className="ig-demo-section-title">Feature Cards</h3>
-          <div className="ig-grid ig-grid--responsive" style={{ gap: "var(--ig-size-200)" }}>
-            <FeatureCard
-              icon={<Shield style={{ width: "var(--ig-size-500)", height: "var(--ig-size-500)", color: "var(--ig-text-primary)" }} />}
-              title="Premium Plan"
-              description="Advanced features for professional teams"
-              features={[
-                "Unlimited projects",
-                "Advanced analytics",
-                "Priority support", 
-                "Custom integrations",
-                "Team collaboration tools"
-              ]}
-              primaryAction={{
-                label: "Upgrade Now",
-                onClick: () => console.log("Upgrade clicked")
-              }}
-              secondaryAction={{
-                label: "Learn More", 
-                onClick: () => console.log("Learn more clicked")
-              }}
-              variant="clear"
-              shadow={true}
-            />
+        <div>
+          <h3 className="ig-typography-heading-xxsmall-bold mb-4">Feature Cards</h3>
+          <Grid>
+            <GridCol span={12} spanMd={6} spanLg={4}>
+              <FeatureCard
+                icon={<Star className="h-6 w-6" />}
+                title="Premium Quality"
+                description="Hand-crafted components built with attention to detail and modern design principles."
+                actions={
+                  <Button size="small" variant="outline">
+                    Learn More
+                  </Button>
+                }
+              />
+            </GridCol>
 
-            <FeatureCard
-              icon={<Award style={{ width: "var(--ig-size-500)", height: "var(--ig-size-500)", color: "var(--ig-text-secondary)" }} />}
-              title="Enterprise"
-              description="Complete solution for large organizations"
-              features={[
-                "Everything in Premium",
-                "Advanced security",
-                "Dedicated support",
-                "Custom onboarding",
-                "SLA guarantee"
-              ]}
-              primaryAction={{
-                label: "Contact Sales",
-                onClick: () => console.log("Contact sales clicked")
-              }}
-              variant="strong"
-              shadow={true}
-            />
-          </div>
+            <GridCol span={12} spanMd={6} spanLg={4}>
+              <FeatureCard
+                icon={<Users className="h-6 w-6" />}
+                title="Team Collaboration"
+                description="Built-in collaboration tools to help your team work together more effectively."
+                actions={
+                  <Button size="small" variant="outline">
+                    Get Started
+                  </Button>
+                }
+              />
+            </GridCol>
+
+            <GridCol span={12} spanMd={6} spanLg={4}>
+              <FeatureCard
+                icon={<TrendingUp className="h-6 w-6" />}
+                title="Analytics & Insights"
+                description="Comprehensive analytics to help you understand your users and improve your product."
+                actions={
+                  <Button size="small" variant="outline">
+                    View Demo
+                  </Button>
+                }
+              />
+            </GridCol>
+          </Grid>
         </div>
 
         {/* Metric Cards */}
-        <div className="ig-demo-section">
-          <h3 className="ig-demo-section-title">Metric Cards</h3>
-          <div className="ig-grid ig-grid--auto-fit" style={{ gap: "var(--ig-size-200)", gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))" }}>
-            <MetricCard
-              title="Total Users"
-              value="12,847"
-              change={{ value: "+12%", direction: "up" }}
-              description="vs last month"
-              trend={<Users style={{ width: "var(--ig-size-300)", height: "var(--ig-size-300)", color: "var(--ig-text-soft)" }} />}
-              variant="clear"
-              shadow={true}
-            />
+        <div>
+          <h3 className="ig-typography-heading-xxsmall-bold mb-4">Metric Cards</h3>
+          <Grid>
+            <GridCol span={12} spanSm={6} spanLg={3}>
+              <MetricCard
+                title="Total Users"
+                value="12,458"
+                change="+12.5%"
+                trend="up"
+                icon={<Users className="h-5 w-5" />}
+              />
+            </GridCol>
 
-            <MetricCard
-              title="Revenue"
-              value="$54,290"
-              change={{ value: "+8.2%", direction: "up" }}
-              description="Monthly recurring revenue"
-              trend={<TrendingUp style={{ width: "var(--ig-size-300)", height: "var(--ig-size-300)", color: "var(--ig-text-success)" }} />}
-              variant="subtle"
-              shadow={true}
-            />
+            <GridCol span={12} spanSm={6} spanLg={3}>
+              <MetricCard
+                title="Revenue"
+                value="$48,392"
+                change="+8.2%"
+                trend="up"
+                icon={<TrendingUp className="h-5 w-5" />}
+              />
+            </GridCol>
 
-            <MetricCard
-              title="Conversion Rate"
-              value="3.24%"
-              change={{ value: "-0.3%", direction: "down" }}
-              description="Weekly average"
-              variant="clear"
-              shadow={true}
-            />
+            <GridCol span={12} spanSm={6} spanLg={3}>
+              <MetricCard
+                title="Active Sessions"
+                value="3,421"
+                change="-2.1%"
+                trend="down"
+                icon={<Globe className="h-5 w-5" />}
+              />
+            </GridCol>
 
-            <MetricCard
-              title="Active Sessions"
-              value="1,429"
-              change={{ value: "0%", direction: "neutral" }}
-              description="Currently online"
-              variant="clear"
-              shadow={true}
-            />
-          </div>
+            <GridCol span={12} spanSm={6} spanLg={3}>
+              <MetricCard
+                title="Conversion Rate"
+                value="3.45%"
+                change="+0.8%"
+                trend="up"
+                icon={<Award className="h-5 w-5" />}
+              />
+            </GridCol>
+          </Grid>
         </div>
 
         {/* Content Cards */}
-        <div className="ig-demo-section">
-          <h3 className="ig-demo-section-title">Content Cards</h3>
-          <div className="ig-grid ig-grid--responsive" style={{ gap: "var(--ig-size-200)" }}>
-            <ContentCard
-              image="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&h=400&fit=crop"
-              category="Technology"
-              title="The Future of Web Development"
-              excerpt="Exploring the latest trends and technologies shaping the future of web development, from AI integration to progressive web apps."
-              author="Jane Smith"
-              date="Mar 15, 2024"
-              readTime="5 min read"
-              tags={["React", "AI", "WebDev", "Future"]}
-              actions={
-                <Button variant="soft" color="primary" size="sm">
-                  <Heart style={{ width: "var(--ig-size-150)", height: "var(--ig-size-150)" }} />
-                </Button>
-              }
-              variant="clear"
-              shadow={true}
-            />
+        <div>
+          <h3 className="ig-typography-heading-xxsmall-bold mb-4">Content Cards</h3>
+          <Grid>
+            <GridCol span={12} spanMd={6}>
+              <ContentCard
+                title="Design System Workshop"
+                description="Join us for a comprehensive workshop on building and maintaining design systems for modern web applications."
+                image="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400&h=200&fit=crop"
+                metadata={[
+                  { icon: <Calendar className="h-4 w-4" />, text: "March 15, 2024" },
+                  { icon: <MapPin className="h-4 w-4" />, text: "San Francisco, CA" },
+                ]}
+                actions={
+                  <>
+                    <Button size="medium" variant="primary">Register Now</Button>
+                    <Button size="medium" variant="outline">Learn More</Button>
+                  </>
+                }
+              />
+            </GridCol>
 
-            <ContentCard
-              image="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=400&fit=crop"
-              category="Design"
-              title="Creating Better User Experiences"
-              excerpt="A comprehensive guide to UX design principles that can transform your digital products and delight your users."
-              author="Michael Brown"
-              date="Mar 12, 2024"
-              readTime="8 min read"
-              tags={["UX", "Design", "User Research"]}
-              actions={
-                <div style={{ display: "flex", gap: "var(--ig-size-050)" }}>
-                  <Button variant="soft" color="primary" size="sm">
-                    <Heart style={{ width: "var(--ig-size-150)", height: "var(--ig-size-150)" }} />
-                  </Button>
-                  <Button variant="soft" color="primary" size="sm">
-                    <Star style={{ width: "var(--ig-size-150)", height: "var(--ig-size-150)" }} />
-                  </Button>
+            <GridCol span={12} spanMd={6}>
+              <ContentCard
+                title="Building Scalable React Applications"
+                description="Learn the best practices and patterns for building React applications that can scale with your team and user base."
+                metadata={[
+                  { icon: <Calendar className="h-4 w-4" />, text: "March 22, 2024" },
+                  { icon: <Globe className="h-4 w-4" />, text: "Online Event" },
+                  { icon: <Users className="h-4 w-4" />, text: "500+ attendees" },
+                ]}
+                actions={
+                  <Button size="medium" variant="primary">Join Webinar</Button>
+                }
+              />
+            </GridCol>
+          </Grid>
+        </div>
+
+        {/* Code Example */}
+        <div>
+          <h3 className="ig-typography-heading-xxsmall-bold mb-4">Usage with Grid System</h3>
+          <Grid>
+            <GridCol span={12}>
+              <div className="ig-card ig-card--clear">
+                <div className="ig-card__body">
+                  <pre className="ig-typography-body-small-regular overflow-x-auto">
+{`<Grid>
+  <GridCol span={12} spanMd={6} spanLg={4}>
+    <ProfileCard
+      name="John Doe"
+      role="Developer"
+      stats={[
+        { label: "Projects", value: "12" },
+        { label: "Rating", value: "4.8" }
+      ]}
+      actions={
+        <Button variant="primary">View Profile</Button>
+      }
+    />
+  </GridCol>
+  
+  <GridCol span={12} spanMd={6} spanLg={8}>
+    <ContentCard
+      title="Featured Article"
+      description="Latest insights and best practices..."
+      actions={
+        <Button variant="outline">Read More</Button>
+      }
+    />
+  </GridCol>
+</Grid>`}
+                  </pre>
                 </div>
-              }
-              variant="clear"
-              shadow={true}
-            />
-
-            <ContentCard
-              category="Business"
-              title="Building Scalable Teams"
-              excerpt="Strategies for building and managing remote development teams that can scale with your growing business needs."
-              author="David Wilson"
-              date="Mar 10, 2024"
-              readTime="6 min read"
-              tags={["Team", "Management", "Remote"]}
-              actions={
-                <Button variant="outlined" color="primary" size="sm">
-                  Read More
-                </Button>
-              }
-              variant="subtle"
-              shadow={true}
-            />
-          </div>
+              </div>
+            </GridCol>
+          </Grid>
         </div>
       </div>
     </ComponentDemo>
-  );
-};
-
-export default ExtendedCardDemo;
+  )
+}

@@ -1,247 +1,208 @@
-import React from "react";
-import { ComponentDemo } from "@/components/demo/ComponentDemo";
-import { Card, CardHeader, CardTitle, CardSubtitle, CardBody, CardFooter } from "@/components/sparkui";
-import { Button } from "@/components/sparkui";
-import { Typography, Body } from "@/components/sparkui";
-import { Settings, Heart, Share, User } from "lucide-react";
+import { ComponentDemo } from "@/components/demo/ComponentDemo"
+import { Card, CardHeader, CardTitle, CardSubtitle, CardBody, CardFooter, Grid, GridCol } from "@/components/sparkui"
+import { Button } from "@/components/sparkui"
 
-const CardDemo = () => {
-  const codeExample = `import { Card, CardHeader, CardTitle, CardSubtitle, CardBody, CardFooter } from "@/components/sparkui";
-
-// Basic Card
-<Card variant="clear" shadow={true}>
-  <CardHeader>
-    <CardTitle>Card Title</CardTitle>
-    <CardSubtitle>Card subtitle or description</CardSubtitle>
-  </CardHeader>
-  <CardBody>
-    <p>Card content goes here...</p>
-  </CardBody>
-  <CardFooter>
-    <Button variant="filled" color="primary">
-      Action
-    </Button>
-  </CardFooter>
-</Card>`;
-
+export default function CardDemo() {
   return (
-    <ComponentDemo 
-      title="Card" 
-      description="Basic card component with header, body, and footer sections. Foundation for building more complex card layouts."
-      code={codeExample}
+    <ComponentDemo
+      title="Card Components"
+      description="Basic card components with different variants and composition patterns using the ig-grid system"
     >
       <div className="space-y-8">
-        
         {/* Card Variants */}
         <div>
-          <Typography level={4} weight="medium" className="mb-4">Card Variants</Typography>
-          <div className="grid md:grid-cols-3 gap-6">
-            <Card variant="clear" shadow={false}>
-              <CardHeader>
-                <CardTitle>Clear Variant</CardTitle>
-                <CardSubtitle>Basic clear card without shadow</CardSubtitle>
-              </CardHeader>
-              <CardBody>
-                <Body size="medium">
-                  This is a clear card variant with minimal styling.
-                </Body>
-              </CardBody>
-              <CardFooter>
-                <Button variant="outlined" color="primary" size="sm">
-                  Learn More
-                </Button>
-              </CardFooter>
-            </Card>
+          <h3 className="ig-typography-heading-xxsmall-bold mb-4">Card Variants</h3>
+          <Grid>
+            <GridCol span={12} spanMd={4}>
+              <Card variant="clear">
+                <CardHeader>
+                  <CardTitle>Clear Card</CardTitle>
+                  <CardSubtitle>Minimal styling with transparent background</CardSubtitle>
+                </CardHeader>
+                <CardBody>
+                  This is a clear card with minimal background styling. Perfect for overlays or when you want minimal visual weight.
+                </CardBody>
+                <CardFooter>
+                  <Button size="sm" variant="outlined">Action</Button>
+                </CardFooter>
+              </Card>
+            </GridCol>
 
-            <Card variant="subtle" shadow={true}>
-              <CardHeader>
-                <CardTitle>Subtle Variant</CardTitle>
-                <CardSubtitle>Subtle background with shadow</CardSubtitle>
-              </CardHeader>
-              <CardBody>
-                <Body size="medium">
-                  This is a subtle card variant with background and shadow.
-                </Body>
-              </CardBody>
-              <CardFooter>
-                <Button variant="filled" color="primary" size="sm">
-                  Get Started
-                </Button>
-              </CardFooter>
-            </Card>
+            <GridCol span={12} spanMd={4}>
+              <Card variant="subtle">
+                <CardHeader>
+                  <CardTitle>Subtle Card</CardTitle>
+                  <CardSubtitle>Light background for gentle contrast</CardSubtitle>
+                </CardHeader>
+                <CardBody>
+                  This is a subtle card with light background styling. Great for content that needs gentle separation from the background.
+                </CardBody>
+                <CardFooter>
+                  <Button size="sm" variant="outlined">Action</Button>
+                </CardFooter>
+              </Card>
+            </GridCol>
 
-            <Card variant="strong" shadow={true}>
-              <CardHeader>
-                <CardTitle>Strong Variant</CardTitle>
-                <CardSubtitle>Strong contrast with shadow</CardSubtitle>
-              </CardHeader>
-              <CardBody>
-                <Body size="medium">
-                  This is a strong card variant with high contrast styling.
-                </Body>
-              </CardBody>
-              <CardFooter>
-                <Button variant="soft" color="primary" size="sm">
-                  Explore
-                </Button>
-              </CardFooter>
-            </Card>
-          </div>
+            <GridCol span={12} spanMd={4}>
+              <Card variant="strong">
+                <CardHeader>
+                  <CardTitle>Strong Card</CardTitle>
+                  <CardSubtitle>Bold styling for emphasis</CardSubtitle>
+                </CardHeader>
+                <CardBody>
+                  This is a strong card with bold background styling. Use this when you need the card to stand out prominently.
+                </CardBody>
+                <CardFooter>
+                  <Button size="sm" variant="outlined">Action</Button>
+                </CardFooter>
+              </Card>
+            </GridCol>
+          </Grid>
         </div>
 
-        {/* Card with Shadow Options */}
+        {/* Cards with Shadow */}
         <div>
-          <Typography level={4} weight="medium" className="mb-4">Shadow Options</Typography>
-          <div className="grid md:grid-cols-2 gap-6">
-            <Card variant="clear" shadow={false}>
-              <CardHeader>
-                <CardTitle>No Shadow</CardTitle>
-                <CardSubtitle>Card without shadow styling</CardSubtitle>
-              </CardHeader>
-              <CardBody>
-                <Body size="medium">
-                  This card has no shadow applied, creating a flat appearance.
-                </Body>
-              </CardBody>
-            </Card>
+          <h3 className="ig-typography-heading-xxsmall-bold mb-4">Cards with Shadow</h3>
+          <Grid>
+            <GridCol span={12} spanMd={4}>
+              <Card variant="clear" shadow>
+                <CardHeader>
+                  <CardTitle>Clear + Shadow</CardTitle>
+                  <CardSubtitle>Elevation effect</CardSubtitle>
+                </CardHeader>
+                <CardBody>
+                  Clear card with shadow effect for floating appearance.
+                </CardBody>
+                <CardFooter>
+                  <Button size="sm" variant="filled" color="primary">Learn More</Button>
+                </CardFooter>
+              </Card>
+            </GridCol>
 
-            <Card variant="clear" shadow={true}>
-              <CardHeader>
-                <CardTitle>With Shadow</CardTitle>
-                <CardSubtitle>Card with shadow styling</CardSubtitle>
-              </CardHeader>
-              <CardBody>
-                <Body size="medium">
-                  This card has shadow applied, creating depth and elevation.
-                </Body>
-              </CardBody>
-            </Card>
-          </div>
+            <GridCol span={12} spanMd={4}>
+              <Card variant="subtle" shadow>
+                <CardHeader>
+                  <CardTitle>Subtle + Shadow</CardTitle>
+                  <CardSubtitle>Gentle elevation</CardSubtitle>
+                </CardHeader>
+                <CardBody>
+                  Subtle card with shadow effect for refined depth.
+                </CardBody>
+                <CardFooter>
+                  <Button size="sm" variant="filled" color="primary">Learn More</Button>
+                </CardFooter>
+              </Card>
+            </GridCol>
+
+            <GridCol span={12} spanMd={4}>
+              <Card variant="strong" shadow>
+                <CardHeader>
+                  <CardTitle>Strong + Shadow</CardTitle>
+                  <CardSubtitle>Maximum impact</CardSubtitle>
+                </CardHeader>
+                <CardBody>
+                  Strong card with shadow effect for maximum visual impact.
+                </CardBody>
+                <CardFooter>
+                  <Button size="sm" variant="filled" color="primary">Learn More</Button>
+                </CardFooter>
+              </Card>
+            </GridCol>
+          </Grid>
         </div>
 
-        {/* Card Structure Examples */}
+        {/* Flexible Layouts */}
         <div>
-          <Typography level={4} weight="medium" className="mb-4">Card Structure Examples</Typography>
-          <div className="grid md:grid-cols-2 gap-6">
-            
-            {/* Header Only */}
-            <Card variant="subtle" shadow={true}>
-              <CardHeader>
-                <CardTitle>Header Only Card</CardTitle>
-                <CardSubtitle>Simple card with just header content</CardSubtitle>
-              </CardHeader>
-            </Card>
+          <h3 className="ig-typography-heading-xxsmall-bold mb-4">Flexible Layouts</h3>
+          <Grid>
+            <GridCol span={12} spanMd={8}>
+              <Card variant="subtle" shadow>
+                <CardHeader>
+                  <CardTitle>Main Content Area</CardTitle>
+                  <CardSubtitle>8 columns on medium+ screens</CardSubtitle>
+                </CardHeader>
+                <CardBody>
+                  This card takes up 8 columns on medium and larger screens, making it perfect for main content areas. On smaller screens, it spans the full width for optimal mobile experience.
+                </CardBody>
+                <CardFooter>
+                  <Button size="md" variant="filled" color="primary">Primary Action</Button>
+                  <Button size="md" variant="outlined">Secondary</Button>
+                </CardFooter>
+              </Card>
+            </GridCol>
 
-            {/* Body Only */}
-            <Card variant="subtle" shadow={true}>
-              <CardBody>
-                <Typography level={5} weight="medium" className="mb-2">Body Only Card</Typography>
-                <Body size="medium">
-                  This card contains only body content without separate header or footer sections.
-                </Body>
-              </CardBody>
-            </Card>
-
-            {/* Header + Body */}
-            <Card variant="clear" shadow={true}>
-              <CardHeader>
-                <CardTitle>Header + Body</CardTitle>
-                <CardSubtitle>Card with header and body sections</CardSubtitle>
-              </CardHeader>
-              <CardBody>
-                <Body size="medium">
-                  This demonstrates a card with both header and body content sections.
-                </Body>
-              </CardBody>
-            </Card>
-
-            {/* Full Structure */}
-            <Card variant="clear" shadow={true}>
-              <CardHeader>
-                <CardTitle>Complete Card</CardTitle>
-                <CardSubtitle>All sections included</CardSubtitle>
-              </CardHeader>
-              <CardBody>
-                <Body size="medium">
-                  This card demonstrates all available sections: header, body, and footer.
-                </Body>
-              </CardBody>
-              <CardFooter>
-                <div style={{ display: "flex", gap: "var(--ig-size-100)" }}>
-                  <Button variant="filled" color="primary" size="sm">
-                    Primary
-                  </Button>
-                  <Button variant="outlined" color="primary" size="sm">
-                    Secondary
-                  </Button>
-                </div>
-              </CardFooter>
-            </Card>
-          </div>
+            <GridCol span={12} spanMd={4}>
+              <Card variant="clear" shadow>
+                <CardHeader>
+                  <CardTitle>Sidebar</CardTitle>
+                  <CardSubtitle>4 columns complement</CardSubtitle>
+                </CardHeader>
+                <CardBody>
+                  This card complements the main content area with 4 columns on medium+ screens.
+                </CardBody>
+                <CardFooter>
+                  <Button size="sm" variant="outlined">View All</Button>
+                </CardFooter>
+              </Card>
+            </GridCol>
+          </Grid>
         </div>
 
-        {/* Interactive Cards */}
+        {/* Minimal Cards */}
         <div>
-          <Typography level={4} weight="medium" className="mb-4">Interactive Examples</Typography>
-          <div className="grid md:grid-cols-2 gap-6">
-            
-            {/* Settings Card */}
-            <Card variant="clear" shadow={true}>
-              <CardHeader>
-                <div style={{ display: "flex", alignItems: "center", gap: "var(--ig-size-150)" }}>
-                  <Settings style={{ width: "var(--ig-size-300)", height: "var(--ig-size-300)", color: "var(--ig-text-primary)" }} />
-                  <div>
-                    <CardTitle>Account Settings</CardTitle>
-                    <CardSubtitle>Manage your account preferences</CardSubtitle>
-                  </div>
-                </div>
-              </CardHeader>
-              <CardBody>
-                <Body size="medium">
-                  Update your profile information, notification settings, and privacy preferences.
-                </Body>
-              </CardBody>
-              <CardFooter>
-                <Button variant="filled" color="primary" size="sm">
-                  Open Settings
-                </Button>
-              </CardFooter>
-            </Card>
+          <h3 className="ig-typography-heading-xxsmall-bold mb-4">Minimal Compositions</h3>
+          <Grid>
+            <GridCol span={12} spanMd={6}>
+              <Card variant="subtle">
+                <CardBody>
+                  Simple card with just body content. Perfect for when you need minimal structure but still want the card styling benefits.
+                </CardBody>
+              </Card>
+            </GridCol>
 
-            {/* Social Card */}
-            <Card variant="subtle" shadow={true}>
-              <CardHeader>
-                <div style={{ display: "flex", alignItems: "center", gap: "var(--ig-size-150)" }}>
-                  <User style={{ width: "var(--ig-size-300)", height: "var(--ig-size-300)", color: "var(--ig-text-medium)" }} />
-                  <div>
-                    <CardTitle>Social Post</CardTitle>
-                    <CardSubtitle>2 hours ago</CardSubtitle>
-                  </div>
-                </div>
-              </CardHeader>
-              <CardBody>
-                <Body size="medium">
-                  Just finished building an amazing component library! The flexibility of the card system is incredible.
-                </Body>
-              </CardBody>
-              <CardFooter>
-                <div style={{ display: "flex", gap: "var(--ig-size-150)" }}>
-                  <Button variant="soft" color="primary" size="sm">
-                    <Heart style={{ width: "var(--ig-size-150)", height: "var(--ig-size-150)" }} />
-                    Like
-                  </Button>
-                  <Button variant="soft" color="primary" size="sm">
-                    <Share style={{ width: "var(--ig-size-150)", height: "var(--ig-size-150)" }} />
-                    Share
-                  </Button>
-                </div>
-              </CardFooter>
-            </Card>
-          </div>
+            <GridCol span={12} spanMd={6}>
+              <Card variant="clear" shadow>
+                <CardHeader>
+                  <CardTitle>Header + Body Only</CardTitle>
+                </CardHeader>
+                <CardBody>
+                  Card with header and body, no footer. Great for informational content that doesn't require actions.
+                </CardBody>
+              </Card>
+            </GridCol>
+          </Grid>
+        </div>
+
+        {/* Code Examples */}
+        <div>
+          <h3 className="ig-typography-heading-xxsmall-bold mb-4">Usage Examples</h3>
+          <Grid>
+            <GridCol span={12}>
+              <Card variant="clear">
+                <CardHeader>
+                  <CardTitle>Basic Card Usage</CardTitle>
+                </CardHeader>
+                <CardBody>
+                  <pre className="ig-typography-body-small-regular overflow-x-auto">
+{`<Card variant="subtle" shadow>
+  <CardHeader>
+    <CardTitle>Card Title</CardTitle>
+    <CardSubtitle>Optional subtitle</CardSubtitle>
+  </CardHeader>
+  <CardBody>
+    Your content goes here...
+  </CardBody>
+  <CardFooter>
+    <Button variant="primary">Action</Button>
+  </CardFooter>
+</Card>`}
+                  </pre>
+                </CardBody>
+              </Card>
+            </GridCol>
+          </Grid>
         </div>
       </div>
     </ComponentDemo>
-  );
-};
-
-export default CardDemo;
+  )
+}

@@ -10,7 +10,7 @@ import ButtonDemo from "./pages/components/ButtonDemo";
 import TypographyDemo from "./pages/components/TypographyDemo";
 import BodyDemo from "./pages/components/BodyDemo";
 import TabsDemo from "./pages/components/TabsDemo";
-import CardLayoutsDemo from "./pages/components/CardLayoutsDemo";
+import GridDemo from "./pages/components/GridDemo";
 import CardDemo from "./pages/components/CardDemo";
 import ExtendedCardDemo from "./pages/components/ExtendedCardDemo";
 import NotFound from "./pages/NotFound";
@@ -55,9 +55,9 @@ const App = () => (
                 <CardDemo />
               </ComponentLayout>
             } />
-            <Route path="/components/card-layouts" element={
+            <Route path="/components/grid" element={
               <ComponentLayout>
-                <CardLayoutsDemo />
+                <GridDemo />
               </ComponentLayout>
             } />
             <Route path="/components/extended-cards" element={

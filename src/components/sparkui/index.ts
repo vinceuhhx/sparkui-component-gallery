@@ -14,3 +14,6 @@ export type { CardProps } from "./Card"
 
 export { ProfileCard, FeatureCard, MetricCard, ContentCard } from "./ExtendedCard"
 export type { ProfileCardProps, FeatureCardProps, MetricCardProps, ContentCardProps } from "./ExtendedCard"
+
+export { Grid, GridCol } from "./Grid"
+export type { GridProps, GridColProps } from "./Grid"

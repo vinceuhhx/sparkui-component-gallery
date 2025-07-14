@@ -69,11 +69,11 @@ export const ComponentLibrarySidebar = () => {
     { title: "Typography", to: "/components/typography" },
     { title: "Body", to: "/components/body" },
     { title: "Card", to: "/components/card" },
+    { title: "Grid", to: "/components/grid" },
     { title: "Tabs", to: "/components/tabs" },
   ]
 
   const compositeComponents = [
-    { title: "Card Layouts", to: "/components/card-layouts" },
     { title: "Extended Cards", to: "/components/extended-cards" },
     { title: "Form Components", to: "/components/forms" },
     { title: "Navigation", to: "/components/navigation" },
