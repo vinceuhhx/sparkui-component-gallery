@@ -5,6 +5,7 @@ import { Star, Users, TrendingUp, Calendar, MapPin, Mail, Globe, Award } from "l
 
 export default function ExtendedCardDemo() {
   return (
+       <div className="p-8">
     <ComponentDemo
       title="Extended Cards"
       description="Composite card components built on top of the basic card system using the ig-grid layout system"
@@ -238,5 +239,6 @@ export default function ExtendedCardDemo() {
         </div>
       </div>
     </ComponentDemo>
+    </div>
   )
 }
