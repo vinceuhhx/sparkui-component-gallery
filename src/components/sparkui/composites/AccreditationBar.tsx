@@ -77,7 +77,7 @@ export const AccreditationBar = React.forwardRef<
               {title}
             </Typography>
             <Body 
-             
+             weight="400"
             size="large"
               color="soft"
               style={{
