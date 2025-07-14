@@ -18,7 +18,7 @@ const HomeComponentDemo = () => {
 />`
 
   return (
-    <div className="p-0">
+    <div className="p-8">
       <ComponentDemo
         title="Accreditation Bar"
         description="Display accreditations and recognitions in a professional layout matching your Figma design"
