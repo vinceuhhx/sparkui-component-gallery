@@ -47,7 +47,7 @@ export const AccreditationBar = React.forwardRef<
     return (
       <div
         ref={ref}
-        className={`py-6 ${className || ''}`}
+        className={` ${className || ''}`}
         style={{
           backgroundColor: "var(--ig-background-page-clear)",
           textAlign: "center"
