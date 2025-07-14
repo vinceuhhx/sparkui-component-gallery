@@ -78,7 +78,7 @@ export const AccreditationBar = React.forwardRef<
             </Typography>
             <Body 
              
-            size="small"
+            size="large"
               color="soft"
               style={{
                 maxWidth: "600px",
