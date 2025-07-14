@@ -1,101 +1,85 @@
-import { Toaster } from "@/components/ui/toaster";
-import { Toaster as Sonner } from "@/components/ui/sonner";
-import { TooltipProvider } from "@/components/ui/tooltip";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { ThemeProvider } from "@/hooks/useTheme";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { ComponentLayout } from "@/components/layout/ComponentLayout";
-import Home from "./pages/Home";
-import ButtonDemo from "./pages/components/ButtonDemo";
-import TypographyDemo from "./pages/components/TypographyDemo";
-import BodyDemo from "./pages/components/BodyDemo";
-import TabsDemo from "./pages/components/TabsDemo";
-import GridDemo from "./pages/components/GridDemo";
-import CardDemo from "./pages/components/CardDemo";
-import ExtendedCardDemo from "./pages/components/ExtendedCardDemo";
-import NotFound from "./pages/NotFound";
+import { ThemeProvider } from "@/hooks/useTheme";
+import Home from "@/pages/Home";
+import NotFound from "@/pages/NotFound";
 
-const queryClient = new QueryClient();
+// Component Pages
+import ButtonDemo from "@/pages/components/ButtonDemo";
+import TypographyDemo from "@/pages/components/TypographyDemo";
+import BodyDemo from "@/pages/components/BodyDemo";
+import CardDemo from "@/pages/components/CardDemo";
+import GridDemo from "@/pages/components/GridDemo";
+import TabsDemo from "@/pages/components/TabsDemo";
+import ExtendedCardDemo from "@/pages/components/ExtendedCardDemo";
 
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <ThemeProvider defaultTheme="light" storageKey="sparkui-theme">
-        <Toaster />
-        <Sonner />
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={
-              <ComponentLayout>
-                <Home />
-              </ComponentLayout>
-            } />
-            <Route path="/components/button" element={
-              <ComponentLayout>
-                <ButtonDemo />
-              </ComponentLayout>
-            } />
-            <Route path="/components/typography" element={
-              <ComponentLayout>
-                <TypographyDemo />
-              </ComponentLayout>
-            } />
-            <Route path="/components/body" element={
-              <ComponentLayout>
-                <BodyDemo />
-              </ComponentLayout>
-            } />
-            <Route path="/components/tabs" element={
-              <ComponentLayout>
-                <TabsDemo />
-              </ComponentLayout>
-            } />
-            <Route path="/components/card" element={
-              <ComponentLayout>
-                <CardDemo />
-              </ComponentLayout>
-            } />
-            <Route path="/components/grid" element={
-              <ComponentLayout>
-                <GridDemo />
-              </ComponentLayout>
-            } />
-            <Route path="/components/extended-cards" element={
-              <ComponentLayout>
-                <ExtendedCardDemo />
-              </ComponentLayout>
-            } />
-            {/* Placeholder routes for other composite components */}
-            <Route path="/components/forms" element={
-              <ComponentLayout>
-                <div className="p-8">
-                  <h1 className="text-3xl font-bold">Form Components</h1>
-                  <p className="text-muted-foreground mt-2">Coming soon...</p>
-                </div>
-              </ComponentLayout>
-            } />
-            <Route path="/components/navigation" element={
-              <ComponentLayout>
-                <div className="p-8">
-                  <h1 className="text-3xl font-bold">Navigation Components</h1>
-                  <p className="text-muted-foreground mt-2">Coming soon...</p>
-                </div>
-              </ComponentLayout>
-            } />
-            <Route path="/components/data-display" element={
-              <ComponentLayout>
-                <div className="p-8">
-                  <h1 className="text-3xl font-bold">Data Display Components</h1>
-                  <p className="text-muted-foreground mt-2">Coming soon...</p>
-                </div>
-              </ComponentLayout>
-            } />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </BrowserRouter>
-      </ThemeProvider>
-    </TooltipProvider>
-  </QueryClientProvider>
-);
+import "@/index.css";
+import "@/styles/impressive.css";
+
+function App() {
+  return (
+    <ThemeProvider defaultTheme="light" storageKey="sparkui-theme">
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/components/*" element={
+            <ComponentLayout>
+              <Routes>
+                <Route path="button" element={<ButtonDemo />} />
+                <Route path="typography" element={<TypographyDemo />} />
+                <Route path="body" element={<BodyDemo />} />
+                <Route path="card" element={<CardDemo />} />
+                <Route path="grid" element={<GridDemo />} />
+                <Route path="tabs" element={<TabsDemo />} />
+                <Route path="extended-cards" element={<ExtendedCardDemo />} />
+                <Route path="forms" element={
+                  <div className="p-8">
+                    <h1 style={{ 
+                      font: 'var(--ig-typography-heading-large-bold)', 
+                      color: 'var(--ig-text-bold)',
+                      marginBottom: '8px'
+                    }}>Form Components</h1>
+                    <p style={{ 
+                      font: 'var(--ig-typography-body-large-regular)', 
+                      color: 'var(--ig-text-medium)'
+                    }}>Coming soon...</p>
+                  </div>
+                } />
+                <Route path="navigation" element={
+                  <div className="p-8">
+                    <h1 style={{ 
+                      font: 'var(--ig-typography-heading-large-bold)', 
+                      color: 'var(--ig-text-bold)',
+                      marginBottom: '8px'
+                    }}>Navigation Components</h1>
+                    <p style={{ 
+                      font: 'var(--ig-typography-body-large-regular)', 
+                      color: 'var(--ig-text-medium)'
+                    }}>Coming soon...</p>
+                  </div>
+                } />
+                <Route path="data-display" element={
+                  <div className="p-8">
+                    <h1 style={{ 
+                      font: 'var(--ig-typography-heading-large-bold)', 
+                      color: 'var(--ig-text-bold)',
+                      marginBottom: '8px'
+                    }}>Data Display Components</h1>
+                    <p style={{ 
+                      font: 'var(--ig-typography-body-large-regular)', 
+                      color: 'var(--ig-text-medium)'
+                    }}>Coming soon...</p>
+                  </div>
+                } />
+                <Route path="*" element={<NotFound />} />
+              </Routes>
+            </ComponentLayout>
+          } />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </Router>
+    </ThemeProvider>
+  );
+}
 
 export default App;
