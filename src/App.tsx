@@ -11,6 +11,8 @@ import TypographyDemo from "./pages/components/TypographyDemo";
 import BodyDemo from "./pages/components/BodyDemo";
 import TabsDemo from "./pages/components/TabsDemo";
 import CardLayoutsDemo from "./pages/components/CardLayoutsDemo";
+import CardDemo from "./pages/components/CardDemo";
+import ExtendedCardDemo from "./pages/components/ExtendedCardDemo";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -48,9 +50,19 @@ const App = () => (
                 <TabsDemo />
               </ComponentLayout>
             } />
+            <Route path="/components/card" element={
+              <ComponentLayout>
+                <CardDemo />
+              </ComponentLayout>
+            } />
             <Route path="/components/card-layouts" element={
               <ComponentLayout>
                 <CardLayoutsDemo />
+              </ComponentLayout>
+            } />
+            <Route path="/components/extended-cards" element={
+              <ComponentLayout>
+                <ExtendedCardDemo />
               </ComponentLayout>
             } />
             {/* Placeholder routes for other composite components */}
