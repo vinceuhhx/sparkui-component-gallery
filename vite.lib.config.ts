@@ -30,7 +30,7 @@ export default defineConfig({
         },
         assetFileNames: (assetInfo) => {
           if (assetInfo.name === 'style.css') return 'style.css'
-          return assetInfo.name
+          return assetInfo.name || 'assets/[name]-[hash][extname]'
         }
       }
     },
@@ -41,6 +41,11 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': resolve(__dirname, 'src')
+    }
+  },
+  css: {
+    postcss: {
+      plugins: []
     }
   }
 })

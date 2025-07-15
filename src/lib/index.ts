@@ -1,3 +1,7 @@
+
+// Import styles for the npm package
+import '../styles/lib.css'
+
 // Export all SparkUI components for npm package
 export * from '../components/sparkui'
 
