@@ -196,21 +196,19 @@
 }
 
 .content-block-container__title {
-  font: var(--ig-typography-heading-large-bold);
-  color: var(--ig-text-bold);
-  margin-bottom: 24px;
+  margin-bottom: var(--ig-spacing-6);
 }
 
 @media (min-width: 1024px) {
   .content-block-container__title {
-    margin-bottom: 64px;
+    margin-bottom: var(--ig-spacing-16);
   }
 }
 
 .content-block-container__grid {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: var(--ig-spacing-6);
 }
 
 @media (min-width: 768px) {
@@ -224,10 +222,9 @@
 .content-block-card {
   width: 100%;
   max-width: 360px;
-  padding: 24px;
+  padding: var(--ig-spacing-6);
   border-radius: var(--ig-border-radius);
-  box-shadow: 0px 0px 4px 0px rgba(48, 54, 66, 0.11),
-    0px 2px 2px 0px rgba(48, 54, 66, 0.1);
+  box-shadow: var(--ig-shadow-subtle);
   background: var(--ig-background-surface-on-clear-subtle);
   border: 1px solid var(--ig-border-soft);
   display: flex;
@@ -237,13 +234,13 @@
 @media (min-width: 768px) {
   .content-block-card {
     min-width: 330px;
-    width: calc(50% - 12px);
+    width: calc(50% - var(--ig-spacing-3));
   }
 }
 
 @media (min-width: 1024px) {
   .content-block-card {
-    padding: 32px;
+    padding: var(--ig-spacing-8);
     min-width: 330px;
   }
 }
@@ -256,7 +253,7 @@
 
 .content-block-card__image-container {
   aspect-ratio: 1.64/1;
-  margin-bottom: 14px;
+  margin-bottom: var(--ig-spacing-3-5);
   position: relative;
   overflow: hidden;
   border-radius: var(--ig-border-radius);
@@ -264,7 +261,7 @@
 
 @media (min-width: 1024px) {
   .content-block-card__image-container {
-    margin-bottom: 32px;
+    margin-bottom: var(--ig-spacing-8);
   }
 }
 
@@ -274,44 +271,39 @@
 }
 
 .content-block-card__title {
-  font: var(--ig-typography-heading-xsmall-bold);
-  color: var(--ig-text-bold);
-  margin-bottom: 4px;
+  margin-bottom: var(--ig-spacing-1);
 }
 
 @media (min-width: 1024px) {
   .content-block-card__title {
-    margin-bottom: 12px;
+    margin-bottom: var(--ig-spacing-3);
   }
 }
 
 .content-block-card__description {
-  font: var(--ig-typography-body-small-regular);
-  color: var(--ig-text-medium);
   margin-bottom: 0;
   line-height: 1.25rem;
 }
 
 @media (min-width: 1024px) {
   .content-block-card__description {
-    font: var(--ig-typography-body-large-regular);
     line-height: 2rem;
   }
 }
 
 .content-block-card__button {
-  margin-top: 16px;
+  margin-top: var(--ig-spacing-4);
 }
 
 @media (min-width: 768px) {
   .content-block-card__button {
-    margin-top: 24px;
+    margin-top: var(--ig-spacing-6);
   }
 }
 
 @media (min-width: 1024px) {
   .content-block-card__button {
-    margin-top: 32px;
+    margin-top: var(--ig-spacing-8);
   }
 }
 
