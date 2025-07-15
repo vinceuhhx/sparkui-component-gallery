@@ -1,0 +1,27 @@
+
+# Development files
+src/
+public/
+docs/
+.vscode/
+.git/
+node_modules/
+
+# Config files
+vite.config.ts
+vite.lib.config.ts
+tailwind.config.ts
+tsconfig.json
+tsconfig.app.json
+tsconfig.node.json
+eslint.config.js
+postcss.config.js
+components.json
+
+# Development assets
+*.log
+.env*
+.DS_Store
+
+# Keep only dist folder for npm package
+!dist/

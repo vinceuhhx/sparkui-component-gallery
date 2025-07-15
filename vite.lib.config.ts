@@ -1,3 +1,4 @@
+
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react-swc'
 import { resolve } from 'path'
@@ -26,11 +27,16 @@ export default defineConfig({
         globals: {
           react: 'React',
           'react-dom': 'ReactDOM'
+        },
+        assetFileNames: (assetInfo) => {
+          if (assetInfo.name === 'style.css') return 'style.css'
+          return assetInfo.name
         }
       }
     },
     outDir: 'dist',
-    emptyOutDir: true
+    emptyOutDir: true,
+    cssCodeSplit: false
   },
   resolve: {
     alias: {
