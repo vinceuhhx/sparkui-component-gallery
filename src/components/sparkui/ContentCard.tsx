@@ -10,6 +10,7 @@ export interface ContentCardProps extends React.HTMLAttributes<HTMLDivElement> {
   buttonSlot?: React.ReactNode;
   variant?: "default" | "reverse" | "wide";
   imageClassName?: string;
+  children?: React.ReactNode;
 }
 
 export const ContentCard = React.forwardRef<HTMLDivElement, ContentCardProps>(

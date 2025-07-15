@@ -1,6 +1,6 @@
 
 import { ComponentDemo } from "@/components/demo/ComponentDemo"
-import { ContentCard, ContentCardContainer, Button } from "@/components/sparkui"
+import { ContentBlockCard, ContentBlockCardContainer, Button } from "@/components/sparkui"
 
 export default function ContentCardDemo() {
   return (
@@ -9,8 +9,8 @@ export default function ContentCardDemo() {
         title="Content Block Cards"
         description="Flexible card components for content blocks with customizable media and actions"
       >
-        <ContentCardContainer title="Featured Content">
-          <ContentCard
+        <ContentBlockCardContainer title="Featured Content">
+          <ContentBlockCard
             title="Design Systems Workshop"
             description="Learn how to build and maintain scalable design systems that work across teams and products. This comprehensive workshop covers everything from design tokens to component libraries."
             mediaSlot={
@@ -27,7 +27,7 @@ export default function ContentCardDemo() {
             }
           />
 
-          <ContentCard
+          <ContentBlockCard
             title="Building React Components"
             description="Master the art of creating reusable React components with modern patterns and best practices. Perfect for developers looking to improve their component architecture skills."
             mediaSlot={
@@ -44,7 +44,7 @@ export default function ContentCardDemo() {
             }
           />
 
-          <ContentCard
+          <ContentBlockCard
             title="Advanced TypeScript Patterns"
             description="Dive deep into TypeScript's advanced features and learn how to create type-safe applications with confidence. Explore utility types, conditional types, and more."
             mediaSlot={
@@ -60,7 +60,7 @@ export default function ContentCardDemo() {
               </Button>
             }
           />
-        </ContentCardContainer>
+        </ContentBlockCardContainer>
 
         {/* Example with custom content */}
         <div className="space-y-4">
@@ -71,7 +71,7 @@ export default function ContentCardDemo() {
             Custom Content Example
           </h3>
           
-          <ContentCard
+          <ContentBlockCard
             mediaSlot={
               <div style={{ 
                 width: '100%', 
@@ -95,7 +95,7 @@ export default function ContentCardDemo() {
               <Button size="sm" variant="filled">Primary Action</Button>
               <Button size="sm" variant="outlined">Secondary</Button>
             </div>
-          </ContentCard>
+          </ContentBlockCard>
         </div>
       </ComponentDemo>
     </div>

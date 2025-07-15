@@ -23,5 +23,5 @@ export { Marquee } from "./composites/Marquee"
 export { WidgetHome } from "./composites/WidgetHome"
 export { AccreditationBar } from "./composites/AccreditationBar"
 
-export { ContentCard, ContentCardContainer } from "./ContentCard"
-export type { ContentCardProps, ContentCardContainerProps } from "./ContentCard"
+export { ContentCard as ContentBlockCard, ContentCardContainer as ContentBlockCardContainer } from "./ContentCard"
+export type { ContentCardProps as ContentBlockCardProps, ContentCardContainerProps as ContentBlockCardContainerProps } from "./ContentCard"
