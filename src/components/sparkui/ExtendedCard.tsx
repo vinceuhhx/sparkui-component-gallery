@@ -1,8 +1,9 @@
 import * as React from "react";
-import { Card, CardHeader, CardTitle, CardSubtitle, CardBody, CardFooter, type CardProps } from "./Card";
+import { Card, CardHeader, CardTitle, CardSubtitle, CardBody, CardFooter } from "./Card";
 import { Button } from "./Button";
 import { Typography } from "./Typography";
 import { Body } from "./Body";
+import "./ExtendedCard.css";
 
 // Profile Card Component
 export interface ProfileCardProps {
@@ -21,20 +22,13 @@ export const ProfileCard = React.forwardRef<HTMLDivElement, ProfileCardProps>(
     return (
       <Card ref={ref} variant={variant} shadow={shadow} className="ig-card--profile">
         <CardHeader>
-          <div className="ig-grid ig-grid--auto-fit" style={{ gridTemplateColumns: "auto 1fr auto", gap: "var(--ig-size-150)" }}>
+          <div className="ig-profile-header">
             {avatar && (
-              <div className="ig-avatar-container">
-                <img 
-                  src={avatar} 
-                  alt={name}
-                  className="ig-avatar ig-avatar--medium"
-                  style={{ 
-                    width: "var(--ig-size-600)", 
-                    height: "var(--ig-size-600)",
-                    borderRadius: "var(--ig-border-radius-large)"
-                  }}
-                />
-              </div>
+              <img 
+                src={avatar} 
+                alt={name}
+                className="ig-avatar"
+              />
             )}
             <div className="ig-profile-info">
               <CardTitle>{name}</CardTitle>
@@ -52,7 +46,7 @@ export const ProfileCard = React.forwardRef<HTMLDivElement, ProfileCardProps>(
             {description}
           </Body>
           {stats && (
-            <div className="ig-stats ig-grid ig-grid--auto-fit" style={{ gap: "var(--ig-size-200)", marginTop: "var(--ig-size-200)" }}>
+            <div className="ig-stats">
               {stats.map((stat, index) => (
                 <div key={index} className="ig-stat-item">
                   <Typography level={5} weight="bold" className="ig-stat-value">
@@ -89,9 +83,9 @@ export const FeatureCard = React.forwardRef<HTMLDivElement, FeatureCardProps>(
     return (
       <Card ref={ref} variant={variant} shadow={shadow} className="ig-card--feature">
         <CardHeader>
-          <div className="ig-feature-header" style={{ textAlign: "center", padding: "var(--ig-size-200)" }}>
+          <div className="ig-feature-header">
             {icon && (
-              <div className="ig-feature-icon" style={{ marginBottom: "var(--ig-size-150)", display: "flex", justifyContent: "center" }}>
+              <div className="ig-feature-icon">
                 {icon}
               </div>
             )}
@@ -101,13 +95,10 @@ export const FeatureCard = React.forwardRef<HTMLDivElement, FeatureCardProps>(
         </CardHeader>
         <CardBody>
           {features && (
-            <ul className="ig-feature-list" style={{ listStyle: "none", padding: 0, margin: 0 }}>
+            <ul className="ig-feature-list">
               {features.map((feature, index) => (
-                <li key={index} className="ig-feature-item" style={{ 
-                  padding: "var(--ig-size-050) 0",
-                  borderBottom: index < features.length - 1 ? "1px solid var(--ig-border-soft)" : "none"
-                }}>
-                  <Typography level={5} className="ig-feature-text">
+                <li key={index} className="ig-feature-item">
+                  <Typography level={5}>
                     {feature}
                   </Typography>
                 </li>
@@ -117,13 +108,13 @@ export const FeatureCard = React.forwardRef<HTMLDivElement, FeatureCardProps>(
         </CardBody>
         {(primaryAction || secondaryAction) && (
           <CardFooter>
-            <div className="ig-grid ig-grid--auto-fit" style={{ gap: "var(--ig-size-100)", width: "100%" }}>
+            <div className="ig-feature-actions">
               {primaryAction && (
                 <Button 
                   variant="filled" 
                   color="primary" 
                   onClick={primaryAction.onClick}
-                  style={{ flex: 1 }}
+                  className="ig-button"
                 >
                   {primaryAction.label}
                 </Button>
@@ -133,7 +124,7 @@ export const FeatureCard = React.forwardRef<HTMLDivElement, FeatureCardProps>(
                   variant="outlined" 
                   color="primary" 
                   onClick={secondaryAction.onClick}
-                  style={{ flex: 1 }}
+                  className="ig-button"
                 >
                   {secondaryAction.label}
                 </Button>
@@ -163,12 +154,12 @@ export const MetricCard = React.forwardRef<HTMLDivElement, MetricCardProps>(
     return (
       <Card ref={ref} variant={variant} shadow={shadow} className="ig-card--metric">
         <CardHeader>
-          <div className="ig-grid" style={{ gridTemplateColumns: "1fr auto", alignItems: "start" }}>
+          <div className="ig-metric-header">
             <div>
               <CardSubtitle>{title}</CardSubtitle>
-              <CardTitle style={{ fontSize: "var(--ig-font-size-heading-medium)", marginTop: "var(--ig-size-050)" }}>
+              <Typography level={3} weight="bold" className="ig-metric-value">
                 {value}
-              </CardTitle>
+              </Typography>
             </div>
             {trend && (
               <div className="ig-metric-trend">
@@ -178,28 +169,18 @@ export const MetricCard = React.forwardRef<HTMLDivElement, MetricCardProps>(
           </div>
         </CardHeader>
         <CardBody>
-          <div className="ig-metric-details">
-            {change && (
-              <div className="ig-metric-change" style={{ marginBottom: description ? "var(--ig-size-100)" : 0 }}>
-                <Typography 
-                  level={6}
-                  weight="medium"
-                  style={{ 
-                    color: change.direction === "up" ? "var(--ig-text-success)" : 
-                           change.direction === "down" ? "var(--ig-text-danger)" : 
-                           "var(--ig-text-medium)"
-                  }}
-                >
-                  {change.direction === "up" ? "↗" : change.direction === "down" ? "↘" : "→"} {change.value}
-                </Typography>
-              </div>
-            )}
-            {description && (
-              <Body size="small" className="ig-metric-description">
-                {description}
-              </Body>
-            )}
-          </div>
+          {change && (
+            <div className={`ig-metric-change ig-metric-change--${change.direction}`}>
+              <Typography level={6} weight="medium">
+                {change.direction === "up" ? "↗" : change.direction === "down" ? "↘" : "→"} {change.value}
+              </Typography>
+            </div>
+          )}
+          {description && (
+            <Body size="small" className="ig-metric-description">
+              {description}
+            </Body>
+          )}
         </CardBody>
       </Card>
     );
@@ -207,7 +188,7 @@ export const MetricCard = React.forwardRef<HTMLDivElement, MetricCardProps>(
 );
 MetricCard.displayName = "MetricCard";
 
-// Content Card Component
+// Content Card Component  
 export interface ContentCardProps {
   image?: string;
   category?: string;
@@ -227,29 +208,13 @@ export const ContentCard = React.forwardRef<HTMLDivElement, ContentCardProps>(
     return (
       <Card ref={ref} variant={variant} shadow={shadow} className="ig-card--content">
         {image && (
-          <div className="ig-content-image" style={{ 
-            width: "100%", 
-            height: "200px", 
-            overflow: "hidden",
-            borderRadius: "var(--ig-border-radius) var(--ig-border-radius) 0 0"
-          }}>
-            <img 
-              src={image} 
-              alt={title}
-              style={{ 
-                width: "100%", 
-                height: "100%", 
-                objectFit: "cover"
-              }}
-            />
+          <div className="ig-content-image">
+            <img src={image} alt={title} />
           </div>
         )}
         <CardHeader>
           {category && (
-            <Typography level={6} weight="medium" className="ig-content-category" style={{ 
-              color: "var(--ig-text-primary)",
-              marginBottom: "var(--ig-size-050)"
-            }}>
+            <Typography level={6} weight="medium" className="ig-content-category">
               {category.toUpperCase()}
             </Typography>
           )}
@@ -260,23 +225,9 @@ export const ContentCard = React.forwardRef<HTMLDivElement, ContentCardProps>(
             {excerpt}
           </Body>
           {tags && (
-            <div className="ig-content-tags" style={{ 
-              display: "flex", 
-              flexWrap: "wrap", 
-              gap: "var(--ig-size-050)", 
-              marginTop: "var(--ig-size-150)" 
-            }}>
+            <div className="ig-content-tags">
               {tags.map((tag, index) => (
-                <span 
-                  key={index} 
-                  className="ig-tag"
-                  style={{
-                    padding: "var(--ig-size-025) var(--ig-size-100)",
-                    backgroundColor: "var(--ig-background-soft)",
-                    borderRadius: "var(--ig-border-radius-small)",
-                    fontSize: "var(--ig-font-size-caption)"
-                  }}
-                >
+                <span key={index} className="ig-tag">
                   {tag}
                 </span>
               ))}
@@ -284,7 +235,7 @@ export const ContentCard = React.forwardRef<HTMLDivElement, ContentCardProps>(
           )}
         </CardBody>
         <CardFooter>
-          <div className="ig-grid" style={{ gridTemplateColumns: "1fr auto", alignItems: "center" }}>
+          <div className="ig-content-footer">
             <div className="ig-content-meta">
               {author && (
                 <Typography level={6} className="ig-content-author">
@@ -292,7 +243,7 @@ export const ContentCard = React.forwardRef<HTMLDivElement, ContentCardProps>(
                 </Typography>
               )}
               {(date || readTime) && (
-                <Typography level={6} className="ig-content-details" style={{ color: "var(--ig-text-soft)" }}>
+                <Typography level={6} className="ig-content-details">
                   {date} {date && readTime && "•"} {readTime}
                 </Typography>
               )}
