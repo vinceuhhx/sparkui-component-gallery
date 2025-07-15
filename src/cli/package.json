@@ -1,8 +1,8 @@
 
 {
-  "name": "@sdworx/sparkui",
+  "name": "@sdworx/sparkui-cli",
   "version": "1.0.0",
-  "description": "SparkUI - A modern React component library built on IG CDN design system",
+  "description": "SparkUI CLI - Set up and configure SparkUI in your React project",
   "main": "index.js",
   "type": "commonjs",
   "bin": {
@@ -15,13 +15,15 @@
     "design-system",
     "sparkui",
     "ig-cdn",
-    "cli"
+    "cli",
+    "setup"
   ],
   "author": "SD Worx",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/sdworx/sparkui.git"
+    "url": "https://github.com/sdworx/sparkui.git",
+    "directory": "cli"
   },
   "homepage": "https://sparkui.sdworx.com",
   "bugs": {
@@ -32,21 +34,13 @@
     "inquirer": "^8.2.6",
     "fs-extra": "^11.1.0",
     "chalk": "^4.1.2",
-    "ora": "^5.4.1",
-    "axios": "^1.5.0",
-    "clsx": "^2.0.0"
-  },
-  "peerDependencies": {
-    "react": ">=18.0.0",
-    "react-dom": ">=18.0.0"
+    "ora": "^5.4.1"
   },
   "engines": {
     "node": ">=16.0.0"
   },
   "files": [
     "index.js",
-    "lib/",
-    "registry/",
     "README.md"
   ]
 }

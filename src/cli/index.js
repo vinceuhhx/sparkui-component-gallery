@@ -21,7 +21,7 @@ try {
 // CLI Configuration
 program
   .name('sparkui')
-  .description('SparkUI Component Library CLI')
+  .description('SparkUI CLI - Set up and configure SparkUI in your React project')
   .version(packageJson.version);
 
 // Commands

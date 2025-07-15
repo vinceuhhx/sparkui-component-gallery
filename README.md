@@ -1,293 +1,122 @@
-:root {
-  --ig-black: light-dark(#000, #fff);
-  --ig-white: light-dark(#fff, #000);
-  --ig-text-bold: light-dark(#1d2830, #e9f0f5);
-  --ig-text-bold-hover: light-dark(#303c45, #b7c3cc);
-  --ig-text-bold-hover-emphasized: light-dark(#c42600, #ff9b7d);
-  --ig-text-bold-selected: light-dark(#0e171e, #f6f9fb);
-  --ig-text-bold-pressed: light-dark(#0e171e, #f6f9fb);
-  --ig-text-bold-selected-emphasized: light-dark(#c42600, #ff9b7d);
-  --ig-text-bold-inverse: #fff;
-  --ig-text-medium: light-dark(#54636d, #b7c3cc);
-  --ig-text-medium-hover: light-dark(#606e78, #6f7c86);
-  --ig-text-medium-hover-emphasized: light-dark(#da3300, #ffe4d9);
-  --ig-text-medium-selected: light-dark(#424f59, #e9f0f5);
-  --ig-text-medium-pressed: light-dark(#424f59, #e9f0f5);
-  --ig-text-medium-selected-emphasized: light-dark(#c42600, #ff9b7d);
-  --ig-text-medium-inverse: #f6f9fb;
-  --ig-text-soft: light-dark(#6f7c86, #54636d);
-  --ig-text-soft-hover: light-dark(#b7c3cc, #6f7c86);
-  --ig-text-soft-hover-emphasized: #ff9b7d;
-  --ig-text-soft-selected: light-dark(#54636d, #e9f0f5);
-  --ig-text-soft-pressed: light-dark(#54636d, #e9f0f5);
-  --ig-text-soft-selected-emphasized: light-dark(#c42600, #ff9b7d);
-  --ig-text-soft-inverse: #b7c3cc;
-  --ig-text-primary: light-dark(#c42600, #ff9b7d);
-  --ig-text-primary-hover: light-dark(#da3300, #ffe4d9);
-  --ig-text-primary-pressed: light-dark(#c42600, #e84c1d);
-  --ig-text-secondary: #1272ab;
-  --ig-text-secondary-hover: #1882c0;
-  --ig-text-secondary-pressed: #01527e;
-  --ig-text-tertiary: #880a5d;
-  --ig-text-tertiary-hover: #b72280;
-  --ig-text-tertiary-pressed: #4b0030;
-  --ig-text-info: light-dark(#0054d4, #006aff);
-  --ig-text-info-hover: light-dark(#006aff, #2b80ff);
-  --ig-text-info-pressed: light-dark(#003286, #0054d4);
-  --ig-text-warning: light-dark(#835600, #a56e00);
-  --ig-text-warning-hover: light-dark(#a56e00, #b87c00);
-  --ig-text-warning-pressed: light-dark(#533300, #835600);
-  --ig-text-danger: light-dark(#ba0032, #e90040);
-  --ig-text-danger-hover: light-dark(#e90040, #f03557);
-  --ig-text-danger-pressed: light-dark(#75001c, #ba0032);
-  --ig-text-success: light-dark(#007900, #009800);
-  --ig-text-success-hover: light-dark(#009800, #00a813);
-  --ig-text-success-pressed: light-dark(#004b00, #007900);
-  --ig-text-accent-1: light-dark(#7a3800, #ffa659);
-  --ig-text-accent-1-hover: light-dark(#a65200, #bb5e00);
-  --ig-text-accent-1-pressed: light-dark(#431900, #ffe6c8);
-  --ig-text-accent-2: light-dark(#5b4d00, #d3bf46);
-  --ig-text-accent-2-hover: light-dark(#7e6c00, #8e7a00);
-  --ig-text-accent-2-pressed: light-dark(#2f2600, #f7f0c2);
-  --ig-text-accent-3: light-dark(#455500, #b2cb5c);
-  --ig-text-accent-3-hover: light-dark(#627700, #6f8600);
-  --ig-text-accent-3-pressed: light-dark(#222b00, #e9f5c8);
-  --ig-text-accent-4: light-dark(#006035, #5ed99e);
-  --ig-text-accent-4-hover: light-dark(#00844d, #009559);
-  --ig-text-accent-4-pressed: light-dark(#003217, #cdfce1);
-  --ig-text-accent-5: light-dark(#005d4f, #23dbc1);
-  --ig-text-accent-5-hover: light-dark(#00816e, #00927d);
-  --ig-text-accent-5-pressed: light-dark(#003128, #c3fcf0);
-  --ig-text-accent-6: light-dark(#005b60, #00d8e1);
-  --ig-text-accent-6-hover: light-dark(#007e85, #008e96);
-  --ig-text-accent-6-pressed: light-dark(#002f33, #c0fbfe);
-  --ig-text-accent-7: light-dark(#005871, #25d2fc);
-  --ig-text-accent-7-hover: light-dark(#007a9a, #008aae);
-  --ig-text-accent-7-pressed: light-dark(#002d3e, #c2f9ff);
-  --ig-text-accent-8: light-dark(#005389, #5fc9ff);
-  --ig-text-accent-8-hover: light-dark(#0073b8, #0083ce);
-  --ig-text-accent-8-pressed: light-dark(#00294d, #d1f4ff);
-  --ig-text-accent-9: light-dark(#4137a6, #aeb4ff);
-  --ig-text-accent-9-hover: light-dark(#5c53da, #6861f1);
-  --ig-text-accent-9-pressed: light-dark(#1f175e, #e8ecff);
-  --ig-text-accent-10: light-dark(#5e2b9a, #cca8ff);
-  --ig-text-accent-10-hover: light-dark(#8044cb, #9051e1);
-  --ig-text-accent-10-pressed: light-dark(#310e57, #f3e7ff);
-  --ig-text-accent-11: light-dark(#731f85, #e59ff6);
-  --ig-text-accent-11-hover: light-dark(#9c36b1, #ae42c5);
-  --ig-text-accent-11-pressed: light-dark(#3e0649, #ffe2ff);
-  --ig-text-accent-12: light-dark(#8e0049, #ff95ba);
-  --ig-text-accent-12-hover: light-dark(#be1b67, #d42975);
-  --ig-text-accent-12-pressed: light-dark(#4f0024, #ffe1ed);
-  --ig-text-on-strong-bold: #fff;
-  --ig-text-on-strong-bold-hover: light-dark(#fff, #0e171e);
-  --ig-text-on-strong-bold-pressed: #e9f0f5;
-  --ig-text-on-strong-medium: #f6f9fb;
-  --ig-text-on-strong-medium-hover: light-dark(#fff, #0e171e);
-  --ig-text-on-strong-medium-pressed: #e9f0f5;
-  --ig-text-on-strong-soft: #e9f0f5;
-  --ig-text-on-strong-soft-hover: light-dark(#f6f9fb, #0e171e);
-  --ig-text-on-strong-soft-pressed: light-dark(#b7c3cc, #e9f0f5);
-  --ig-text-on-bold-bold: light-dark(#fff, #0e171e);
-  --ig-text-on-bold-bold-hover: light-dark(#fff, #1d2830);
-  --ig-text-on-bold-bold-pressed: light-dark(#e9f0f5, #030a11);
-  --ig-text-on-bold-medium: #fff;
-  --ig-text-on-bold-medium-hover: light-dark(#fff, #0e171e);
-  --ig-text-on-bold-medium-pressed: #e9f0f5;
-  --ig-text-on-medium-bold: #fff;
-  --ig-text-on-medium-bold-hover: light-dark(#fff, #0e171e);
-  --ig-text-on-medium-bold-pressed: #e9f0f5;
-  --ig-text-on-medium-medium: #f6f9fb;
-  --ig-text-on-medium-medium-hover: light-dark(#fff, #0e171e);
-  --ig-text-on-medium-medium-pressed: #e9f0f5;
-  --ig-text-on-soft-bold: light-dark(#1d2830, #fff);
-  --ig-text-on-soft-bold-hover: light-dark(#303c45, #0e171e);
-  --ig-text-on-soft-bold-pressed: light-dark(#0e171e, #e9f0f5);
-  --ig-text-on-soft-medium: light-dark(#54636d, #f6f9fb);
-  --ig-text-on-soft-medium-hover: light-dark(#606e78, #0e171e);
-  --ig-text-on-soft-medium-pressed: light-dark(#424f59, #e9f0f5);
-  --ig-text-on-warning: #835600;
-  --ig-text-on-warning-hover: #a56e00;
-  --ig-text-on-warning-pressed: #533300;
-  --ig-text-decoration-primary: light-dark(lch(69.067% 45.993 43.689), lch(85.801% 26.71 41.9));
-  --ig-text-decoration-primary-hover: light-dark(#da3300, #ffe4d9);
-  --ig-text-decoration-primary-pressed: light-dark(#c42600, #e84c1d);
-  --ig-text-decoration-bold: light-dark(lch(53.442% 4.1502 245.89), lch(96.903% 2.0341 242.24));
-  --ig-text-decoration-bold-hover: light-dark(#303c45, #b7c3cc);
-  --ig-text-decoration-bold-pressed: light-dark(#0e171e, #f6f9fb);
-  --ig-background-backdrop: light-dark(lch(15.153% 19.828 255.11 / .35), lch(15.349% 7.5458 245.89 / .4));
-  --ig-background-page-clear: light-dark(#fff, #0e171e);
-  --ig-background-page-subtle: light-dark(#f6f9fb, #1d2830);
-  --ig-background-page-soft: light-dark(#e9f0f5, #303c45);
-  --ig-background-surface-on-clear-subtle: light-dark(#f6f9fb, #1d2830);
-  --ig-background-surface-on-clear-soft: light-dark(#e9f0f5, #303c45);
-  --ig-background-surface-on-subtle-clear: light-dark(#fff, #0e171e);
-  --ig-background-surface-on-subtle-soft: light-dark(#e9f0f5, #303c45);
-  --ig-background-surface-on-soft-clear: light-dark(#fff, #0e171e);
-  --ig-background-surface-on-soft-subtle: light-dark(#f6f9fb, #1d2830);
-  --ig-background-clear: light-dark(#fff, #0e171e);
-  --ig-background-clear-hover: light-dark(#f6f9fb, #030a11);
-  --ig-background-clear-pressed: light-dark(#b7c3cc, #1d2830);
-  --ig-background-clear-selected: light-dark(#e9f0f5, #1d2830);
-  --ig-background-clear-selected-emphasized: light-dark(#ffe4d9, #520000);
-  --ig-background-subtle: light-dark(#f6f9fb, #1d2830);
-  --ig-background-subtle-hover: light-dark(#fff, #0e171e);
-  --ig-background-subtle-pressed: light-dark(#b7c3cc, #303c45);
-  --ig-background-subtle-selected: light-dark(#e9f0f5, #303c45);
-  --ig-background-subtle-selected-emphasized: light-dark(#ffe4d9, #340000);
-  --ig-background-soft: light-dark(#e9f0f5, #303c45);
-  --ig-background-soft-hover: light-dark(#f6f9fb, #1d2830);
-  --ig-background-soft-pressed: light-dark(#6f7c86, #424f59);
-  --ig-background-soft-selected: light-dark(#b7c3cc, #424f59);
-  --ig-background-soft-selected-emphasized: light-dark(#ffe4d9, #520000);
-  --ig-background-medium: light-dark(#b7c3cc, #424f59);
-  --ig-background-medium-hover: light-dark(#e9f0f5, #303c45);
-  --ig-background-medium-pressed: light-dark(#606e78, #54636d);
-  --ig-background-medium-selected: light-dark(#6f7c86, #606e78);
-  --ig-background-medium-selected-emphasized: light-dark(#ffe4d9, #520000);
-  --ig-background-bold: #606e78;
-  --ig-background-bold-hover: #6f7c86;
-  --ig-background-bold-pressed: #54636d;
-  --ig-background-bold-selected: #424f59;
-  --ig-background-bold-selected-emphasized: light-dark(#ffe4d9, #520000);
-  --ig-background-strong: light-dark(#1d2830, #e9f0f5);
-  --ig-background-strong-hover: light-dark(#424f59, #b7c3cc);
-  --ig-background-strong-pressed: light-dark(#0e171e, #000);
-  --ig-background-strong-selected: #303c45;
-  --ig-background-strong-selected-emphasized: light-dark(#ffe4d9, #520000);
-  --ig-background-transparent-clear: lch(78.063% 6.6963 244.03 / 0);
-  --ig-background-transparent-clear-hover: light-dark(lch(78.063% 6.6963 244.03 / .1), lch(78.063% 6.6963 244.03 / .13));
-  --ig-background-transparent-clear-pressed: light-dark(lch(78.063% 6.6963 244.03 / .2), lch(78.063% 6.6963 244.03 / .18));
-  --ig-background-transparent-clear-selected: light-dark(lch(78.063% 6.6963 244.03 / .15), lch(78.063% 6.6963 244.03 / .08));
-  --ig-background-transparent-clear-selected-emphasized: lch(49.462% 89.244 44.686 / .1);
-  --ig-background-transparent-subtle: lch(78.063% 6.6963 244.03 / .25);
-  --ig-background-transparent-subtle-hover: lch(78.063% 6.6963 244.03 / .3);
-  --ig-background-transparent-subtle-pressed: lch(78.063% 6.6963 244.03 / .35);
-  --ig-background-transparent-subtle-selected: lch(78.063% 6.6963 244.03 / .15);
-  --ig-background-transparent-subtle-selected-emphasized: lch(49.462% 89.244 44.686 / .15);
-  --ig-background-transparent-success: light-dark(lch(78.674% 58.006 140.54 / .17), lch(78.674% 58.006 140.54 / .2));
-  --ig-background-transparent-success-hover: light-dark(lch(78.674% 58.006 140.54 / .22), lch(78.674% 58.006 140.54 / .25));
-  --ig-background-transparent-success-pressed: light-dark(lch(78.674% 58.006 140.54 / .25), lch(78.674% 58.006 140.54 / .3));
-  --ig-background-transparent-danger: light-dark(lch(73.855% 42.952 19.927 / .17), lch(73.855% 42.952 19.927 / .2));
-  --ig-background-transparent-danger-hover: light-dark(lch(73.855% 42.952 19.927 / .22), lch(73.855% 42.952 19.927 / .25));
-  --ig-background-transparent-danger-pressed: light-dark(lch(73.855% 42.952 19.927 / .25), lch(73.855% 42.952 19.927 / .3));
-  --ig-background-alpha-dark-0: light-dark(lch(15.349% 7.5458 245.89 / 0), lch(97.738% 1.5305 240.17 / 0));
-  --ig-background-alpha-dark-10: light-dark(lch(15.349% 7.5458 245.89 / .1), lch(97.738% 1.5305 240.17 / .1));
-  --ig-background-alpha-dark-20: light-dark(lch(15.349% 7.5458 245.89 / .2), lch(97.738% 1.5305 240.17 / .2));
-  --ig-background-alpha-dark-30: light-dark(lch(15.349% 7.5458 245.89 / .3), lch(97.738% 1.5305 240.17 / .3));
-  --ig-background-alpha-dark-40: light-dark(lch(15.349% 7.5458 245.89 / .4), lch(97.738% 1.5305 240.17 / .4));
-  --ig-background-alpha-dark-50: light-dark(lch(15.349% 7.5458 245.89 / .5), lch(97.738% 1.5305 240.17 / .5));
-  --ig-background-alpha-dark-60: light-dark(lch(15.349% 7.5458 245.89 / .6), lch(97.738% 1.5305 240.17 / .6));
-  --ig-background-alpha-dark-70: light-dark(lch(15.349% 7.5458 245.89 / .7), lch(97.738% 1.5305 240.17 / .7));
-  --ig-background-alpha-dark-80: light-dark(lch(15.349% 7.5458 245.89 / .8), lch(97.738% 1.5305 240.17 / .8));
-  --ig-background-alpha-dark-90: light-dark(lch(15.349% 7.5458 245.89 / .9), lch(97.738% 1.5305 240.17 / .9));
-  --ig-background-alpha-light-0: light-dark(lch(97.738% 1.5305 240.17 / 0), lch(15.349% 7.5458 245.89 / 0));
-  --ig-background-alpha-light-10: light-dark(lch(97.738% 1.5305 240.17 / .1), lch(15.349% 7.5458 245.89 / .1));
-  --ig-background-alpha-light-20: light-dark(lch(97.738% 1.5305 240.17 / .2), lch(15.349% 7.5458 245.89 / .2));
-  --ig-background-alpha-light-30: light-dark(lch(97.738% 1.5305 240.17 / .3), lch(15.349% 7.5458 245.89 / .3));
-  --ig-background-alpha-light-40: light-dark(lch(97.738% 1.5305 240.17 / .4), lch(15.349% 7.5458 245.89 / .4));
-  --ig-background-alpha-light-50: light-dark(lch(97.738% 1.5305 240.17 / .5), lch(15.349% 7.5458 245.89 / .5));
-  --ig-background-alpha-light-60: light-dark(lch(97.738% 1.5305 240.17 / .6), lch(15.349% 7.5458 245.89 / .6));
-  --ig-background-alpha-light-70: light-dark(lch(97.738% 1.5305 240.17 / .7), lch(15.349% 7.5458 245.89 / .7));
-  --ig-background-alpha-light-80: light-dark(lch(97.738% 1.5305 240.17 / .8), lch(15.349% 7.5458 245.89 / .8));
-  --ig-background-alpha-light-90: light-dark(lch(97.738% 1.5305 240.17 / .9), lch(15.349% 7.5458 245.89 / .9));
-  --ig-background-primary-subtle: light-dark(#fff4ef, #340000);
-  --ig-background-primary-subtle-hover: light-dark(#ffe4d9, #520000);
-  --ig-background-primary-subtle-pressed: light-dark(#ff9b7d, #340000);
-  --ig-background-primary-soft: light-dark(#ffe4d9, #520000);
-  --ig-background-primary-soft-hover: light-dark(#fff4ef, #ff9b7d);
-  --ig-background-primary-soft-pressed: light-dark(#ff9b7d, #e84c1d);
-  --ig-background-primary-bold: light-dark(#da3300, #ff9b7d);
-  --ig-background-primary-bold-hover: light-dark(#e84c1d, #ffe4d9);
-  --ig-background-primary-bold-pressed: light-dark(#c42600, #e84c1d);
-  --ig-background-primary-strong: light-dark(#520000, #da3300);
-  --ig-background-primary-strong-hover: light-dark(#c42600, #e84c1d);
-  --ig-background-primary-strong-pressed: light-dark(#340000, #c42600);
-  --ig-background-secondary-subtle: light-dark(#f3f9ff, #042941);
-  --ig-background-secondary-subtle-hover: light-dark(#e1f1fe, #01527e);
-  --ig-background-secondary-subtle-pressed: light-dark(#bbdcf6, #011828);
-  --ig-background-secondary-soft: light-dark(#e1f1fe, #01527e);
-  --ig-background-secondary-soft-hover: light-dark(#f3f9ff, #042941);
-  --ig-background-secondary-soft-pressed: light-dark(#bbdcf6, #1272ab);
-  --ig-background-secondary-bold: light-dark(#1272ab, #1882c0);
-  --ig-background-secondary-bold-hover: light-dark(#1882c0, lch(53.596% 40.583 254.16));
-  --ig-background-secondary-bold-pressed: light-dark(#01527e, #1272ab);
-  --ig-background-secondary-strong: light-dark(#042941, #bbdcf6);
-  --ig-background-secondary-strong-hover: light-dark(#01527e, #1882c0);
-  --ig-background-secondary-strong-pressed: light-dark(#011828, #e1f1fe);
-  --ig-background-tertiary-subtle: #fff3fb;
-  --ig-background-tertiary-subtle-hover: #ffe0f5;
-  --ig-background-tertiary-subtle-pressed: #ff97ce;
-  --ig-background-tertiary-soft: #ffe0f5;
-  --ig-background-tertiary-soft-hover: #fff3fb;
-  --ig-background-tertiary-soft-pressed: #ff97ce;
-  --ig-background-tertiary-bold: #b72280;
-  --ig-background-tertiary-bold-hover: #cb2f90;
-  --ig-background-tertiary-bold-pressed: #880a5d;
-  --ig-background-tertiary-strong: #4b0030;
-  --ig-background-tertiary-strong-hover: #880a5d;
-  --ig-background-tertiary-strong-pressed: #30001d;
-  --ig-background-info-subtle: light-dark(#f1f9ff, #00113e);
-  --ig-background-info-subtle-hover: light-dark(#ddf0ff, #003286);
-  --ig-background-info-subtle-pressed: light-dark(#8fbeff, #00113e);
-  --ig-background-info-soft: light-dark(#ddf0ff, #003286);
-  --ig-background-info-soft-hover: #f1f9ff;
-  --ig-background-info-soft-pressed: #8fbeff;
-  --ig-background-info-bold: light-dark(#006aff, #8fbeff);
-  --ig-background-info-bold-hover: light-dark(#2b80ff, #ddf0ff);
-  --ig-background-info-bold-pressed: light-dark(#0054d4, #2b80ff);
-  --ig-background-warning-subtle: light-dark(#fff7ea, #241100);
-  --ig-background-warning-subtle-hover: light-dark(#ffebc2, #533300);
-  --ig-background-warning-subtle-pressed: light-dark(#f3b01d, #241100);
-  --ig-background-warning-soft: light-dark(#ffebc2, #533300);
-  --ig-background-warning-soft-hover: #fff7ea;
-  --ig-background-warning-soft-pressed: #f3b01d;
-  --ig-background-warning-bold: #f3b01d;
-  --ig-background-warning-bold-hover: #ffebc2;
-  --ig-background-warning-bold-pressed: #b87c00;
-  --ig-background-danger-subtle: light-dark(#fff3f4, #340006);
-  --ig-background-danger-subtle-hover: light-dark(#ffe3e3, #75001c);
-  --ig-background-danger-subtle-pressed: light-dark(#ff979d, #340006);
-  --ig-background-danger-soft: light-dark(#ffe3e3, #75001c);
-  --ig-background-danger-soft-hover: #fff3f4;
-  --ig-background-danger-soft-pressed: #ff979d;
-  --ig-background-danger-bold: light-dark(#e90040, #ff979d);
-  --ig-background-danger-bold-hover: light-dark(#f03557, #ffe3e3);
-  --ig-background-danger-bold-pressed: light-dark(#ba0032, #f03557);
-  --ig-background-success-subtle: light-dark(#f1fcf0, #001f00);
-  --ig-background-success-subtle-hover: light-dark(#d6fad6, #004b00);
-  --ig-background-success-subtle-pressed: light-dark(#75d87a, #001f00);
-  --ig-background-success-soft: light-dark(#d6fad6, #004b00);
-  --ig-background-success-soft-hover: #f1fcf0;
-  --ig-background-success-soft-pressed: #75d87a;
-  --ig-background-success-bold: light-dark(#009800, #75d87a);
-  --ig-background-success-bold-hover: light-dark(#00a813, #d6fad6);
-  --ig-background-success-bold-pressed: light-dark(#007900, #00a813);
-  --ig-background-accent-1-bold: #a65200;
-  --ig-background-accent-1-bold-hover: #bb5e00;
-  --ig-background-accent-1-bold-pressed: #7a3800;
-  --ig-background-accent-1-subtle: light-dark(#fff6eb, #2b0b00);
-  --ig-background-accent-1-subtle-hover: light-dark(#ffe6c8, #431900);
-  --ig-background-accent-1-subtle-pressed: light-dark(#ffa659, #2b0b00);
-  --ig-background-accent-2-bold: #7e6c00;
-  --ig-background-accent-2-bold-hover: #8e7a00;
-  --ig-background-accent-2-bold-pressed: #5b4d00;
-  --ig-background-accent-2-subtle: light-dark(#fbf9ea, #1d1600);
-  --ig-background-accent-2-subtle-hover: light-dark(#f7f0c2, #2f2600);
-  --ig-background-accent-2-subtle-pressed: light-dark(#d3bf46, #1d1600);
-  --ig-background-accent-3-bold: #627700;
-  --ig-background-accent-3-bold-hover: #6f8600;
-  --ig-background-accent-3-bold-pressed: #455500;
-  --ig-background-accent-3-subtle: light-dark(#f6fbec, #131a00);
-  --ig-background-accent-3-subtle-hover: light-dark(#e9f5c8, #222b00);
-  --ig-background-accent-3-subtle-pressed: light-dark(#b2cb5c, #131a00);
-  --ig-background-accent-4-bold: #00844d;
-  --ig-background-accent-4-bold-hover: #009559;
-  --ig-background-accent-4-bold-pressed: #006035;
-  --ig-background-accent-4-subtle: light-dark(#eefdf4, #001f0a);
-  --ig-background-accent-4-subtle-hover: light-dark(#cdfce1, #003217);
-  --ig-background-accent-4-subtle-pressed: light-dark(#5ed99e, #001f0a);
-  --ig-background-accent-5-bold: #00816e;
+# SparkUI
+
+A modern React component library built on the IG CDN design system.
+
+## Installation
+
+```bash
+npm install @sdworx/sparkui
+```
+
+## Quick Start
+
+### 1. Set up SparkUI (Optional CLI)
+
+Install the CLI for easy setup:
+
+```bash
+npm install -g @sdworx/sparkui-cli
+sparkui init
+```
+
+### 2. Import Styles
+
+Add SparkUI styles to your main file (e.g., `main.tsx` or `App.tsx`):
+
+```tsx
+import '@sdworx/sparkui/styles'
+```
+
+### 3. Use Components
+
+```tsx
+import React from 'react'
+import { Button, Card, Typography } from '@sdworx/sparkui'
+
+export default function App() {
+  return (
+    <div className="p-8">
+      <Typography variant="h1">Welcome to SparkUI!</Typography>
+      
+      <Card className="p-6 mt-6">
+        <Typography variant="h2" className="mb-4">
+          Getting Started
+        </Typography>
+        <Typography variant="body" className="mb-4">
+          Start building beautiful interfaces with SparkUI components.
+        </Typography>
+        <Button variant="primary">
+          Get Started
+        </Button>
+      </Card>
+    </div>
+  )
+}
+```
+
+## Available Components
+
+### Basic Components
+- `Button` - Various button styles and sizes
+- `Typography` - Text components with consistent styling
+- `Body` - Main content wrapper
+- `Card` - Card components with header, body, footer
+- `Grid` - Responsive grid system
+- `Tabs` - Tab navigation components
+
+### Extended Components  
+- `ProfileCard` - User profile display
+- `FeatureCard` - Feature highlight cards
+- `MetricCard` - Metric display cards
+- `ContentCard` - Content block cards
+
+### Composite Components
+- `Marquee` - Scrolling text component
+- `WidgetHome` - Homepage widget
+- `AccreditationBar` - Accreditation display
+
+## CLI Commands
+
+If you have the CLI installed:
+
+```bash
+# Initialize SparkUI in your project
+sparkui init
+
+# List all available components
+sparkui list
+
+# Show current configuration
+sparkui config
+
+# Generate component example
+sparkui example Button
+```
+
+## TypeScript Support
+
+SparkUI is built with TypeScript and provides full type definitions.
+
+```tsx
+import { ButtonProps, CardProps } from '@sdworx/sparkui'
+```
+
+## Styling
+
+SparkUI uses Tailwind CSS and CSS variables for theming. The library includes:
+
+- Light/dark mode support
+- Responsive design utilities
+- IG CDN design system integration
+- Customizable CSS variables
+
+## Contributing
+
+See our [Contributing Guide](CONTRIBUTING.md) for development instructions.
+
+## License
+
+MIT © SD Worx
   --ig-background-accent-5-bold-hover: #00927d;
   --ig-background-accent-5-bold-pressed: #005d4f;
   --ig-background-accent-5-subtle: light-dark(#ebfdf9, #001e17);
