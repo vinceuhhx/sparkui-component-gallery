@@ -6,10 +6,17 @@ const fs = require('fs-extra');
 const path = require('path');
 const chalk = require('chalk');
 const ora = require('ora');
-const axios = require('axios');
 
 const program = new Command();
-const packageJson = require('./package.json');
+
+// Load package.json
+let packageJson;
+try {
+  packageJson = require('./package.json');
+} catch (error) {
+  console.error(chalk.red('Failed to load package.json'));
+  process.exit(1);
+}
 
 // CLI Configuration
 program
@@ -80,42 +87,49 @@ async function initProject(options) {
 
     if (!options.yes) {
       spinner.stop();
-      const answers = await inquirer.prompt([
-        {
-          type: 'input',
-          name: 'componentsPath',
-          message: 'Where would you like to install components?',
-          default: 'src/components/sparkui'
-        },
-        {
-          type: 'input',
-          name: 'cssPath',
-          message: 'Where would you like to install CSS files?',
-          default: 'src/styles'
-        },
-        {
-          type: 'confirm',
-          name: 'typescript',
-          message: 'Are you using TypeScript?',
-          default: true
-        },
-        {
-          type: 'confirm',
-          name: 'cdnEnabled',
-          message: 'Enable IG CDN integration? (Required for proper styling)',
-          default: true
-        }
-      ]);
+      
+      try {
+        const answers = await inquirer.prompt([
+          {
+            type: 'input',
+            name: 'componentsPath',
+            message: 'Where would you like to install components?',
+            default: 'src/components/sparkui'
+          },
+          {
+            type: 'input',
+            name: 'cssPath',
+            message: 'Where would you like to install CSS files?',
+            default: 'src/styles'
+          },
+          {
+            type: 'confirm',
+            name: 'typescript',
+            message: 'Are you using TypeScript?',
+            default: true
+          },
+          {
+            type: 'confirm',
+            name: 'cdnEnabled',
+            message: 'Enable IG CDN integration? (Required for proper styling)',
+            default: true
+          }
+        ]);
 
-      config = {
-        componentsPath: answers.componentsPath,
-        cssPath: answers.cssPath,
-        typescript: answers.typescript,
-        cdn: {
-          enabled: answers.cdnEnabled,
-          version: 'latest'
-        }
-      };
+        config = {
+          componentsPath: answers.componentsPath,
+          cssPath: answers.cssPath,
+          typescript: answers.typescript,
+          cdn: {
+            enabled: answers.cdnEnabled,
+            version: 'latest'
+          }
+        };
+      } catch (inquirerError) {
+        console.error(chalk.red('Failed to prompt for configuration'));
+        console.error(chalk.red(inquirerError.message));
+        return;
+      }
       
       spinner.start('Setting up SparkUI...');
     }

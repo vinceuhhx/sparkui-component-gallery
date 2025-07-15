@@ -1,8 +1,10 @@
+
 {
   "name": "@sdworx/sparkui",
   "version": "1.0.0",
   "description": "SparkUI - A modern React component library built on IG CDN design system",
   "main": "index.js",
+  "type": "commonjs",
   "bin": {
     "sparkui": "./index.js"
   },
@@ -27,7 +29,7 @@
   },
   "dependencies": {
     "commander": "^11.0.0",
-    "inquirer": "^9.2.0",
+    "inquirer": "^8.2.6",
     "fs-extra": "^11.1.0",
     "chalk": "^4.1.2",
     "ora": "^5.4.1",
