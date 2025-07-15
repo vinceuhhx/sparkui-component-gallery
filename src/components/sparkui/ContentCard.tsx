@@ -1,6 +1,8 @@
 
 import * as React from "react";
 import { cn } from "@/lib/utils";
+import { Typography } from "./Typography";
+import { ArrowRight } from "lucide-react";
 import "./ContentCard.css";
 
 export interface ContentCardProps extends React.HTMLAttributes<HTMLDivElement> {
@@ -9,10 +11,51 @@ export interface ContentCardProps extends React.HTMLAttributes<HTMLDivElement> {
   description?: string;
   mediaSlot?: React.ReactNode;
   buttonSlot?: React.ReactNode;
-  variant?: "default" | "reverse" | "wide";
+  buttonText?: string;
+  buttonHref?: string;
+  onButtonClick?: () => void;
   imageClassName?: string;
   children?: React.ReactNode;
 }
+
+// Content Card Button Component
+interface ContentCardButtonProps {
+  children: React.ReactNode;
+  href?: string;
+  onClick?: () => void;
+  icon?: React.ReactNode;
+}
+
+const ContentCardButton = React.forwardRef<HTMLButtonElement | HTMLAnchorElement, ContentCardButtonProps>(
+  ({ children, href, onClick, icon = <ArrowRight size={16} /> }, ref) => {
+    const className = "content-card-button";
+    
+    if (href) {
+      return (
+        <a 
+          ref={ref as React.Ref<HTMLAnchorElement>} 
+          href={href} 
+          className={className}
+        >
+          {children}
+          <span className="content-card-button__icon">{icon}</span>
+        </a>
+      );
+    }
+    
+    return (
+      <button 
+        ref={ref as React.Ref<HTMLButtonElement>} 
+        onClick={onClick} 
+        className={className}
+      >
+        {children}
+        <span className="content-card-button__icon">{icon}</span>
+      </button>
+    );
+  }
+);
+ContentCardButton.displayName = "ContentCardButton";
 
 export const ContentCard = React.forwardRef<HTMLDivElement, ContentCardProps>(
   (
@@ -22,19 +65,16 @@ export const ContentCard = React.forwardRef<HTMLDivElement, ContentCardProps>(
       description,
       mediaSlot,
       buttonSlot,
-      variant = "default",
+      buttonText,
+      buttonHref,
+      onButtonClick,
       imageClassName,
       children,
       ...props
     },
     ref
   ) => {
-    const cardClasses = cn(
-      "content-block-card",
-      variant === "reverse" && "content-block-card--reverse",
-      variant === "wide" && "content-block-card--wide",
-      className
-    );
+    const cardClasses = cn("content-block-card", className);
 
     return (
       <div ref={ref} className={cardClasses} {...props}>
@@ -46,7 +86,9 @@ export const ContentCard = React.forwardRef<HTMLDivElement, ContentCardProps>(
         
         <div className="content-block-card__content">
           {title && (
-            <h3 className="content-block-card__title">{title}</h3>
+            <Typography level={4} weight="bold" className="content-block-card__title">
+              {title}
+            </Typography>
           )}
           
           {description && (
@@ -55,11 +97,16 @@ export const ContentCard = React.forwardRef<HTMLDivElement, ContentCardProps>(
           
           {children}
           
-          {buttonSlot && (
-            <div className="content-block-card__button">
-              {buttonSlot}
-            </div>
-          )}
+          <div className="content-block-card__button">
+            {buttonSlot || (buttonText && (
+              <ContentCardButton 
+                href={buttonHref} 
+                onClick={onButtonClick}
+              >
+                {buttonText}
+              </ContentCardButton>
+            ))}
+          </div>
         </div>
       </div>
     );
@@ -77,7 +124,9 @@ export const ContentCardContainer = React.forwardRef<HTMLDivElement, ContentCard
   ({ className, title, children, ...props }, ref) => (
     <div ref={ref} className="content-block-container" {...props}>
       {title && (
-        <h2 className="content-block-container__title">{title}</h2>
+        <Typography level={2} weight="bold" className="content-block-container__title">
+          {title}
+        </Typography>
       )}
       <div className={cn("content-block-container__grid", className)}>
         {children}

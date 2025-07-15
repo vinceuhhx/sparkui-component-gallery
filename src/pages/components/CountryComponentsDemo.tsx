@@ -1,5 +1,5 @@
 import { ComponentDemo } from "@/components/demo/ComponentDemo"
-import { ContentBlockCard, ContentBlockCardContainer, Button } from "@/components/sparkui"
+import { ContentCard, ContentCardContainer } from "@/components/sparkui"
 
 export default function CountryComponentsDemo() {
   return (
@@ -8,109 +8,67 @@ export default function CountryComponentsDemo() {
         title="Country Components"
         description="Showcase of content cards designed for country-specific solutions and services"
       >
-        <ContentBlockCardContainer title="Our Solutions">
-          <ContentBlockCard
-            title="Personnel administration"
-            description="SD Worx offers various solutions to streamline your administrative HR processes."
+        <ContentCardContainer title="Our Solutions">
+          <ContentCard
+            title="Digital signatures"
+            description="Are you looking for an efficient solution for digital signatures? Our experts are at your fingertips to support you."
+            buttonText="Find out more"
             mediaSlot={
               <img 
-                src="https://images.unsplash.com/photo-1649972904349-6e44c42644a7?w=400&h=200&fit=crop" 
-                alt="Personnel administration"
-                style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                src="https://images.unsplash.com/photo-1649972904349-6e44c42644a7?w=400&h=244&fit=crop" 
+                alt="Digital signatures" 
               />
             }
-            buttonSlot={
-              <Button variant="outlined" color="primary">
-                Find out more →
-              </Button>
-            }
           />
-
-          <ContentBlockCard
-            title="Payroll services"
-            description="Comprehensive payroll solutions that ensure accuracy and compliance with local regulations."
+          
+          <ContentCard
+            title="Interim & recruitment"
+            description="Are you looking for temporary or permanent reinforcement, or do you need specific expertise? Our experts are completely at home in interim, recruitment and project sourcing for your company."
+            buttonText="Find out more"
             mediaSlot={
               <img 
-                src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=400&h=200&fit=crop" 
-                alt="Payroll services"
-                style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                src="/lovable-uploads/00551a12-b942-4bc9-85e3-e24b90f28263.png" 
+                alt="Interim & recruitment" 
               />
             }
-            buttonSlot={
-              <Button variant="outlined" color="primary">
-                Find out more →
-              </Button>
-            }
           />
-
-          <ContentBlockCard
-            title="Talent management"
-            description="End-to-end talent management solutions to help you attract, develop, and retain top talent."
+          
+          <ContentCard
+            title="Sustainable work"
+            description="Is your job taking too much of a toll, or do you feel like you're not at the right place? We help you find sustainable work that fits your life."
+            buttonText="Find out more"
             mediaSlot={
               <img 
-                src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&h=200&fit=crop" 
-                alt="Talent management"
-                style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&h=244&fit=crop" 
+                alt="Sustainable work" 
               />
             }
-            buttonSlot={
-              <Button variant="outlined" color="primary">
-                Find out more →
-              </Button>
-            }
           />
-
-          <ContentBlockCard
-            title="HR consulting"
-            description="Expert HR consulting services to help optimize your human resources strategies and processes."
+          
+          <ContentCard
+            title="Technology solutions"
+            description="From cutting-edge software to innovative platforms, discover technology solutions that transform your business operations and drive growth."
+            buttonText="Find out more"
             mediaSlot={
               <img 
-                src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=400&h=200&fit=crop" 
-                alt="HR consulting"
-                style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=400&h=244&fit=crop" 
+                alt="Technology solutions" 
               />
             }
-            buttonSlot={
-              <Button variant="outlined" color="primary">
-                Find out more →
-              </Button>
-            }
           />
-
-          <ContentBlockCard
-            title="Digital solutions"
-            description="Modern digital HR solutions that integrate seamlessly with your existing systems and workflows."
+          
+          <ContentCard
+            title="Data insights"
+            description="Unlock the power of your data with advanced analytics and insights that help you make informed decisions and optimize performance."
+            buttonText="Find out more"
             mediaSlot={
               <img 
-                src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=400&h=200&fit=crop" 
-                alt="Digital solutions"
-                style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=400&h=244&fit=crop" 
+                alt="Data insights" 
               />
             }
-            buttonSlot={
-              <Button variant="outlined" color="primary">
-                Find out more →
-              </Button>
-            }
           />
-
-          <ContentBlockCard
-            title="Compliance management"
-            description="Stay compliant with ever-changing regulations through our comprehensive compliance management solutions."
-            mediaSlot={
-              <img 
-                src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=400&h=200&fit=crop" 
-                alt="Compliance management"
-                style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-              />
-            }
-            buttonSlot={
-              <Button variant="outlined" color="primary">
-                Find out more →
-              </Button>
-            }
-          />
-        </ContentBlockCardContainer>
+        </ContentCardContainer>
       </ComponentDemo>
     </div>
   )

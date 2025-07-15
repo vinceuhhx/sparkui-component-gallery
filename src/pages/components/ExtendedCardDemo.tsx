@@ -1,6 +1,5 @@
 import { ComponentDemo } from "@/components/demo/ComponentDemo"
-import { ProfileCard, FeatureCard, MetricCard, ContentCard, Grid, GridCol } from "@/components/sparkui"
-import { Button } from "@/components/sparkui"
+import { ProfileCard, FeatureCard, MetricCard, ExtendedContentCard, Grid, GridCol, Button } from "@/components/sparkui"
 import { Star, Users, TrendingUp, Calendar, MapPin, Globe, Award } from "lucide-react"
 
 export default function ExtendedCardDemo() {
@@ -150,7 +149,7 @@ export default function ExtendedCardDemo() {
           <h3 className="ig-typography-heading-xxsmall-bold">Content Cards</h3>
           <Grid>
             <GridCol span={12} spanMd={6}>
-              <ContentCard
+            <ExtendedContentCard
                 title="Design System Workshop"
                 excerpt="Join us for a comprehensive workshop on building and maintaining design systems for modern web applications."
                 image="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400&h=200&fit=crop"
@@ -166,7 +165,7 @@ export default function ExtendedCardDemo() {
             </GridCol>
 
             <GridCol span={12} spanMd={6}>
-              <ContentCard
+              <ExtendedContentCard
                 title="Building Scalable React Applications"
                 excerpt="Learn the best practices and patterns for building React applications that can scale with your team and user base."
                 date="March 22, 2024"
