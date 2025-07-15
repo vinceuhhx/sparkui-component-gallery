@@ -15,6 +15,7 @@ import TabsDemo from "@/pages/components/TabsDemo";
 import ExtendedCardDemo from "@/pages/components/ExtendedCardDemo";
 import HomeComponentDemo from "@/pages/components/HomeComponentDemo";
 import ContentCardDemo from "@/pages/components/ContentCardDemo";
+import CountryComponentsDemo from "@/pages/components/CountryComponentsDemo";
 
 import "@/index.css";
 import "@/styles/impressive.css";
@@ -37,6 +38,7 @@ function App() {
                 <Route path="extended-cards" element={<ExtendedCardDemo />} />
                 <Route path="home-components" element={<HomeComponentDemo />} />
                 <Route path="content-cards" element={<ContentCardDemo />} />
+                <Route path="country-components" element={<CountryComponentsDemo />} />
                 <Route path="forms" element={
                   <div className="p-8">
                     <h1 style={{ 
