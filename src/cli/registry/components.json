@@ -1,0 +1,213 @@
+{
+  "version": "1.0.0",
+  "lastUpdated": "2025-01-15",
+  "categories": [
+    {
+      "id": "basic",
+      "name": "Basic Components",
+      "description": "Essential UI building blocks"
+    },
+    {
+      "id": "layout", 
+      "name": "Layout Components",
+      "description": "Components for page structure and layout"
+    },
+    {
+      "id": "extended",
+      "name": "Extended Components", 
+      "description": "Advanced components with complex functionality"
+    },
+    {
+      "id": "composite",
+      "name": "Composite Components",
+      "description": "Pre-built component combinations"
+    }
+  ],
+  "components": [
+    {
+      "name": "Button",
+      "category": "basic",
+      "description": "Interactive button component with multiple variants",
+      "version": "1.0.0",
+      "aliases": ["btn"],
+      "dependencies": [],
+      "tags": ["interactive", "form"],
+      "files": [
+        {
+          "name": "Button.tsx",
+          "type": "component",
+          "url": "https://registry.sparkui.com/components/Button.tsx"
+        }
+      ],
+      "examples": [
+        {
+          "name": "Basic Usage",
+          "code": "<Button variant=\"filled\" color=\"primary\">Click me</Button>"
+        }
+      ]
+    },
+    {
+      "name": "Typography",
+      "category": "basic", 
+      "description": "Text styling component with semantic levels",
+      "version": "1.0.0",
+      "aliases": ["text", "heading"],
+      "dependencies": [],
+      "tags": ["text", "content"],
+      "files": [
+        {
+          "name": "Typography.tsx",
+          "type": "component",
+          "url": "https://registry.sparkui.com/components/Typography.tsx"
+        }
+      ]
+    },
+    {
+      "name": "Body",
+      "category": "basic",
+      "description": "Body text component with size variants",
+      "version": "1.0.0", 
+      "dependencies": [],
+      "tags": ["text", "content"],
+      "files": [
+        {
+          "name": "Body.tsx",
+          "type": "component",
+          "url": "https://registry.sparkui.com/components/Body.tsx"
+        }
+      ]
+    },
+    {
+      "name": "Card", 
+      "category": "basic",
+      "description": "Flexible card container with header, body, and footer",
+      "version": "1.0.0",
+      "dependencies": [],
+      "tags": ["container", "layout"],
+      "files": [
+        {
+          "name": "Card.tsx",
+          "type": "component", 
+          "url": "https://registry.sparkui.com/components/Card.tsx"
+        }
+      ]
+    },
+    {
+      "name": "Grid",
+      "category": "layout",
+      "description": "Responsive grid layout system",
+      "version": "1.0.0",
+      "dependencies": [],
+      "tags": ["layout", "responsive"],
+      "files": [
+        {
+          "name": "Grid.tsx",
+          "type": "component",
+          "url": "https://registry.sparkui.com/components/Grid.tsx"
+        }
+      ]
+    },
+    {
+      "name": "Tabs",
+      "category": "layout",
+      "description": "Tabbed interface component",
+      "version": "1.0.0", 
+      "dependencies": [],
+      "tags": ["navigation", "interface"],
+      "files": [
+        {
+          "name": "Tabs.tsx",
+          "type": "component",
+          "url": "https://registry.sparkui.com/components/Tabs.tsx"
+        }
+      ]
+    },
+    {
+      "name": "ExtendedCard",
+      "category": "extended",
+      "description": "Advanced card components with specialized layouts",
+      "version": "1.0.0",
+      "aliases": ["profile-card", "feature-card", "metric-card"],
+      "dependencies": ["Card", "Typography", "Body"],
+      "tags": ["card", "advanced", "display"],
+      "files": [
+        {
+          "name": "ExtendedCard.tsx",
+          "type": "component",
+          "url": "https://registry.sparkui.com/components/ExtendedCard.tsx"
+        },
+        {
+          "name": "ExtendedCard.css",
+          "type": "styles",
+          "url": "https://registry.sparkui.com/components/ExtendedCard.css"
+        }
+      ]
+    },
+    {
+      "name": "ContentCard",
+      "category": "extended", 
+      "description": "Content display cards for articles and media",
+      "version": "1.0.0",
+      "aliases": ["content-card", "article-card"],
+      "dependencies": ["Typography"],
+      "tags": ["content", "media", "display"],
+      "files": [
+        {
+          "name": "ContentCard.tsx",
+          "type": "component",
+          "url": "https://registry.sparkui.com/components/ContentCard.tsx"
+        },
+        {
+          "name": "ContentCard.css", 
+          "type": "styles",
+          "url": "https://registry.sparkui.com/components/ContentCard.css"
+        }
+      ]
+    },
+    {
+      "name": "Marquee",
+      "category": "composite",
+      "description": "Animated scrolling text or content",
+      "version": "1.0.0",
+      "dependencies": [],
+      "tags": ["animation", "display"],
+      "files": [
+        {
+          "name": "Marquee.tsx",
+          "type": "component",
+          "url": "https://registry.sparkui.com/components/Marquee.tsx"
+        }
+      ]
+    },
+    {
+      "name": "AccreditationBar",
+      "category": "composite",
+      "description": "Display certifications and accreditations",
+      "version": "1.0.0", 
+      "dependencies": ["Typography"],
+      "tags": ["display", "branding"],
+      "files": [
+        {
+          "name": "AccreditationBar.tsx",
+          "type": "component",
+          "url": "https://registry.sparkui.com/components/AccreditationBar.tsx"
+        }
+      ]
+    },
+    {
+      "name": "WidgetHome",
+      "category": "composite",
+      "description": "Home page widget component",
+      "version": "1.0.0",
+      "dependencies": ["Card", "Typography"],
+      "tags": ["widget", "home"],
+      "files": [
+        {
+          "name": "WidgetHome.tsx", 
+          "type": "component",
+          "url": "https://registry.sparkui.com/components/WidgetHome.tsx"
+        }
+      ]
+    }
+  ]
+}
