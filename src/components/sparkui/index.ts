@@ -22,3 +22,6 @@ export type { GridProps, GridColProps } from "./Grid"
 export { Marquee } from "./composites/Marquee"
 export { WidgetHome } from "./composites/WidgetHome"
 export { AccreditationBar } from "./composites/AccreditationBar"
+
+export { ContentCard, ContentCardContainer } from "./ContentCard"
+export type { ContentCardProps, ContentCardContainerProps } from "./ContentCard"

@@ -1,3 +1,4 @@
+
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { ComponentLayout } from "@/components/layout/ComponentLayout";
 import { ThemeProvider } from "@/hooks/useTheme";
@@ -13,6 +14,7 @@ import GridDemo from "@/pages/components/GridDemo";
 import TabsDemo from "@/pages/components/TabsDemo";
 import ExtendedCardDemo from "@/pages/components/ExtendedCardDemo";
 import HomeComponentDemo from "@/pages/components/HomeComponentDemo";
+import ContentCardDemo from "@/pages/components/ContentCardDemo";
 
 import "@/index.css";
 import "@/styles/impressive.css";
@@ -34,6 +36,7 @@ function App() {
                 <Route path="tabs" element={<TabsDemo />} />
                 <Route path="extended-cards" element={<ExtendedCardDemo />} />
                 <Route path="home-components" element={<HomeComponentDemo />} />
+                <Route path="content-cards" element={<ContentCardDemo />} />
                 <Route path="forms" element={
                   <div className="p-8">
                     <h1 style={{ 
