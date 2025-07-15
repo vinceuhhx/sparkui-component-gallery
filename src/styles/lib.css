@@ -1,6 +1,6 @@
 
 /* Import all necessary styles for the npm package */
-@import './index.css';
+@import '../index.css';
 @import '../components/sparkui/ContentCard.css';
 @import '../components/sparkui/ExtendedCard.css';
 
