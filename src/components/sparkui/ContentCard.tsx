@@ -1,7 +1,6 @@
 
 import * as React from "react";
 import { cn } from "@/lib/utils";
-import { Typography } from "./Typography";
 
 export interface ContentCardProps extends React.HTMLAttributes<HTMLDivElement> {
   className?: string;
@@ -46,11 +45,11 @@ export const ContentCard = React.forwardRef<HTMLDivElement, ContentCardProps>(
         
         <div className="content-block-card__content">
           {title && (
-            <Typography level={6} weight="bold" className="content-block-card__title">{title}</Typography>
+            <h3 className="content-block-card__title">{title}</h3>
           )}
           
           {description && (
-            <Typography level={6} weight="regular" color="medium" className="content-block-card__description">{description}</Typography>
+            <p className="content-block-card__description">{description}</p>
           )}
           
           {children}
@@ -77,7 +76,7 @@ export const ContentCardContainer = React.forwardRef<HTMLDivElement, ContentCard
   ({ className, title, children, ...props }, ref) => (
     <div ref={ref} className="content-block-container" {...props}>
       {title && (
-        <Typography level={3} weight="bold" className="content-block-container__title">{title}</Typography>
+        <h2 className="content-block-container__title">{title}</h2>
       )}
       <div className={cn("content-block-container__grid", className)}>
         {children}
