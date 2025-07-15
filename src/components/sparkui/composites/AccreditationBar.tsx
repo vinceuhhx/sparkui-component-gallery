@@ -1,4 +1,3 @@
-
 "use client"
 
 import * as React from "react"
@@ -30,6 +29,7 @@ export const AccreditationBar = React.forwardRef<
   (
     {
       title = "Accreditations & Recognitions",
+      subtitle = "SD Worx is an international recognized organisation always striving to offer the best service to our customers",
       logos = [
         { src: "/placeholder.svg", alt: "Gartner", name: "Gartner" },
         { src: "/placeholder.svg", alt: "Certification", name: "ISAE 3402" },
