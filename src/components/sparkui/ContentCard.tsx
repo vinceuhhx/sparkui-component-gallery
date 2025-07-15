@@ -1,4 +1,3 @@
-
 import * as React from "react";
 import { cn } from "@/lib/utils";
 import { Typography } from "./Typography";
@@ -16,6 +15,7 @@ export interface ContentCardProps extends React.HTMLAttributes<HTMLDivElement> {
   onButtonClick?: () => void;
   imageClassName?: string;
   children?: React.ReactNode;
+  background?: "white" | "grey";
 }
 
 // Content Card Button Component
@@ -70,11 +70,16 @@ export const ContentCard = React.forwardRef<HTMLDivElement, ContentCardProps>(
       onButtonClick,
       imageClassName,
       children,
+      background = "white",
       ...props
     },
     ref
   ) => {
-    const cardClasses = cn("content-block-card", className);
+    const cardClasses = cn(
+      "content-block-card", 
+      `content-block-card--${background}`,
+      className
+    );
 
     return (
       <div ref={ref} className={cardClasses} {...props}>

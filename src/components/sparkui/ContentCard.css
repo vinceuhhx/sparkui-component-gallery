@@ -1,3 +1,4 @@
+
 /* Content Block Cards Component */
 .content-block-container {
   margin-bottom: 48px;
@@ -37,11 +38,21 @@
   border-radius: 4px;
   box-shadow: 0px 0px 4px 0px rgba(48, 54, 66, 0.11),
     0px 2px 2px 0px rgba(48, 54, 66, 0.1);
-  background: var(--ig-background-surface-on-clear-subtle);
   border: 1px solid var(--ig-border-soft);
   display: flex;
   flex-direction: column;
 }
+
+/* Background variants */
+.content-block-card--white {
+  background: var(--ig-background-surface-on-clear-subtle);
+}
+
+.content-block-card--grey {
+  background: var(--ig-background-surface-on-clear-soft);
+}
+
+/* ... keep existing code (responsive styles and other card styles) */
 
 @media (min-width: 768px) {
   .content-block-card {
