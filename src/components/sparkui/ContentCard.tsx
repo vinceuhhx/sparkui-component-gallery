@@ -1,6 +1,7 @@
 
 import * as React from "react";
 import { cn } from "@/lib/utils";
+import "./ContentCard.css";
 
 export interface ContentCardProps extends React.HTMLAttributes<HTMLDivElement> {
   className?: string;
