@@ -34,7 +34,7 @@ export function ThemeProvider({
     const root = window.document.documentElement
     
     // Remove existing theme classes
-    root.classList.remove("light", "dark")
+    root.removeAttribute('data-theme')
     
     if (theme === "system") {
       const systemTheme = window.matchMedia("(prefers-color-scheme: dark)")
@@ -42,11 +42,11 @@ export function ThemeProvider({
         ? "dark"
         : "light"
       
-      root.classList.add(systemTheme)
+      root.setAttribute('data-theme', systemTheme)
       return
     }
 
-    root.classList.add(theme)
+    root.setAttribute('data-theme', theme)
   }, [theme])
 
   const value = {
