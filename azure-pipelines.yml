@@ -1,0 +1,87 @@
+trigger:
+- main
+- develop
+
+pr:
+- main
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+variables:
+  - name: artifactFeed
+    value: 'sparkui'
+  - name: artifactFeedUrl
+    value: 'https://pkgs.dev.azure.com/sdworx/_packaging/sparkui/npm/registry/'
+
+stages:
+- stage: Build
+  displayName: 'Build and Test'
+  jobs:
+  - job: Build
+    displayName: 'Build SparkUI Library'
+    steps:
+    - task: NodeTool@0
+      inputs:
+        versionSpec: '18.x'
+      displayName: 'Install Node.js'
+
+    - task: Cache@2
+      inputs:
+        key: 'npm | "$(Agent.OS)" | package-lock.json'
+        restoreKeys: |
+          npm | "$(Agent.OS)"
+        path: ~/.npm
+      displayName: 'Cache npm'
+
+    - script: |
+        npm ci
+      displayName: 'Install dependencies'
+
+    - script: |
+        npm run lint
+      displayName: 'Run ESLint'
+
+    - script: |
+        npm run build:lib
+      displayName: 'Build library'
+
+    - script: |
+        npm pack
+      displayName: 'Create package'
+
+    - publish: '$(System.DefaultWorkingDirectory)/*.tgz'
+      artifact: 'npm-package'
+      displayName: 'Publish package artifact'
+
+- stage: Publish
+  displayName: 'Publish to Azure Artifacts'
+  dependsOn: Build
+  condition: and(succeeded(), or(eq(variables['Build.SourceBranch'], 'refs/heads/main'), eq(variables['Build.SourceBranch'], 'refs/heads/develop')))
+  jobs:
+  - deployment: PublishPackage
+    displayName: 'Publish to Azure Artifacts'
+    environment: 'npm-publish'
+    strategy:
+      runOnce:
+        deploy:
+          steps:
+          - task: NodeTool@0
+            inputs:
+              versionSpec: '18.x'
+            displayName: 'Install Node.js'
+
+          - download: current
+            artifact: 'npm-package'
+            displayName: 'Download package artifact'
+
+          - task: npmAuthenticate@0
+            inputs:
+              workingFile: '.npmrc'
+              customEndpoint: 'Azure Artifacts - SparkUI'
+            displayName: 'Authenticate to Azure Artifacts'
+
+          - script: |
+              cd $(Pipeline.Workspace)/npm-package
+              npm publish *.tgz --registry $(artifactFeedUrl)
+            displayName: 'Publish to Azure Artifacts'
