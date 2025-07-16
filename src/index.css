@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -111,11 +112,12 @@ html {
 
 body {
   font-family: var(--ig-font-family-body);
-  background: var(--ig-background-page-clear);
-  color: var(--ig-text-bold);
+  background: hsl(var(--background));
+  color: hsl(var(--foreground));
   margin: 0;
   padding: 0;
   line-height: 1.6;
+  transition: background-color var(--ig-transition-duration) ease, color var(--ig-transition-duration) ease;
 }
 
 * {
@@ -128,6 +130,7 @@ body {
   flex-direction: column;
   min-height: 100vh;
   width: 100%;
+  background: hsl(var(--background));
 }
 
 @media (min-width: 1024px) {
@@ -137,8 +140,8 @@ body {
 }
 
 .sparkui-sidebar {
-  background: var(--ig-background-surface-on-clear-subtle);
-  border-bottom: 1px solid var(--ig-border-soft);
+  background: hsl(var(--card));
+  border-bottom: 1px solid hsl(var(--border));
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -149,7 +152,7 @@ body {
   .sparkui-sidebar {
     width: 320px;
     min-width: 320px;
-    border-right: 1px solid var(--ig-border-soft);
+    border-right: 1px solid hsl(var(--border));
     border-bottom: none;
     position: sticky;
     top: 0;
@@ -161,6 +164,7 @@ body {
   flex: 1;
   min-width: 0;
   width: 100%;
+  background: hsl(var(--background));
 }
 
 /* Theme toggle button */
@@ -170,13 +174,13 @@ body {
   background: none;
   cursor: pointer;
   border-radius: var(--ig-border-radius);
-  color: var(--ig-text-medium);
+  color: hsl(var(--muted-foreground));
   transition: all var(--ig-transition-duration) ease;
 }
 
 .theme-toggle:hover {
-  background: var(--ig-background-surface-on-clear-soft);
-  color: var(--ig-text-bold);
+  background: hsl(var(--accent));
+  color: hsl(var(--foreground));
 }
 
 .theme-toggle .icon {
@@ -191,7 +195,7 @@ body {
   gap: 12px;
   padding: 8px 12px;
   text-decoration: none;
-  color: var(--ig-text-medium);
+  color: hsl(var(--muted-foreground));
   border-radius: var(--ig-border-radius);
   transition: all var(--ig-transition-duration) ease;
   font-size: 14px;
@@ -199,13 +203,13 @@ body {
 }
 
 .sidebar-item:hover {
-  background: var(--ig-background-surface-on-clear-soft);
-  color: var(--ig-text-bold);
+  background: hsl(var(--accent));
+  color: hsl(var(--foreground));
 }
 
 .sidebar-item.active {
-  background: var(--ig-text-primary);
-  color: var(--ig-white);
+  background: hsl(var(--primary));
+  color: hsl(var(--primary-foreground));
   font-weight: var(--ig-font-weight-medium);
 }
 
@@ -217,13 +221,13 @@ body {
 
 /* Interactive highlights */
 .interactive-highlight:hover {
-  background: var(--ig-background-surface-on-clear-soft);
+  background: hsl(var(--accent));
 }
 
 /* Demo card styling */
 .demo-card {
-  background: var(--ig-background-surface-on-clear-subtle);
-  border: 1px solid var(--ig-border-soft);
+  background: hsl(var(--card));
+  border: 1px solid hsl(var(--border));
   border-radius: var(--ig-border-radius-large);
   padding: 20px;
   margin: 16px 0;
@@ -245,7 +249,7 @@ body {
 .hero-section {
   text-align: center;
   padding: 40px 0;
-  border-bottom: 1px solid var(--ig-border-soft);
+  border-bottom: 1px solid hsl(var(--border));
   margin-bottom: 40px;
 }
 
@@ -258,7 +262,7 @@ body {
 
 .hero-title {
   font: var(--ig-typography-heading-large-bold);
-  color: var(--ig-text-bold);
+  color: hsl(var(--foreground));
   margin-bottom: 16px;
 }
 
@@ -270,7 +274,7 @@ body {
 
 .hero-subtitle {
   font: var(--ig-typography-heading-small-bold);
-  color: var(--ig-text-medium);
+  color: hsl(var(--muted-foreground));
   margin-bottom: 24px;
 }
 
@@ -282,7 +286,7 @@ body {
 
 .hero-description {
   font: var(--ig-typography-body-medium-regular);
-  color: var(--ig-text-medium);
+  color: hsl(var(--muted-foreground));
   max-width: 600px;
   margin: 0 auto 40px;
   line-height: 1.6;
@@ -340,7 +344,7 @@ body {
 .feature-icon {
   width: 48px;
   height: 48px;
-  background: var(--ig-background-surface-on-clear-soft);
+  background: hsl(var(--accent));
   border-radius: var(--ig-border-radius-large);
   display: flex;
   align-items: center;
@@ -350,13 +354,13 @@ body {
 
 .feature-title {
   font: var(--ig-typography-heading-xsmall-bold);
-  color: var(--ig-text-bold);
+  color: hsl(var(--foreground));
   margin-bottom: 16px;
 }
 
 .feature-description {
   font: var(--ig-typography-body-medium-regular);
-  color: var(--ig-text-medium);
+  color: hsl(var(--muted-foreground));
   line-height: 1.6;
 }
 
