@@ -8,11 +8,9 @@ function LoginForm() {
   return (
     <div className="w-full max-w-md mx-auto">
       <Card>
-        <CardHeader>
-          <CardTitle>
-            <Typography level={2} weight="bold">Sign In</Typography>
-          </CardTitle>
-        </CardHeader>
+            <CardHeader>
+              <CardTitle>Sign In</CardTitle>
+            </CardHeader>
         <CardBody className="space-y-4">
           <div className="space-y-2">
             <label className="text-sm font-medium text-foreground">Email</label>
@@ -211,11 +209,9 @@ function SidebarLayout() {
             <div className="w-full flex justify-center py-8">
               <div className="w-full max-w-md">
                 <Card>
-                  <CardHeader>
-                    <CardTitle>
-                      <Typography level={2} weight="bold">Sign In</Typography>
-                    </CardTitle>
-                  </CardHeader>
+        <CardHeader>
+          <CardTitle>Sign In</CardTitle>
+        </CardHeader>
                   <CardBody className="space-y-4">
                     <div className="space-y-2">
                       <label className="text-sm font-medium text-foreground">Email</label>
