@@ -4,11 +4,12 @@ import { Code } from "lucide-react"
 interface ComponentDemoProps {
   title: string
   description: string
-  children: React.ReactNode
+  children?: React.ReactNode
   code?: string
+  hidePreview?: boolean
 }
 
-export const ComponentDemo = ({ title, description, children, code }: ComponentDemoProps) => {
+export const ComponentDemo = ({ title, description, children, code, hidePreview = false }: ComponentDemoProps) => {
   const [showCode, setShowCode] = useState(false)
 
   return (
@@ -26,19 +27,21 @@ export const ComponentDemo = ({ title, description, children, code }: ComponentD
         }}>{description}</p>
       </div>
 
-      <div className="demo-card">
-        <h3 style={{ 
-          font: 'var(--ig-typography-heading-xsmall-bold)', 
-          color: 'var(--ig-text-bold)',
-          marginBottom: '16px'
-        }}>Interactive Demo</h3>
-        <div style={{ 
-          padding: '24px', 
-          borderRadius: 'var(--ig-border-radius-large)',
-        }}>
-          {children}
+      {!hidePreview && children && (
+        <div className="demo-card">
+          <h3 style={{ 
+            font: 'var(--ig-typography-heading-xsmall-bold)', 
+            color: 'var(--ig-text-bold)',
+            marginBottom: '16px'
+          }}>Interactive Demo</h3>
+          <div style={{ 
+            padding: '24px', 
+            borderRadius: 'var(--ig-border-radius-large)',
+          }}>
+            {children}
+          </div>
         </div>
-      </div>
+      )}
 
       {code && (
         <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>

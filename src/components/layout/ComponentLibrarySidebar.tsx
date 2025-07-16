@@ -1,7 +1,6 @@
-
 import { useState } from "react"
 import { NavLink, useLocation } from "react-router-dom"
-import { ChevronDown, Package, Palette, Sun, Moon } from "lucide-react"
+import { ChevronDown, Package, Palette, Sun, Moon, MousePointer, Type, AlignLeft, Square, Grid3X3, Layers, CreditCard, FileText, BookOpen, Code, Lightbulb } from "lucide-react"
 import { useTheme } from "@/hooks/useTheme"
 
 interface SidebarItemProps {
@@ -86,22 +85,24 @@ export const ComponentLibrarySidebar = () => {
   const { theme, setTheme } = useTheme()
 
   const basicComponents = [
-    { title: "Button", to: "/components/button" },
-    { title: "Typography", to: "/components/typography" },
-    { title: "Body", to: "/components/body" },
-    { title: "Card", to: "/components/card" },
-    { title: "Grid", to: "/components/grid" },
-    { title: "Tabs", to: "/components/tabs" },
+    { title: "Button", to: "/components/button", icon: MousePointer },
+    { title: "Typography", to: "/components/typography", icon: Type },
+    { title: "Body", to: "/components/body", icon: AlignLeft },
+    { title: "Card", to: "/components/card", icon: Square },
+    { title: "Grid", to: "/components/grid", icon: Grid3X3 },
+    { title: "Tabs", to: "/components/tabs", icon: Layers },
   ]
 
   const compositeComponents = [
-    { title: "Extended Cards", to: "/components/extended-cards" },
-    { title: "Home Components", to: "/components/home-components" },
-    { title: "Content Cards", to: "/components/content-cards" },
-    { title: "Country Components", to: "/components/country-components" },
-    { title: "Form Components", to: "/components/forms" },
-    { title: "Navigation", to: "/components/navigation" },
-    { title: "Data Display", to: "/components/data-display" },
+    { title: "Extended Cards", to: "/components/extended-cards", icon: CreditCard },
+    { title: "Content Cards", to: "/components/content-cards", icon: FileText },
+  ]
+
+  const documentation = [
+    { title: "Getting Started", to: "/docs/getting-started", icon: BookOpen },
+    { title: "API Reference", to: "/docs/api-reference", icon: Code },
+    { title: "Design Tokens", to: "/docs/design-tokens", icon: Palette },
+    { title: "Examples", to: "/docs/examples", icon: Lightbulb },
   ]
 
   return (
@@ -144,14 +145,21 @@ export const ComponentLibrarySidebar = () => {
       {/* Navigation */}
       <div style={{ flex: 1, padding: '20px', overflowY: 'auto' }}>
         <SidebarGroup 
-          title="Basic Components" 
+          title="Components" 
           items={basicComponents}
           defaultOpen={true}
         />
         
         <SidebarGroup 
-          title="Composite Components" 
+          title="Composite" 
           items={compositeComponents}
+          defaultOpen={true}
+        />
+
+        <SidebarGroup 
+          title="Documentation" 
+          items={documentation}
+          defaultOpen={true}
         />
       </div>
 

@@ -31,15 +31,17 @@ const Home = () => {
         </p>
 
         <div className="hero-actions">
-          <Link to="/components/button">
+          <Link to="/docs/getting-started">
             <Button variant="filled" color="primary" size="lg">
-              Explore Components
+              Get Started
               <ArrowRight style={{ width: '16px', height: '16px', marginLeft: '8px' }} />
             </Button>
           </Link>
-          <Button variant="outlined" color="primary" size="lg">
-            Documentation
-          </Button>
+          <Link to="/components/button">
+            <Button variant="outlined" color="primary" size="lg">
+              View Components
+            </Button>
+          </Link>
         </div>
       </div>
 
