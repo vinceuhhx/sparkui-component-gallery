@@ -143,7 +143,7 @@
 .content-block-card__title {
   font: var(--ig-typography-heading-xsmall-bold);
   color: var(--ig-text-bold);
-  margin-bottom: 4px;
+  margin-bottom: 4px !important;
 }
 
 @media (min-width: 1024px) {

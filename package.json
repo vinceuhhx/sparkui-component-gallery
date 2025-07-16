@@ -1,11 +1,12 @@
 {
-  "name": "vite_react_shadcn_ts",
+  "name": "@sdworx/sparkui",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+     "build:lib": "vite build --config vite.lib.config.ts",
     "build:dev": "vite build --mode development",
     "lint": "eslint .",
     "preview": "vite preview"

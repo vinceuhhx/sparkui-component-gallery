@@ -91,7 +91,7 @@ export const ContentCard = React.forwardRef<HTMLDivElement, ContentCardProps>(
         
         <div className="content-block-card__content">
           {title && (
-            <Typography level={4} weight="bold" className="content-block-card__title">
+            <Typography level={5} weight="bold" className="content-block-card__title">
               {title}
             </Typography>
           )}
