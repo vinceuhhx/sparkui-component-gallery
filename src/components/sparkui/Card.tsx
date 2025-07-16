@@ -21,6 +21,7 @@ const cardVariants = cva("ig-card", {
 });
 
 export interface CardProps extends VariantProps<typeof cardVariants>, React.HTMLAttributes<HTMLDivElement> {
+  children?: React.ReactNode
   /** Use a different component for the root */
   asChild?: boolean;
   className?: string;

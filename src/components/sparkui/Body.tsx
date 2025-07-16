@@ -4,6 +4,7 @@ import * as React from "react"
 import { Slot } from "@radix-ui/react-slot"
 
 export interface BodyProps extends Omit<React.HTMLAttributes<HTMLElement>, "color"> {
+  children?: React.ReactNode
   size?: "small" | "medium" | "large"
   weight?: "regular" | "medium" | "bold"
   color?:

@@ -49,6 +49,7 @@ const buttonVariants = cva("ig-btn", {
 export interface ButtonProps
   extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, "color">,
     VariantProps<typeof buttonVariants> {
+  children?: React.ReactNode
   asChild?: boolean
   loading?: boolean
   loadingText?: string

@@ -2,6 +2,7 @@ import * as React from "react";
 import { cn } from "@/lib/utils";
 
 export interface GridProps extends React.HTMLAttributes<HTMLDivElement> {
+  children?: React.ReactNode
   className?: string;
 }
 
@@ -17,6 +18,7 @@ export const Grid = React.forwardRef<HTMLDivElement, GridProps>(
 Grid.displayName = "Grid";
 
 export interface GridColProps extends React.HTMLAttributes<HTMLDivElement> {
+  children?: React.ReactNode
   className?: string;
   span?: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
   spanSm?: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
