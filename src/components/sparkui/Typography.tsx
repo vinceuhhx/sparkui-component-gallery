@@ -5,6 +5,7 @@ import { Slot } from "@radix-ui/react-slot"
 import type { JSX } from "react/jsx-runtime"
 
 export interface TypographyProps extends Omit<React.HTMLAttributes<HTMLHeadingElement>, "color"> {
+  children?: React.ReactNode
   level?: 1 | 2 | 3 | 4 | 5 | 6
   weight?: "bold" | "medium" | "regular"
   color?:
