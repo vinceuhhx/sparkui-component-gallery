@@ -1,7 +1,8 @@
 
 import { useState } from "react"
 import { ComponentLibrarySidebar } from "./ComponentLibrarySidebar"
-import { Menu, X } from "lucide-react"
+import { Menu } from "lucide-react"
+import { useTheme } from "@/hooks/useTheme"
 
 interface ComponentLayoutProps {
   children: React.ReactNode
