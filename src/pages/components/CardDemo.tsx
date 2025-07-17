@@ -1,5 +1,5 @@
 import { ComponentDemo } from "@/components/demo/ComponentDemo"
-import { Card, CardHeader, CardTitle, CardSubtitle, CardBody, CardFooter, Grid, GridCol } from "@/components/sparkui"
+import { Card, CardHeader, CardTitle, CardSubtitle, CardBody, CardFooter, Grid, GridCol, Typography } from "@/components/sparkui"
 import { Button } from "@/components/sparkui"
 
 export default function CardDemo() {
@@ -12,7 +12,7 @@ export default function CardDemo() {
       <div className="space-y-8">
         {/* Card Variants */}
         <div>
-          <h3 className="ig-typography-heading-xxsmall-bold mb-4">Card Variants</h3>
+          <Typography level={4} weight="bold" color="bold" className="mb-4">Card Variants</Typography>
           <Grid>
             <GridCol span={12} spanMd={4}>
               <Card variant="clear">
@@ -63,7 +63,7 @@ export default function CardDemo() {
 
         {/* Cards with Shadow */}
         <div>
-          <h3 className="ig-typography-heading-xxsmall-bold mb-4">Cards with Shadow</h3>
+          <Typography level={4} weight="bold" color="bold" className="mb-4">Cards with Shadow</Typography>
           <Grid>
             <GridCol span={12} spanMd={4}>
               <Card variant="clear" shadow>
@@ -114,7 +114,7 @@ export default function CardDemo() {
 
         {/* Flexible Layouts */}
         <div>
-          <h3 className="ig-typography-heading-xxsmall-bold mb-4">Flexible Layouts</h3>
+          <Typography level={4} weight="bold" color="bold" className="mb-4">Flexible Layouts</Typography>
           <Grid>
             <GridCol span={12} spanMd={8}>
               <Card variant="subtle" shadow>
@@ -151,7 +151,7 @@ export default function CardDemo() {
 
         {/* Minimal Cards */}
         <div>
-          <h3 className="ig-typography-heading-xxsmall-bold mb-4">Minimal Compositions</h3>
+          <Typography level={4} weight="bold" color="bold" className="mb-4">Minimal Compositions</Typography>
           <Grid>
             <GridCol span={12} spanMd={6}>
               <Card variant="subtle">
@@ -176,7 +176,7 @@ export default function CardDemo() {
 
         {/* Code Examples */}
         <div>
-          <h3 className="ig-typography-heading-xxsmall-bold mb-4">Usage Examples</h3>
+          <Typography level={4} weight="bold" color="bold" className="mb-4">Usage Examples</Typography>
           <Grid>
             <GridCol span={12}>
               <Card variant="clear">

@@ -1,5 +1,5 @@
 import { ComponentDemo } from "@/components/demo/ComponentDemo"
-import { Button } from "@/components/sparkui"
+import { Button, Typography } from "@/components/sparkui"
 import { Download, Heart, ArrowRight } from "lucide-react"
 
 const ButtonDemo = () => {
@@ -36,7 +36,7 @@ const ButtonDemo = () => {
         <div className="space-y-8">
           {/* Variants Section */}
           <div>
-            <h3 className="text-lg font-semibold mb-4" style={{ color: 'var(--ig-text-bold)' }}>Button Variants</h3>
+            <Typography level={4} weight="bold" color="bold" className="mb-4">Button Variants</Typography>
             <div className="space-y-4">
               <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
                 <Button variant="filled" color="primary">Filled Primary</Button>
@@ -55,7 +55,7 @@ const ButtonDemo = () => {
 
           {/* Colors Section */}
           <div>
-            <h3 className="text-lg font-semibold mb-4" style={{ color: 'var(--ig-text-bold)' }}>Button Colors</h3>
+            <Typography level={4} weight="bold" color="bold" className="mb-4">Button Colors</Typography>
             <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
               <Button color="primary">Primary</Button>
               <Button color="success">Success</Button>
@@ -65,7 +65,7 @@ const ButtonDemo = () => {
 
           {/* Sizes Section */}
           <div>
-            <h3 className="text-lg font-semibold mb-4" style={{ color: 'var(--ig-text-bold)' }}>Button Sizes</h3>
+            <Typography level={4} weight="bold" color="bold" className="mb-4">Button Sizes</Typography>
             <div style={{ display: 'flex', gap: '12px', alignItems: 'center', flexWrap: 'wrap' }}>
               <Button size="sm">Small</Button>
               <Button size="md">Medium</Button>
@@ -75,7 +75,7 @@ const ButtonDemo = () => {
 
           {/* States Section */}
           <div>
-            <h3 className="text-lg font-semibold mb-4" style={{ color: 'var(--ig-text-bold)' }}>Button States</h3>
+            <Typography level={4} weight="bold" color="bold" className="mb-4">Button States</Typography>
             <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
               <Button>Normal</Button>
               <Button disabled>Disabled</Button>
@@ -88,7 +88,7 @@ const ButtonDemo = () => {
 
           {/* With Icons Section */}
           <div>
-            <h3 className="text-lg font-semibold mb-4" style={{ color: 'var(--ig-text-bold)' }}>With Icons</h3>
+            <Typography level={4} weight="bold" color="bold" className="mb-4">With Icons</Typography>
             <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
               <Button variant="filled" color="primary">
                 <Download style={{ width: '16px', height: '16px', marginRight: '8px' }} />

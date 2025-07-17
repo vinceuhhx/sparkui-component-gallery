@@ -30,45 +30,104 @@ const APIReference = () => {
 
   return (
     <div className="p-8 max-w-6xl mx-auto">
-      <Typography level={1} weight="bold" className="mb-6">
+      <Typography level={2} weight="bold" color="bold" className="mb-6">
         API Reference
       </Typography>
       
-      <Typography className="mb-8 text-muted-foreground">
+      <Typography level={5} weight="regular" color="medium" className="mb-8">
         Complete reference for all SparkUI components and their properties.
       </Typography>
 
       <div className="space-y-12">
         {components.map((component) => (
-          <div key={component.name} className="border rounded-lg p-6">
-            <Typography level={2} weight="bold" className="mb-4">
-              {component.name}
-            </Typography>
+          <div key={component.name} className="rounded-lg overflow-hidden" style={{ backgroundColor: 'var(--ig-background-surface-on-clear-subtle)', border: '1px solid var(--ig-border-soft)' }}>
+            <div className="p-6" style={{ backgroundColor: 'var(--ig-background-page-clear)', borderBottom: '1px solid var(--ig-border-soft)' }}>
+              <Typography level={3} weight="bold" color="bold">
+                {component.name}
+              </Typography>
+            </div>
             
             <div className="overflow-x-auto">
-              <table className="w-full">
+              <table className="w-full" style={{ borderCollapse: 'collapse' }}>
                 <thead>
-                  <tr className="border-b">
-                    <th className="text-left py-3 px-4 font-medium">Prop</th>
-                    <th className="text-left py-3 px-4 font-medium">Type</th>
-                    <th className="text-left py-3 px-4 font-medium">Default</th>
+                  <tr style={{ backgroundColor: 'var(--ig-background-surface-on-clear-soft)' }}>
+                    <th 
+                      className="text-left py-4 px-6" 
+                      style={{ 
+                        color: 'var(--ig-text-bold)',
+                        font: 'var(--ig-typography-heading-xxsmall-bold)',
+                        borderBottom: '1px solid var(--ig-border-medium)'
+                      }}
+                    >
+                      Property
+                    </th>
+                    <th 
+                      className="text-left py-4 px-6" 
+                      style={{ 
+                        color: 'var(--ig-text-bold)',
+                        font: 'var(--ig-typography-heading-xxsmall-bold)',
+                        borderBottom: '1px solid var(--ig-border-medium)'
+                      }}
+                    >
+                      Type
+                    </th>
+                    <th 
+                      className="text-left py-4 px-6" 
+                      style={{ 
+                        color: 'var(--ig-text-bold)',
+                        font: 'var(--ig-typography-heading-xxsmall-bold)',
+                        borderBottom: '1px solid var(--ig-border-medium)'
+                      }}
+                    >
+                      Default Value
+                    </th>
                   </tr>
                 </thead>
                 <tbody>
-                  {component.props.map((prop) => (
-                    <tr key={prop.name} className="border-b">
-                      <td className="py-3 px-4">
-                        <code className="bg-muted px-2 py-1 rounded text-sm">
+                  {component.props.map((prop, index) => (
+                    <tr 
+                      key={prop.name} 
+                      style={{ 
+                        backgroundColor: index % 2 === 0 ? 'var(--ig-background-page-clear)' : 'var(--ig-background-surface-on-clear-subtle)',
+                        borderBottom: '1px solid var(--ig-border-soft)'
+                      }}
+                    >
+                      <td className="py-4 px-6">
+                        <code 
+                          className="px-3 py-1 rounded text-sm"
+                          style={{ 
+                            backgroundColor: 'var(--ig-background-surface-on-clear-soft)',
+                            color: 'var(--ig-text-primary)',
+                            border: '1px solid var(--ig-border-soft)',
+                            fontFamily: 'monospace'
+                          }}
+                        >
                           {prop.name}
                         </code>
                       </td>
-                      <td className="py-3 px-4">
-                        <code className="bg-muted px-2 py-1 rounded text-sm">
+                      <td className="py-4 px-6">
+                        <code 
+                          className="px-3 py-1 rounded text-sm"
+                          style={{ 
+                            backgroundColor: 'var(--ig-background-surface-on-clear-soft)',
+                            color: 'var(--ig-text-secondary)',
+                            border: '1px solid var(--ig-border-soft)',
+                            fontFamily: 'monospace'
+                          }}
+                        >
                           {prop.type}
                         </code>
                       </td>
-                      <td className="py-3 px-4">
-                        <code className="bg-muted px-2 py-1 rounded text-sm">
+                      <td className="py-4 px-6">
+                        <code 
+                          className="px-3 py-1 rounded text-sm"
+                          style={{ 
+                            backgroundColor: 'var(--ig-background-surface-on-clear-soft)',
+                            color: 'var(--ig-text-tertiary)',
+                            border: '1px solid var(--ig-border-soft)',
+                            fontFamily: 'monospace'
+                          }}
+                        >
                           {prop.default}
                         </code>
                       </td>

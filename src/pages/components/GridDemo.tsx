@@ -1,5 +1,5 @@
 import { ComponentDemo } from "@/components/demo/ComponentDemo"
-import { Grid, GridCol, Card, CardHeader, CardTitle, CardBody } from "@/components/sparkui"
+import { Grid, GridCol, Card, CardHeader, CardTitle, CardBody, Typography } from "@/components/sparkui"
 
 export default function GridDemo() {
   return (
@@ -11,7 +11,7 @@ export default function GridDemo() {
       <div className="space-y-8">
         {/* Basic Grid */}
         <div>
-          <h3 className="ig-typography-heading-xxsmall-bold mb-4">Basic Grid Layout</h3>
+          <Typography level={4} weight="bold" color="bold" className="mb-4">Basic Grid Layout</Typography>
           <Grid>
             <GridCol span={12}>
               <Card variant="subtle">
@@ -28,7 +28,7 @@ export default function GridDemo() {
 
         {/* Two Columns */}
         <div>
-          <h3 className="ig-typography-heading-xxsmall-bold mb-4">Two Columns</h3>
+          <Typography level={4} weight="bold" color="bold" className="mb-4">Two Columns</Typography>
           <Grid>
             <GridCol span={6}>
               <Card variant="subtle">
@@ -55,7 +55,7 @@ export default function GridDemo() {
 
         {/* Three Columns */}
         <div>
-          <h3 className="ig-typography-heading-xxsmall-bold mb-4">Three Columns</h3>
+          <Typography level={4} weight="bold" color="bold" className="mb-4">Three Columns</Typography>
           <Grid>
             <GridCol span={4}>
               <Card variant="subtle">
@@ -92,7 +92,7 @@ export default function GridDemo() {
 
         {/* Responsive Grid */}
         <div>
-          <h3 className="ig-typography-heading-xxsmall-bold mb-4">Responsive Grid</h3>
+          <Typography level={4} weight="bold" color="bold" className="mb-4">Responsive Grid</Typography>
           <Grid>
             <GridCol span={12} spanMd={6} spanLg={4}>
               <Card variant="subtle">
@@ -129,7 +129,7 @@ export default function GridDemo() {
 
         {/* Complex Layout */}
         <div>
-          <h3 className="ig-typography-heading-xxsmall-bold mb-4">Complex Layout</h3>
+          <Typography level={4} weight="bold" color="bold" className="mb-4">Complex Layout</Typography>
           <Grid>
             <GridCol span={8}>
               <Card variant="subtle">
@@ -196,7 +196,7 @@ export default function GridDemo() {
 
         {/* Code Example */}
         <div>
-          <h3 className="ig-typography-heading-xxsmall-bold mb-4">Usage Example</h3>
+          <Typography level={4} weight="bold" color="bold" className="mb-4">Usage Example</Typography>
           <Card variant="clear">
             <CardBody>
               <pre className="ig-typography-body-small-regular overflow-x-auto">

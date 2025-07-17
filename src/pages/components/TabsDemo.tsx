@@ -1,5 +1,5 @@
 import { ComponentDemo } from "@/components/demo/ComponentDemo"
-import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/sparkui"
+import { Tabs, TabsList, TabsTrigger, TabsContent, Typography } from "@/components/sparkui"
 import { Body } from "@/components/sparkui"
 
 const TabsDemo = () => {
@@ -39,7 +39,7 @@ const TabsDemo = () => {
         <div className="space-y-8">
           {/* Basic Horizontal Tabs */}
           <div>
-            <h3 className="text-lg font-semibold mb-4 text-foreground">Horizontal Tabs (Medium Size)</h3>
+            <Typography level={4} weight="bold" color="bold" className="mb-4">Horizontal Tabs (Medium Size)</Typography>
             <Tabs defaultValue="overview" orientation="horizontal" size="md">
               <TabsList>
                 <TabsTrigger value="overview">Overview</TabsTrigger>
@@ -72,7 +72,7 @@ const TabsDemo = () => {
 
           {/* Large Horizontal Tabs */}
           <div>
-            <h3 className="text-lg font-semibold mb-4 text-foreground">Horizontal Tabs (Large Size)</h3>
+            <Typography level={4} weight="bold" color="bold" className="mb-4">Horizontal Tabs (Large Size)</Typography>
             <Tabs defaultValue="products" orientation="horizontal" size="lg">
               <TabsList>
                 <TabsTrigger value="products">Products</TabsTrigger>
@@ -99,7 +99,7 @@ const TabsDemo = () => {
 
           {/* Vertical Tabs */}
           <div>
-            <h3 className="text-lg font-semibold mb-4 text-foreground">Vertical Tabs</h3>
+            <Typography level={4} weight="bold" color="bold" className="mb-4">Vertical Tabs</Typography>
             <Tabs defaultValue="profile" orientation="vertical" size="md">
               <div className="flex gap-6">
                 <TabsList>
@@ -136,7 +136,7 @@ const TabsDemo = () => {
 
           {/* Tabs with States */}
           <div>
-            <h3 className="text-lg font-semibold mb-4 text-foreground">Tabs with Different States</h3>
+            <Typography level={4} weight="bold" color="bold" className="mb-4">Tabs with Different States</Typography>
             <Tabs defaultValue="general" orientation="horizontal" size="md">
               <TabsList>
                 <TabsTrigger value="general">General</TabsTrigger>
@@ -170,7 +170,7 @@ const TabsDemo = () => {
 
           {/* Large Vertical Tabs */}
           <div>
-            <h3 className="text-lg font-semibold mb-4 text-foreground">Large Vertical Tabs</h3>
+            <Typography level={4} weight="bold" color="bold" className="mb-4">Large Vertical Tabs</Typography>
             <Tabs defaultValue="dashboard" orientation="vertical" size="lg">
               <div className="flex gap-6">
                 <TabsList>
